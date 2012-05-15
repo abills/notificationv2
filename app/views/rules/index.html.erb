@@ -2,15 +2,18 @@
 
 <table>
   <tr>
+    <th>Rule Group</th>
+    <th>Rule ID</th>
     <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Message</th>
   </tr>
 
 <% @rules.each do |rule| %>
   <tr>
+    <td><%= rule.group.title %></td>
+    <td><%= rule.id %></td>
     <td><%= rule.title %></td>
+    <td><%= rule.syntax_msg %></td>
     <td><%= link_to 'Show', rule %></td>
     <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
     <td><%= link_to 'Destroy', rule, confirm: 'Are you sure?', method: :delete %></td>
