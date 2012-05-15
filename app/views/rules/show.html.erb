@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<div class="form-horizontal">
+  <fieldset>
+    <div class="control-group">
+      <%= label_tag @rule, "Title", :class => "control-label" %>
+      <div class="controls">
+        <%= text_field_tag @rule, @rule.title, :class => "input-xlarge uneditable-input" %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= link_to 'Edit', edit_rule_path(@rule), :class => "btn btn-primary " %>
+      <%= link_to 'Back', rules_path, :class => "btn" %>
+    </div>
+
+  </fieldset>
+</div>
+
+
+

@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<div class="form-horizontal">
+  <fieldset>
+    <div class="control-group">
+      <%= label_tag @group, "Title", :class => "control-label" %>
+      <div class="controls">
+        <%= text_field_tag @group, @group.title, :class => "input-xlarge uneditable-input" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= label_tag @group, "Rules", :class => "control-label" %>
+      <div class="controls">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Title</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @group.rules.each do |rule| %>
+            <tr>
+                <td><%= link_to rule.title, rule %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= label_tag @group, "Users", :class => "control-label" %>
+      <div class="controls">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @group.users.each do |user| %>
+            <tr>
+                <td><%= link_to user.name, user %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= link_to 'Edit', edit_group_path(@group), :class => "btn btn-primary " %>
+      <%= link_to 'Back', groups_path, :class => "btn" %>
+    </div>
+
+  </fieldset>
+</div>

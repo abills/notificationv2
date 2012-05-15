@@ -1,0 +1,3 @@
+rvm 1.9.3@andrew2 --create
+rvm_make_flags="-j 3"
+rvm_archflags="-arch x86_64"
