@@ -10,5 +10,6 @@ Notificationv2::Application.routes.draw do
   devise_for :users, :path_prefix => 'd'
   #resources :users
   #devise_for :users
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index, :edit, :update]
+
 end

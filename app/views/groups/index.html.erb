@@ -1,4 +1,5 @@
 <h1>Listing groups</h1>
+<% if current_user.has_role? :roleSystemAdmin %>
 <table>
   <tr>
     <th>Title</th>
@@ -28,4 +29,12 @@
   </div>
 </div>
 <br/>
+<% else %>
 
+<% end %>
+
+
+<% @groups.where(:user_ids == current_user.id.to_s.to_sym).each do |group| %>
+    <%= group.title %><br>
+    <%= group.user_ids %><br>
+<% end %>

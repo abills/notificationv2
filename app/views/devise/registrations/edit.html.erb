@@ -16,36 +16,6 @@
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
-
-    <h3>Notification Settings</h3>
-    <div><b>Country</b>
-      <%= f.select :country_iso, [['Australia','AU'],['United States','US'],['Chile','CL'],['Malaysia','MY']] %><br /></div>
-
-    <div><b>Notification Methods</b><br>
-      <b>(</b> Email <%= f.check_box :use_email_flag %> <b>)</b>
-      <b>(</b> Instant Messenger OCS <%= f.check_box :use_im_flag %> <b>)</b>
-      <b>(</b> Boxcar <%= f.check_box :use_boxcar_flag %> <b>)</b>
-      <b>(</b> Mobile Ph TXT/SMS <%= f.check_box :use_mobile_ph_flag %> <b>)</b><br /></div>
-
-    <br><div><b>Boxcar Login/ID</b>
-  <%=  f.text_field :boxcar_id %><br /></div>
-
-    <div><b>Mobile Phone#</b><br />
-      <i>(add the full international number including + and country code)</i><br />
-      <%=  f.text_field :mobile_phone_no %><br /></div>
-
-    <h3>Coverage Settings</h3>
-    <div>Business Days<br />
-      <%= f.radio_button :business_days, "5" %> Mon-Fri
-      <%= f.radio_button :business_days, "7" %> 7 Days
-      <%= f.radio_button :business_days, "0" %> Disable Notifications
-      <br>
-      <%= f.label :business_hrs_start %>
-      <%= f.select :business_hrs_start, [['0000','0'],['0100','1'],['0200','2'],['0300','3'],['0400','4'],['0500','5'],['0600','6'],['0700','7'],['0800','8'],['0900','9'],['1000','10'],['1100','11'],['1200','12'],['1300','13'],['1400','14'],['1500','15'],['1600','16'],['1700','17'],['1800','18'],['1900','19'],['2000','20'],['2100','21'],['2200','22'],['2300','23'], ] %>
-      <%= f.label :business_hrs_end %>
-      <%= f.select :business_hrs_end, [['0000','0'],['0100','1'],['0200','2'],['0300','3'],['0400','4'],['0500','5'],['0600','6'],['0700','7'],['0800','8'],['0900','9'],['1000','10'],['1100','11'],['1200','12'],['1300','13'],['1400','14'],['1500','15'],['1600','16'],['1700','17'],['1800','18'],['1900','19'],['2000','20'],['2100','21'],['2200','22'],['2300','23'], ] %></div>
-
-  <div><%= f.submit "Update" %></div>
 <% end %>
 
 <h3>Cancel my account</h3>
