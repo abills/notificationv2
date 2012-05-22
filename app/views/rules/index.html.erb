@@ -1,5 +1,7 @@
-<h1>Listing rules</h1>
-
+<h1>Listing rules</h1><br/>
+<% if @rules.empty? %>
+    No Rules Found
+<% else %>
 <table>
   <tr>
     <th>Rule Group</th>
@@ -20,9 +22,9 @@
   </tr>
 <% end %>
 </table>
-
+<% end %>
+<br>
 <br />
-
 <%= link_to 'New Rule', new_rule_path, :class => "btn btn-primary" %>
 
 <div class="pagination">

@@ -60,20 +60,34 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
 
-    if params[:add_user] == 1
-      format.html { redirect_to @group, notice: 'I did nothing' }
-      format.json { head :no_content }
-    end
+    begin
+      @group.users.find(current_user.id)
+      @group.users.delete(current_user)
 
-    respond_to do |format|
-      if @group.update_attributes(params[:group])
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @group.update_attributes(params[:group])
+          format.html { redirect_to groups_url, notice: 'Group was successfully removed.' }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to groups_url, notice: 'Error removing Group' }
+          format.json { head :no_content }
+        end
+      end
+    rescue
+      @group.users.push(current_user)
+
+      respond_to do |format|
+        if @group.update_attributes(params[:group])
+          format.html { redirect_to groups_url, notice: 'Group was successfully added.' }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to groups_url, notice: 'Error adding Group' }
+          format.json { head :no_content }
+        end
       end
     end
+
+
   end
 
   # DELETE /groups/1
