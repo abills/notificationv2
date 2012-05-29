@@ -11,7 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120515004904) do
+ActiveRecord::Schema.define(:version => 20120525032119) do
+
+  create_table "events", :force => true do |t|
+    t.string   "milestone"
+    t.string   "ticket_id"
+    t.string   "call_type"
+    t.string   "source"
+    t.datetime "time_stamp"
+    t.string   "cust_no"
+    t.string   "cust_region"
+    t.string   "other_text"
+    t.integer  "priority"
+    t.string   "group_owner"
+    t.string   "ctc_id"
+    t.string   "entitlement_code"
+    t.string   "description"
+    t.string   "milestone_type"
+    t.integer  "terminate_flag"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "groups", :force => true do |t|
     t.string   "title"
