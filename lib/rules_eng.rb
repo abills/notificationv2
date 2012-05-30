@@ -5,11 +5,29 @@ class EngineRulebook < Rulebook
   # To change this template use File | Settings | File Templates.
   def rules
     puts "loading rules"
+    @rules = Rule.all
+
+    @rules.each do |rule_name|
+
+    end
+
     rule [Event, :m, m.milestone == "AKR", m.source =~ /(REMEDY|^)/] do |v|
-      puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
+      #puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
     end
     rule [Event, :m, m.milestone == "WTR", m.source == "REMEDY"] do |v|
-      puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
+      #puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
+    end
+    rule [Event, :m, m.terminate_flag == 1] do |v|
+      puts "#{v[:m].ticket_id} | Need to Delete - #{v[:m].description}"
+      @event = Event.find_all_by_ticket_id(v[:m].ticket_id)
+      #TODO need to add check for source to go with find_by_ticket_id -> ###.where(:source => v[:m].source) ?
+      @event.each do |event_id|
+        event_id.delete
+      end
+
+      retract v[:m]
+      #TODO need to add that this rule has already fired and add it to the rule conditions to check
+      #TODO add these actions to a application log for auditing
     end
   end
 end

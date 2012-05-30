@@ -1,13 +1,15 @@
-require 'openwfe/util/scheduler'
+require 'rufus/scheduler'
 require 'RulesEngineCaller'
-include OpenWFE
 
-scheduler = Scheduler.new
-scheduler.start
+scheduler = Rufus::Scheduler.start_new
 
 rule_engine = Ruleby::Core::Engine.new
 n = RulesEngineCaller.new(rule_engine)
 EngineRulebook.new(rule_engine).rules
 
-scheduler.schedule_every('5s'){n.run_engine}
-scheduler.schedule_every('12s'){n.rebuild_engine}
+scheduler.every('10s', :blocking => true, :allow_overlapping => false) do
+  n.run_engine
+end
+scheduler.every('30s', :blocking => true, :allow_overlapping => false) do
+  n.rebuild_engine
+end

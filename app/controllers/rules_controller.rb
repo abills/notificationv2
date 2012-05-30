@@ -60,7 +60,6 @@ class RulesController < ApplicationController
   # PUT /rules/1.json
   def update
     @rule = Rule.find(params[:id])
-    # TODO Need to add build_sql_query into populating new rule
 
     respond_to do |format|
       if @rule.update_attributes(params[:rule])
