@@ -6,6 +6,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :call_type
       t.string :source
       t.datetime :time_stamp
+      t.datetime :target_time
+      t.datetime :start_time
       t.string :cust_no
       t.string :cust_region
       t.string :other_text

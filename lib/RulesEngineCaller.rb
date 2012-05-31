@@ -17,25 +17,30 @@ class RulesEngineCaller
     @events = Event.all
 
     puts "Loading Events #{Time.now.utc}"
+    Rails.logger.debug "#{Time.now.utc} - started loading events"
 
     @events.each do |event|
       @rule_engine.assert event
     end
 
     puts "Finished Loading Events #{Time.now.utc}"
+    Rails.logger.debug "#{Time.now.utc} - finished loading events"
   end
 
   def run_engine
     d = Time.now.utc
     puts "run engine"
+    Rails.logger.debug "#{Time.now.utc} - run engine"
     @rule_engine.match
     puts "finished engine match #{Time.now.utc - d}"
+    Rails.logger.debug "#{Time.now.utc} - finished engine match #{Time.now.utc - d} "
   end
 
   def add_fact__to_engine
     #TODO need to pass current 'event' to add to existing engine
     #@rule_engine.assert Verification_Record.new('SC00000067890', 'WTR', 'INC', 'REMEDY')
     @rule_engine.match
+    Rails.logger.debug "#{Time.now.utc} - fact pushed"
   end
 end
 

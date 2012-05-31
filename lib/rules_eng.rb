@@ -2,31 +2,37 @@ require 'ruleby'
 include Ruleby
 
 class EngineRulebook < Rulebook
-  # To change this template use File | Settings | File Templates.
   def rules
     puts "loading rules"
+    Rails.logger.debug "#{Time.now.utc} - Loading Rules into Rulebook"
     @rules = Rule.all
 
     @rules.each do |rule_name|
-
+      #TODO add loading rules loop
     end
 
     rule [Event, :m, m.milestone == "AKR", m.source =~ /(REMEDY|^)/] do |v|
       #puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
     end
-    rule [Event, :m, m.milestone == "WTR", m.source == "REMEDY"] do |v|
+    rule [Event, :m, m.milestone == "WTR", m.source =~ /(REMEDY|^)/] do |v|
       #puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
+      #TODO need to add that this rule has already fired and add it to the rule conditions to check
+      #add matched rule to event
+      #TODO need to know how to add stuff to an existing hash in a model for another example it would be adding the rule name
     end
-    rule [Event, :m, m.terminate_flag == 1] do |v|
-      puts "#{v[:m].ticket_id} | Need to Delete - #{v[:m].description}"
-      @event = Event.find_all_by_ticket_id(v[:m].ticket_id)
-      #TODO need to add check for source to go with find_by_ticket_id -> ###.where(:source => v[:m].source) ?
+    #hardcoded rules
+    #TODO add notification to someone for some of the hardcoded rules, probably "admin" roles
+    rule :delete, [Event, :m, m.terminate_flag == 1] do |v|
+      puts "match #{:delete} rule - #{v[:m].ticket_id} - #{v[:m].description}"
+      Rails.logger.info "#{Time.now.utc} - match #{:delete} rule - #{v[:m].ticket_id} - #{v[:m].description}"
+
+      #remove all entries of the terminated event
+      @event = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
       @event.each do |event_id|
-        event_id.delete
+        event_id.destroy
       end
 
       retract v[:m]
-      #TODO need to add that this rule has already fired and add it to the rule conditions to check
       #TODO add these actions to a application log for auditing
     end
   end

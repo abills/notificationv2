@@ -1,0 +1,6 @@
+# Logfile created on 2012-05-31 18:48:44 +1000 by logger.rb/31641
+2012-05-31 08:57:12 UTC - Created New Rules Engine
+2012-05-31 08:57:12 UTC - Loading Rules into Rulebook
+2012-05-31 08:57:12 UTC - Added Rules to New Rules Engine
+2012-05-31 08:57:23 UTC - run engine
+2012-05-31 08:57:23 UTC - finished engine match 0.0 
