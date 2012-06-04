@@ -18,8 +18,16 @@ class CreateEvents < ActiveRecord::Migration
       t.string :description
       t.string :milestone_type
       t.integer :terminate_flag
+      t.string :triggered_rules
 
       t.timestamps
     end
+
+    create_table(:events_rules, :id => false) do |t|
+      t.references :event
+      t.references :rule
+    end
+    add_index(:events_rules, [ :event_id, :rule_id ])
+
   end
 end

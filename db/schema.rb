@@ -31,9 +31,17 @@ ActiveRecord::Schema.define(:version => 20120525032119) do
     t.string   "description"
     t.string   "milestone_type"
     t.integer  "terminate_flag"
+    t.string   "triggered_rules"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
+
+  create_table "events_rules", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "rule_id"
+  end
+
+  add_index "events_rules", ["event_id", "rule_id"], :name => "index_events_rules_on_event_id_and_rule_id"
 
   create_table "groups", :force => true do |t|
     t.string   "title"

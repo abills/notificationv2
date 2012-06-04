@@ -8,32 +8,58 @@ class EngineRulebook < Rulebook
     @rules = Rule.all
 
     @rules.each do |rule_name|
+      @rule_title = rule_name.id
       #TODO add loading rules loop
+      case
+        #hard coded rule - for auto cleaning
+        when (rule_name.title == "SYSTEM ADMIN - auto-clean delete rule") && (rule_name.group.title == "Notification Admin")
+          puts "load auto cleaning rule"
+          rule [Event, :m, m.terminate_flag == 1] do |v|
+            if v[:m].rules.include?(Rule.find_by_id(rule_name.id)) == false
+              #matched rule to console & logfile
+              puts "match #{:delete_rule} rule - #{v[:m].ticket_id} - #{v[:m].description}"
+              Rails.logger.info "#{Time.now.utc} - match #{:delete_rule} rule - #{v[:m].ticket_id} - #{v[:m].description}"
+
+              #add reference so rule doesn't fire again
+              v[:m].rules << rule_name
+              modify v[:m]
+
+              #remove all entries of the terminated event
+              Event.joins.delete_all(:ticket_id => v[:m].ticket_id, :source => v[:m].source)
+              Event.destroy_all(:ticket_id => v[:m].ticket_id, :source => v[:m].source)
+            end
+          end
+
+        #next when statement goes here
+        #rule condition
+        #check if rule has already fired
+
+        #if a duration type rule find last
+        #@Last_event = Event.where(ticket_id: v[:m].ticket_id).last
+
+        #do stuff
+
+        #notify
+
+        #add reference so rule doesn't fire again
+        #@event = Event.find_by_id(v[:m].id)
+        #@event.rules << rule_name
+        #v[:m].rules << rule_name
+        #modify v[:m]
+      end
     end
 
     rule [Event, :m, m.milestone == "AKR", m.source =~ /(REMEDY|^)/] do |v|
       #puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
+
+
+
     end
     rule [Event, :m, m.milestone == "WTR", m.source =~ /(REMEDY|^)/] do |v|
       #puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
       #TODO need to add that this rule has already fired and add it to the rule conditions to check
       #add matched rule to event
       #TODO need to know how to add stuff to an existing hash in a model for another example it would be adding the rule name
-    end
-    #hardcoded rules
-    #TODO add notification to someone for some of the hardcoded rules, probably "admin" roles
-    rule :delete, [Event, :m, m.terminate_flag == 1] do |v|
-      puts "match #{:delete} rule - #{v[:m].ticket_id} - #{v[:m].description}"
-      Rails.logger.info "#{Time.now.utc} - match #{:delete} rule - #{v[:m].ticket_id} - #{v[:m].description}"
-
-      #remove all entries of the terminated event
-      @event = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
-      @event.each do |event_id|
-        event_id.destroy
-      end
-
-      retract v[:m]
-      #TODO add these actions to a application log for auditing
     end
   end
 end

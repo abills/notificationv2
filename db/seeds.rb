@@ -24,8 +24,21 @@ def createUser(name, email, password, roles)
   user
 end
 
+def createGroup(name)
+  group = Group.find_or_create_by_title :title => name
+  group
+end
+
+def createRule(name, groupname)
+  rule = Rule.find_or_create_by_title :title => name,
+                                      :group_id => Group.find_by_title(groupname)
+  rule
+end
+
 
 puts 'SETTING UP DEFAULT USER LOGIN'
 puts 'New user created: ' << createUser("Neil Pennell", 'neil.pennell@ventyx.abb.com', "password", [:roleSystemAdmin, :admin]).name
 puts 'New user created: ' << createUser("Andrew Bills", 'andrew.bills@ventyx.abb.com', 'password', [:roleSystemAdmin, :admin]).name
+puts 'New group created:' << createGroup('Notification Admin').title
+puts 'New rule created: ' << createRule('SYSTEM ADMIN - auto-clean delete rule', 'Notification Admin').title
 
