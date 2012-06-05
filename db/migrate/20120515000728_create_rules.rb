@@ -8,7 +8,7 @@ class CreateRules < ActiveRecord::Migration
       t.string :group_owner
       t.string :source
       t.string :cust_no
-      t.integer :priority
+      t.string :priority
       t.string :entitlement_code
       t.string :call_type
       t.string :other_text_operator

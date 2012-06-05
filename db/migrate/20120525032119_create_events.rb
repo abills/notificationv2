@@ -11,7 +11,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :cust_no
       t.string :cust_region
       t.string :other_text
-      t.integer :priority
+      t.string :priority
       t.string :group_owner
       t.string :ctc_id
       t.string :entitlement_code

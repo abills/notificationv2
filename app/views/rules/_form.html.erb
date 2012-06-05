@@ -29,10 +29,10 @@
   <div class="control-group">
     <%= f.label :source, :class => "control-label" %>
     <div class="controls">
-      <%= f.radio_button :source, "remedy" %> Remedy
-      <%= f.radio_button :source, "zenoss" %> Zenoss
-      <%= f.radio_button :source, "openview" %> OpenView
-      <%= f.radio_button :source, "avaya" %> Avaya
+      <%= f.radio_button :source, "REMEDY" %> Remedy
+      <%= f.radio_button :source, "ZEN" %> Zenoss
+      <%= f.radio_button :source, "OV" %> OpenView
+      <%= f.radio_button :source, "AVAYA" %> Avaya
       <p class="help-block"></p>
     </div>
   </div>
@@ -48,7 +48,7 @@
   <div class="control-group">
     <%= f.label :call_type, :class => "control-label" %>
     <div class="controls">
-      <%= f.select :call_type, [['All Types','NULL'],['INC - Incident','INC'],['SVR - Service Request','SVR']] %>
+      <%= f.select :call_type, [['All Types',''],['INC - Incident','INC'],['SVR - Service Request','SVR']] %>
       <p class="help-block"></p>
     </div>
   </div>
@@ -56,7 +56,7 @@
   <div class="control-group">
     <%= f.label :priority, :class => "control-label" %>
     <div class="controls">
-      <%= f.select :priority, [['All','NULL'],['P1','1'],['P2','2'],['P3','3'],['P4','4'],['P5','5']] %>
+      <%= f.select :priority, [['All',''],['P1','1'],['P2','2'],['P3','3'],['P4','4'],['P5','5']] %>
       <p class="help-block"></p>
     </div>
   </div>
@@ -81,11 +81,11 @@
   <div class="control-group">
     <%= f.label :Milestone, :class => "control-label" %>
     <div class="controls">
-      <%= f.select :milestone1_operator, [['Not Used','NULL'],['Equals','='],['Count','count']] %>
+      <%= f.select :milestone1_operator, [['Not Used',''],['Equals','=']] %>
       <%= f.text_field :milestone1_value %>
       Duration/Value
       <%= f.text_field :milestone1_time_value %>
-      <%= f.select :milestone1_time_value_denomination, [['Not Used','NULL'],['Hours','H'],['Days','D'],['Perc %','%']] %>
+      <%= f.select :milestone1_time_value_denomination, [['Not Used',''],['Count','count'],['Hours','H'],['Days','D'],['Perc %','%']] %>
       <p class="help-block"></p>
     </div>
   </div>
@@ -93,16 +93,16 @@
   <div class="control-group">
     <%= f.label :Time_to_Target, :class => "control-label" %>
     <div class="controls">
-      <%= f.select :target_time_operator, [['Not Used','NULL'],['Less Than','<']] %>
+      <%= f.select :target_time_operator, [['Not Used',''],['Less Than','<']] %>
       <%= f.text_field :target_time_value %>
-      <%= f.select :target_time_value_denomination, [['Not Used','NULL'],['Hours','H'],['Days','D'],['Perc %','%']] %>
+      <%= f.select :target_time_value_denomination, [['Not Used',''],['Hours','H'],['Days','D'],['Perc %','%']] %>
     </div>
   </div>
 
   <div class="control-group">
     <%= f.label :CTC_ID, :class => "control-label" %>
     <div class="controls">
-      <%= f.select :ctc_id_operator, [['Not Used','NULL'],['Equals','='],['Not Equals','!=']] %>
+      <%= f.select :ctc_id_operator, [['Not Used',''],['Equals','='],['Not Equals','!=']] %>
       <%= f.text_field :ctc_id_value %>
     </div>
   </div>
@@ -110,8 +110,8 @@
   <div class="control-group">
     <%= f.label :Other_text, :class => "control-label" %>
     <div class="controls">
-      <%= f.select :ctc_id_operator, [['Not Used','NULL'],['Equals','='],['Not Equals','!=']] %>
-      <%= f.text_field :ctc_id_value %>
+      <%= f.select :other_text_operator, [['Not Used',''],['Equals','='],['Not Equals','!=']] %>
+      <%= f.text_field :other_text_value %>
     </div>
   </div>
 
