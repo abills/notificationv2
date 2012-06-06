@@ -30,7 +30,8 @@ class EngineRulebook < Rulebook
               #Retract v[:m] would remove the fact from the rules engine, need to remove all related facts though
             end
           end
-        # milestone 1 =, no other text, no ctc, denomination not used
+        ##### Rules for no other text & no ctc #####
+        # milestone 1 =, other text na, ctc na, denomination not used
         when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination == ""
           rule [Event, :m, m.milestone == rule_name.milestone1_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
             #check if rule has already fired
@@ -39,7 +40,7 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-              #do actual alert
+              #TODO do actual alert
               #or queue alert to be done by another task?
               #pass event id & rule id to function for alerting
 
@@ -61,12 +62,16 @@ class EngineRulebook < Rulebook
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
                   #convert hours to minutes
-                  milestone1_target_time = (v[:m].time_stamp) + (rule_name.milestone1_time_value * 60).minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
                 elsif rule_name.milestone1_time_value_denomination == "D"
                   #convert days to minutes
-                  milestone1_target_time = (v[:m].time_stamp) + (rule_name.milestone1_time_value * 60 * 24).minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60 * 24).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
                 else
-                  milestone1_target_time = Time.now.utc
+                  #erroneous data error, do not trigger but record in log
+                  milestone1_target_time = Time.now.utc - 100.years
+                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 end
 
                 #check time now against the target specified
@@ -76,7 +81,7 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #do actual alert
+                  #TODO do actual alert
                   #or queue alert to be done by another task?
                   #pass event id & rule id to function for alerting
 
@@ -98,7 +103,7 @@ class EngineRulebook < Rulebook
               end
             end
           end
-        #milestone1 =, no other text, no ctc, milestone count
+        #milestone1 =, other text na, ctc na, milestone count
         when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination == "count"
           rule [Event, :m, m.milestone == rule_name.milestone1_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
             #check if rule has already fired
@@ -112,7 +117,7 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #do actual alert
+                #TODO do actual alert
                 #or queue alert to be done by another task?
                 #pass event id & rule id to function for alerting
 
@@ -131,7 +136,7 @@ class EngineRulebook < Rulebook
               end
             end
           end
-        #target time, duration based
+        #target time, other text na, ctc na, duration based
         when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "" && rule_name.milestone1_operator == ""
           rule [Event, :m, m.milestone_type =~ /^D/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
             #check if rule has already fired
@@ -146,28 +151,1254 @@ class EngineRulebook < Rulebook
                   #convert the target to a date
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
-                    target_target_time = v[:m].updated_at.advance(:minutes => ((rule_name.target_time_value * 60).to_int))
-                    #target_target_time = (v[:m].target_time) - ((rule_name.target_time_value * 60).to_int).minutes
-                    puts "#{target_target_time} = #{v[:m].target_time} + #{(rule_name.target_time_value * 60).to_int}"
+                    target_minutes = (rule_name.target_time_value * 60).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
-                    target_target_time = (v[:m].target_time) + (rule_name.target_time_value * 60 * 24).minutes
-                    puts "#{target_target_time} = #{v[:m].target_time} + #{rule_name.target_time_value * 60 * 24}"
-                    v[:m].start_time
-                    v[:m].target_time
-                    v[:m].time_stamp
-                    puts "days"
+                    target_minutes = (rule_name.target_time_value * 60 * 24).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_target_time = (time.now.utc - v[:m].start_time) / (v[:m].target_time - v[:m].start_time)
-                    #need to do more here
-                    puts "perc"
+                    target_remaining_perc = rule_name.target_time_value / 100
+                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_minutes = (total_minutes * target_remaining_perc).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
                   else
-                    target_target_time = Time.now.utc
+                    #erroneous data error, do not trigger but record in log
+                    milestone1_target_time = Time.now.utc - 100.years
+                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
-                  #if target then do stuff
-                  #if not past defined target then do nothing might be on the next cycle
+                  #matches the condition
+                  if Time.now.utc >= target_target_time
+                    #matches condition
+                    #output matched rule to console & logfile
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #TODO do actual alert
+                    #or queue alert to be done by another task?
+                    #pass event id & rule id to function for alerting
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  else
+                    #if not past defined target then do nothing might be on the next cycle
+                  end
+                else
+                  #no target date specified unable to calculate a target
+                  #skip adding to exclude in case value is added in later milestones
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        ##### Rules for other text = & ctc != #####
+        # milestone 1 =, other text na, ctc !=, denomination not used
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "!=" && rule_name.milestone1_time_value_denomination == ""
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.ctc_id.not == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #output matched rule to console & logfile
+              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+              Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+
+              #TODO do actual alert
+              #or queue alert to be done by another task?
+              #pass event id & rule id to function for alerting
+
+              #add reference so rule doesn't fire again
+              @event = Event.find_by_id(v[:m].id)
+              @event.rules << rule_name
+              v[:m].rules << rule_name
+              modify v[:m]
+            end
+          end
+        #milestone1 =, no other text, ctc !=, duration based
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "!=" && rule_name.milestone1_time_value_denomination != "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.ctc_id.not == rule_name.ctc_id_value, m.milestone_type =~ /^D|^S/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                if rule_name.milestone1_time_value_denomination == "H"
+                  #convert hours to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                elsif rule_name.milestone1_time_value_denomination == "D"
+                  #convert days to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60 * 24).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                else
+                  #erroneous data error, do not trigger but record in log
+                  milestone1_target_time = Time.now.utc - 100.years
+                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                end
+
+                #check time now against the target specified
+                if Time.now.utc >= milestone1_target_time
+                  #matches condition
+                  #output matched rule to console & logfile
+                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                  #TODO do actual alert
+                  #or queue alert to be done by another task?
+                  #pass event id & rule id to function for alerting
+
+                  #add reference so rule doesn't fire again
+                  @event = Event.find_by_id(v[:m].id)
+                  @event.rules << rule_name
+                  v[:m].rules << rule_name
+                  modify v[:m]
+                else
+                  #do nothing, time hasn't expired yet - allows for check on next cycle
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #milestone1 =, other text na, ctc !=, milestone count
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "!=" && rule_name.milestone1_time_value_denomination == "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.ctc_id.not == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              @events = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
+              @event_count = Event.find_all_by_ticket_id_and_source_and_milestone(v[:m].ticket_id, v[:m].source, v[:m].milestone)
+
+              if @event_count.count() == rule_name.milestone1_time_value.to_int
+                #matches condition
+                #output matched rule to console & logfile
+                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                #TODO do actual alert
+                #or queue alert to be done by another task?
+                #pass event id & rule id to function for alerting
+
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              else
+                #doesnt match condition
+                #add a reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #target time, other text na, ctc !=, duration based
+        when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "!=" && rule_name.milestone1_operator == ""
+          rule [Event, :m, m.milestone_type =~ /^D/, m.ctc_id.not == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                #is the last event so need to check the target against current
+                if v[:m].target_time.nil? == false
+                  #convert the target to a date
+                  if rule_name.target_time_value_denomination == "H"
+                    #convert hours to minutes
+                    target_minutes = (rule_name.target_time_value * 60).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "D"
+                    #convert days to minutes
+                    target_minutes = (rule_name.target_time_value * 60 * 24).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "%"
+                    #determine current %
+                    target_remaining_perc = rule_name.target_time_value / 100
+                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_minutes = (total_minutes * target_remaining_perc).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  else
+                    #erroneous data error, do not trigger but record in log
+                    milestone1_target_time = Time.now.utc - 100.years
+                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  end
+
+                  #matches the condition
+                  if Time.now.utc >= target_target_time
+                    #matches condition
+                    #output matched rule to console & logfile
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #TODO do actual alert
+                    #or queue alert to be done by another task?
+                    #pass event id & rule id to function for alerting
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  else
+                    #if not past defined target then do nothing might be on the next cycle
+                  end
+                else
+                  #no target date specified unable to calculate a target
+                  #skip adding to exclude in case value is added in later milestones
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        ##### Rules for no other text & ctc = #####
+        # milestone 1 =, other text na, ctc =, denomination not used
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination == ""
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #output matched rule to console & logfile
+              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+              Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+
+              #TODO do actual alert
+              #or queue alert to be done by another task?
+              #pass event id & rule id to function for alerting
+
+              #add reference so rule doesn't fire again
+              @event = Event.find_by_id(v[:m].id)
+              @event.rules << rule_name
+              v[:m].rules << rule_name
+              modify v[:m]
+            end
+          end
+        #milestone1 =, other text na, ctc =, duration based
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination != "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.ctc_id == rule_name.ctc_id_value, m.milestone_type =~ /^D|^S/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                if rule_name.milestone1_time_value_denomination == "H"
+                  #convert hours to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                elsif rule_name.milestone1_time_value_denomination == "D"
+                  #convert days to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60 * 24).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                else
+                  #erroneous data error, do not trigger but record in log
+                  milestone1_target_time = Time.now.utc - 100.years
+                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                end
+
+                #check time now against the target specified
+                if Time.now.utc >= milestone1_target_time
+                  #matches condition
+                  #output matched rule to console & logfile
+                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                  #TODO do actual alert
+                  #or queue alert to be done by another task?
+                  #pass event id & rule id to function for alerting
+
+                  #add reference so rule doesn't fire again
+                  @event = Event.find_by_id(v[:m].id)
+                  @event.rules << rule_name
+                  v[:m].rules << rule_name
+                  modify v[:m]
+                else
+                  #do nothing, time hasn't expired yet - allows for check on next cycle
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #milestone1 =, other text na, ctc =, milestone count
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination == "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              @events = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
+              @event_count = Event.find_all_by_ticket_id_and_source_and_milestone(v[:m].ticket_id, v[:m].source, v[:m].milestone)
+
+              if @event_count.count() == rule_name.milestone1_time_value.to_int
+                #matches condition
+                #output matched rule to console & logfile
+                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                #TODO do actual alert
+                #or queue alert to be done by another task?
+                #pass event id & rule id to function for alerting
+
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              else
+                #doesnt match condition
+                #add a reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #target time, other text na, ctc=, duration based
+        when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_operator == ""
+          rule [Event, :m, m.milestone_type =~ /^D/, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                #is the last event so need to check the target against current
+                if v[:m].target_time.nil? == false
+                  #convert the target to a date
+                  if rule_name.target_time_value_denomination == "H"
+                    #convert hours to minutes
+                    target_minutes = (rule_name.target_time_value * 60).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "D"
+                    #convert days to minutes
+                    target_minutes = (rule_name.target_time_value * 60 * 24).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "%"
+                    #determine current %
+                    target_remaining_perc = rule_name.target_time_value / 100
+                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_minutes = (total_minutes * target_remaining_perc).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  else
+                    #erroneous data error, do not trigger but record in log
+                    milestone1_target_time = Time.now.utc - 100.years
+                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  end
+
+                  #matches the condition
+                  if Time.now.utc >= target_target_time
+                    #matches condition
+                    #output matched rule to console & logfile
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #TODO do actual alert
+                    #or queue alert to be done by another task?
+                    #pass event id & rule id to function for alerting
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  else
+                    #if not past defined target then do nothing might be on the next cycle
+                  end
+                else
+                  #no target date specified unable to calculate a target
+                  #skip adding to exclude in case value is added in later milestones
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        ##### Rules for other text = & ctc = #####
+        # milestone 1 =, other text =, ctc =, denomination not used
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination == ""
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text == rule_name.other_text_value, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #output matched rule to console & logfile
+              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+              Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+
+              #TODO do actual alert
+              #or queue alert to be done by another task?
+              #pass event id & rule id to function for alerting
+
+              #add reference so rule doesn't fire again
+              @event = Event.find_by_id(v[:m].id)
+              @event.rules << rule_name
+              v[:m].rules << rule_name
+              modify v[:m]
+            end
+          end
+        #milestone1 =, other text =, ctc =, duration based
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination != "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text == rule_name.other_text_value, m.ctc_id == rule_name.ctc_id_value, m.milestone_type =~ /^D|^S/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                if rule_name.milestone1_time_value_denomination == "H"
+                  #convert hours to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                elsif rule_name.milestone1_time_value_denomination == "D"
+                  #convert days to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60 * 24).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                else
+                  #erroneous data error, do not trigger but record in log
+                  milestone1_target_time = Time.now.utc - 100.years
+                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                end
+
+                #check time now against the target specified
+                if Time.now.utc >= milestone1_target_time
+                  #matches condition
+                  #output matched rule to console & logfile
+                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                  #TODO do actual alert
+                  #or queue alert to be done by another task?
+                  #pass event id & rule id to function for alerting
+
+                  #add reference so rule doesn't fire again
+                  @event = Event.find_by_id(v[:m].id)
+                  @event.rules << rule_name
+                  v[:m].rules << rule_name
+                  modify v[:m]
+                else
+                  #do nothing, time hasn't expired yet - allows for check on next cycle
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #milestone1 =, other text =, ctc =, milestone count
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination == "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text == rule_name.other_text_value, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              @events = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
+              @event_count = Event.find_all_by_ticket_id_and_source_and_milestone(v[:m].ticket_id, v[:m].source, v[:m].milestone)
+
+              if @event_count.count() == rule_name.milestone1_time_value.to_int
+                #matches condition
+                #output matched rule to console & logfile
+                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                #TODO do actual alert
+                #or queue alert to be done by another task?
+                #pass event id & rule id to function for alerting
+
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              else
+                #doesnt match condition
+                #add a reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #target time, other text =, ctc=, duration based
+        when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_operator == ""
+          rule [Event, :m, m.milestone_type =~ /^D/, m.other_text == rule_name.other_text_value, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                #is the last event so need to check the target against current
+                if v[:m].target_time.nil? == false
+                  #convert the target to a date
+                  if rule_name.target_time_value_denomination == "H"
+                    #convert hours to minutes
+                    target_minutes = (rule_name.target_time_value * 60).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "D"
+                    #convert days to minutes
+                    target_minutes = (rule_name.target_time_value * 60 * 24).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "%"
+                    #determine current %
+                    target_remaining_perc = rule_name.target_time_value / 100
+                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_minutes = (total_minutes * target_remaining_perc).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  else
+                    #erroneous data error, do not trigger but record in log
+                    milestone1_target_time = Time.now.utc - 100.years
+                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  end
+
+                  #matches the condition
+                  if Time.now.utc >= target_target_time
+                    #matches condition
+                    #output matched rule to console & logfile
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #TODO do actual alert
+                    #or queue alert to be done by another task?
+                    #pass event id & rule id to function for alerting
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  else
+                    #if not past defined target then do nothing might be on the next cycle
+                  end
+                else
+                  #no target date specified unable to calculate a target
+                  #skip adding to exclude in case value is added in later milestones
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        ##### Rules for other text = & ctc na #####
+        # milestone 1 =, other text =, ctc na, denomination not used
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination == ""
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text == rule_name.other_text_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #output matched rule to console & logfile
+              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+              Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+
+              #TODO do actual alert
+              #or queue alert to be done by another task?
+              #pass event id & rule id to function for alerting
+
+              #add reference so rule doesn't fire again
+              @event = Event.find_by_id(v[:m].id)
+              @event.rules << rule_name
+              v[:m].rules << rule_name
+              modify v[:m]
+            end
+          end
+        #milestone1 =, other text =, ctc na, duration based
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination != "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text == rule_name.other_text_value, m.milestone_type =~ /^D|^S/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                if rule_name.milestone1_time_value_denomination == "H"
+                  #convert hours to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                elsif rule_name.milestone1_time_value_denomination == "D"
+                  #convert days to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60 * 24).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                else
+                  #erroneous data error, do not trigger but record in log
+                  milestone1_target_time = Time.now.utc - 100.years
+                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                end
+
+                #check time now against the target specified
+                if Time.now.utc >= milestone1_target_time
+                  #matches condition
+                  #output matched rule to console & logfile
+                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                  #TODO do actual alert
+                  #or queue alert to be done by another task?
+                  #pass event id & rule id to function for alerting
+
+                  #add reference so rule doesn't fire again
+                  @event = Event.find_by_id(v[:m].id)
+                  @event.rules << rule_name
+                  v[:m].rules << rule_name
+                  modify v[:m]
+                else
+                  #do nothing, time hasn't expired yet - allows for check on next cycle
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #milestone1 =, other text =, ctc na, milestone count
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination == "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text == rule_name.other_text_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              @events = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
+              @event_count = Event.find_all_by_ticket_id_and_source_and_milestone(v[:m].ticket_id, v[:m].source, v[:m].milestone)
+
+              if @event_count.count() == rule_name.milestone1_time_value.to_int
+                #matches condition
+                #output matched rule to console & logfile
+                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                #TODO do actual alert
+                #or queue alert to be done by another task?
+                #pass event id & rule id to function for alerting
+
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              else
+                #doesnt match condition
+                #add a reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #target time, other text =, ctc na, duration based
+        when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "" && rule_name.milestone1_operator == ""
+          rule [Event, :m, m.milestone_type =~ /^D/, m.other_text == rule_name.other_text_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                #is the last event so need to check the target against current
+                if v[:m].target_time.nil? == false
+                  #convert the target to a date
+                  if rule_name.target_time_value_denomination == "H"
+                    #convert hours to minutes
+                    target_minutes = (rule_name.target_time_value * 60).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "D"
+                    #convert days to minutes
+                    target_minutes = (rule_name.target_time_value * 60 * 24).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "%"
+                    #determine current %
+                    target_remaining_perc = rule_name.target_time_value / 100
+                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_minutes = (total_minutes * target_remaining_perc).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  else
+                    #erroneous data error, do not trigger but record in log
+                    milestone1_target_time = Time.now.utc - 100.years
+                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  end
+
+                  #matches the condition
+                  if Time.now.utc >= target_target_time
+                    #matches condition
+                    #output matched rule to console & logfile
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #TODO do actual alert
+                    #or queue alert to be done by another task?
+                    #pass event id & rule id to function for alerting
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  else
+                    #if not past defined target then do nothing might be on the next cycle
+                  end
+                else
+                  #no target date specified unable to calculate a target
+                  #skip adding to exclude in case value is added in later milestones
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        ##### Rules for other text != & ctc na #####
+        # milestone 1 =, other text !=, ctc na, denomination not used
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination == ""
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text.not == rule_name.other_text_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #output matched rule to console & logfile
+              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+              Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+
+              #TODO do actual alert
+              #or queue alert to be done by another task?
+              #pass event id & rule id to function for alerting
+
+              #add reference so rule doesn't fire again
+              @event = Event.find_by_id(v[:m].id)
+              @event.rules << rule_name
+              v[:m].rules << rule_name
+              modify v[:m]
+            end
+          end
+        #milestone1 =, other text !=, ctc na, duration based
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination != "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text.not == rule_name.other_text_value, m.milestone_type =~ /^D|^S/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                if rule_name.milestone1_time_value_denomination == "H"
+                  #convert hours to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                elsif rule_name.milestone1_time_value_denomination == "D"
+                  #convert days to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60 * 24).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                else
+                  #erroneous data error, do not trigger but record in log
+                  milestone1_target_time = Time.now.utc - 100.years
+                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                end
+
+                #check time now against the target specified
+                if Time.now.utc >= milestone1_target_time
+                  #matches condition
+                  #output matched rule to console & logfile
+                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                  #TODO do actual alert
+                  #or queue alert to be done by another task?
+                  #pass event id & rule id to function for alerting
+
+                  #add reference so rule doesn't fire again
+                  @event = Event.find_by_id(v[:m].id)
+                  @event.rules << rule_name
+                  v[:m].rules << rule_name
+                  modify v[:m]
+                else
+                  #do nothing, time hasn't expired yet - allows for check on next cycle
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #milestone1 =, other text !=, ctc na, milestone count
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination == "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text.not == rule_name.other_text_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              @events = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
+              @event_count = Event.find_all_by_ticket_id_and_source_and_milestone(v[:m].ticket_id, v[:m].source, v[:m].milestone)
+
+              if @event_count.count() == rule_name.milestone1_time_value.to_int
+                #matches condition
+                #output matched rule to console & logfile
+                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                #TODO do actual alert
+                #or queue alert to be done by another task?
+                #pass event id & rule id to function for alerting
+
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              else
+                #doesnt match condition
+                #add a reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #target time, other text !=, ctc na, duration based
+        when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "" && rule_name.milestone1_operator == ""
+          rule [Event, :m, m.milestone_type =~ /^D/, m.other_text.not == rule_name.other_text_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                #is the last event so need to check the target against current
+                if v[:m].target_time.nil? == false
+                  #convert the target to a date
+                  if rule_name.target_time_value_denomination == "H"
+                    #convert hours to minutes
+                    target_minutes = (rule_name.target_time_value * 60).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "D"
+                    #convert days to minutes
+                    target_minutes = (rule_name.target_time_value * 60 * 24).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "%"
+                    #determine current %
+                    target_remaining_perc = rule_name.target_time_value / 100
+                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_minutes = (total_minutes * target_remaining_perc).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  else
+                    #erroneous data error, do not trigger but record in log
+                    milestone1_target_time = Time.now.utc - 100.years
+                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  end
+
+                  #matches the condition
+                  if Time.now.utc >= target_target_time
+                    #matches condition
+                    #output matched rule to console & logfile
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #TODO do actual alert
+                    #or queue alert to be done by another task?
+                    #pass event id & rule id to function for alerting
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  else
+                    #if not past defined target then do nothing might be on the next cycle
+                  end
+                else
+                  #no target date specified unable to calculate a target
+                  #skip adding to exclude in case value is added in later milestones
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        ##### Rules for other text != & ctc = #####
+        # milestone 1 =, other text !=, ctc =, denomination not used
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination == ""
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text.not == rule_name.other_text_value, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #output matched rule to console & logfile
+              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+              Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+
+              #TODO do actual alert
+              #or queue alert to be done by another task?
+              #pass event id & rule id to function for alerting
+
+              #add reference so rule doesn't fire again
+              @event = Event.find_by_id(v[:m].id)
+              @event.rules << rule_name
+              v[:m].rules << rule_name
+              modify v[:m]
+            end
+          end
+        #milestone1 =, other text !=, ctc =, duration based
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination != "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text.not == rule_name.other_text_value, m.ctc_id == rule_name.ctc_id_value, m.milestone_type =~ /^D|^S/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                if rule_name.milestone1_time_value_denomination == "H"
+                  #convert hours to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                elsif rule_name.milestone1_time_value_denomination == "D"
+                  #convert days to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60 * 24).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                else
+                  #erroneous data error, do not trigger but record in log
+                  milestone1_target_time = Time.now.utc - 100.years
+                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                end
+
+                #check time now against the target specified
+                if Time.now.utc >= milestone1_target_time
+                  #matches condition
+                  #output matched rule to console & logfile
+                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                  #TODO do actual alert
+                  #or queue alert to be done by another task?
+                  #pass event id & rule id to function for alerting
+
+                  #add reference so rule doesn't fire again
+                  @event = Event.find_by_id(v[:m].id)
+                  @event.rules << rule_name
+                  v[:m].rules << rule_name
+                  modify v[:m]
+                else
+                  #do nothing, time hasn't expired yet - allows for check on next cycle
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #milestone1 =, other text !=, ctc =, milestone count
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination == "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text.not == rule_name.other_text_value, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              @events = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
+              @event_count = Event.find_all_by_ticket_id_and_source_and_milestone(v[:m].ticket_id, v[:m].source, v[:m].milestone)
+
+              if @event_count.count() == rule_name.milestone1_time_value.to_int
+                #matches condition
+                #output matched rule to console & logfile
+                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                #TODO do actual alert
+                #or queue alert to be done by another task?
+                #pass event id & rule id to function for alerting
+
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              else
+                #doesnt match condition
+                #add a reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #target time, other text !=, ctc=, duration based
+        when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_operator == ""
+          rule [Event, :m, m.milestone_type =~ /^D/, m.other_text.not == rule_name.other_text_value, m.ctc_id == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                #is the last event so need to check the target against current
+                if v[:m].target_time.nil? == false
+                  #convert the target to a date
+                  if rule_name.target_time_value_denomination == "H"
+                    #convert hours to minutes
+                    target_minutes = (rule_name.target_time_value * 60).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "D"
+                    #convert days to minutes
+                    target_minutes = (rule_name.target_time_value * 60 * 24).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "%"
+                    #determine current %
+                    target_remaining_perc = rule_name.target_time_value / 100
+                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_minutes = (total_minutes * target_remaining_perc).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  else
+                    #erroneous data error, do not trigger but record in log
+                    milestone1_target_time = Time.now.utc - 100.years
+                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  end
+
+                  #matches the condition
+                  if Time.now.utc >= target_target_time
+                    #matches condition
+                    #output matched rule to console & logfile
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #TODO do actual alert
+                    #or queue alert to be done by another task?
+                    #pass event id & rule id to function for alerting
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  else
+                    #if not past defined target then do nothing might be on the next cycle
+                  end
+                else
+                  #no target date specified unable to calculate a target
+                  #skip adding to exclude in case value is added in later milestones
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        ##### Rules for other text = & ctc != #####
+        # milestone 1 =, other text =, ctc !=, denomination not used
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "!=" && rule_name.milestone1_time_value_denomination == ""
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text == rule_name.other_text_value, m.ctc_id.not == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #output matched rule to console & logfile
+              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+              Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+
+              #TODO do actual alert
+              #or queue alert to be done by another task?
+              #pass event id & rule id to function for alerting
+
+              #add reference so rule doesn't fire again
+              @event = Event.find_by_id(v[:m].id)
+              @event.rules << rule_name
+              v[:m].rules << rule_name
+              modify v[:m]
+            end
+          end
+        #milestone1 =, other text !=, ctc =, duration based
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "!=" && rule_name.milestone1_time_value_denomination != "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text.not == rule_name.other_text_value, m.ctc_id.not == rule_name.ctc_id_value, m.milestone_type =~ /^D|^S/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                if rule_name.milestone1_time_value_denomination == "H"
+                  #convert hours to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                elsif rule_name.milestone1_time_value_denomination == "D"
+                  #convert days to minutes
+                  target_minutes = (rule_name.milestone1_time_value * 60 * 24).to_int
+                  milestone1_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                else
+                  #erroneous data error, do not trigger but record in log
+                  milestone1_target_time = Time.now.utc - 100.years
+                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                end
+
+                #check time now against the target specified
+                if Time.now.utc >= milestone1_target_time
+                  #matches condition
+                  #output matched rule to console & logfile
+                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                  #TODO do actual alert
+                  #or queue alert to be done by another task?
+                  #pass event id & rule id to function for alerting
+
+                  #add reference so rule doesn't fire again
+                  @event = Event.find_by_id(v[:m].id)
+                  @event.rules << rule_name
+                  v[:m].rules << rule_name
+                  modify v[:m]
+                else
+                  #do nothing, time hasn't expired yet - allows for check on next cycle
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #milestone1 =, other text !=, ctc =, milestone count
+        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "!=" && rule_name.milestone1_time_value_denomination == "count"
+          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text.not == rule_name.other_text_value, m.ctc_id.not == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              @events = Event.find_all_by_ticket_id_and_source(v[:m].ticket_id, v[:m].source)
+              @event_count = Event.find_all_by_ticket_id_and_source_and_milestone(v[:m].ticket_id, v[:m].source, v[:m].milestone)
+
+              if @event_count.count() == rule_name.milestone1_time_value.to_int
+                #matches condition
+                #output matched rule to console & logfile
+                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                #TODO do actual alert
+                #or queue alert to be done by another task?
+                #pass event id & rule id to function for alerting
+
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              else
+                #doesnt match condition
+                #add a reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
+        #target time, other text !=, ctc=, duration based
+        when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "!=" && rule_name.ctc_id_operator == "!=" && rule_name.milestone1_operator == ""
+          rule [Event, :m, m.milestone_type =~ /^D/, m.other_text.not == rule_name.other_text_value, m.ctc_id.not == rule_name.ctc_id_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                #is the last event so need to check the target against current
+                if v[:m].target_time.nil? == false
+                  #convert the target to a date
+                  if rule_name.target_time_value_denomination == "H"
+                    #convert hours to minutes
+                    target_minutes = (rule_name.target_time_value * 60).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "D"
+                    #convert days to minutes
+                    target_minutes = (rule_name.target_time_value * 60 * 24).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  elsif rule_name.target_time_value_denomination == "%"
+                    #determine current %
+                    target_remaining_perc = rule_name.target_time_value / 100
+                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_minutes = (total_minutes * target_remaining_perc).to_int
+                    target_target_time = v[:m].target_time - target_minutes.minutes
+                  else
+                    #erroneous data error, do not trigger but record in log
+                    milestone1_target_time = Time.now.utc - 100.years
+                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  end
+
+                  #matches the condition
+                  if Time.now.utc >= target_target_time
+                    #matches condition
+                    #output matched rule to console & logfile
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #TODO do actual alert
+                    #or queue alert to be done by another task?
+                    #pass event id & rule id to function for alerting
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  else
+                    #if not past defined target then do nothing might be on the next cycle
+                  end
                 else
                   #no target date specified unable to calculate a target
                   #skip adding to exclude in case value is added in later milestones
@@ -186,149 +1417,3 @@ class EngineRulebook < Rulebook
     end
   end
 end
-
-#####################################################################################################
-
-#check if rule has fired on another event for the same ticket & source
-#if @events.include?(:rule => rule_name) == false
-#  puts "#{@event_count.count()} #{v[:m].id} #{v[:m].ticket_id} #{@events.include?(:rule => rule_name)}"
-  #check if rule conditions match
-
-
-#else
-  #rule has fired before on another event
-#end
-
-#####################################################################################################
-
-#        when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "=" && rule_name.ctc_id_operator == "=" && rule_name.milestone1_time_value_denomination == "NULL"
-#          # milestone 1 =, other text =, ctc =, denomination not used
-#          puts "load - milestone 1 =, other text =, ctc =, denomination not used"
-#          rule [Event, :m, m.milestone == rule_name.milestone1_value, m.other_text_value == rule_name.other_text_value, m.ctc_id_value == rule_name.ctc_id_value, m.milestone1_time_value_denomination == rule_name.milestone1_time_value_denomination, m.source =~ /(#{rule_name.source}|^)/, m.cust_no =~ /(#{rule_name.cust_no}|^)/, m.call_type =~ /(#{rule_name.call_type}|^)/, m.priority =~ /(#{rule_name.priority}|^)/, m.group_owner =~ /(#{rule_name.group_owner}|^)/, m.entitlement_code =~ /(#{rule_name.entitlement_code}|^)/] do |v|
-#            #check if rule has already fired
-#            if v[:m].rules.include?(Rule.find_by_id(rule_name.id)) == false
-#              #output matched rule to console & logfile
-#              puts "match rule #{rule_name.id} - #{v[:m].ticket_id} - #{v[:m].description}"
-#              Rails.logger.info "#{Time.now.utc} - match delete rule #{rule_name.id} - #{v[:m].ticket_id} - #{v[:m].description}"
-#
-#              #add reference so rule doesn't fire again
-#              @event = Event.find_by_id(v[:m].id)
-#              @event.rules << rule_name
-#              v[:m].rules << rule_name
-#              modify v[:m]
-#            end
-#          end
-
-#####################################################################################################
-#if a duration type rule find last
-#@Last_event = Event.where(ticket_id: v[:m].ticket_id).last
-
-#do stuff
-
-#notify
-
-#add reference so rule doesn't fire again
-#@event = Event.find_by_id(v[:m].id)
-#@event.rules << rule_name
-#v[:m].rules << rule_name
-#modify v[:m]
-
-#####################################################################################################
-
-#rule [Event, :m, m.milestone == "AKR", m.source =~ /(REMEDY|^)/] do |v|
-#puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
-
-#rule [Event, :m, m.milestone == "WTR", m.source =~ /(REMEDY|^)/] do |v|
-#puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
-#TODO need to add that this rule has already fired and add it to the rule conditions to check
-#add matched rule to event
-#TODO need to know how to add stuff to an existing hash in a model for another example it would be adding the rule name
-#end
-#end
-
-#####################################################################################################
-
-#@rules = Rule.all
-
-#@rules.each do |rule_name|
-#case
-#  when (rule_name.milestone1_operator == "=" or rule_name.milestone1_operator == ">") #milestone is equals or count
-#    puts "condition 1"
-#    puts "#{rule_name.ticket_id} | match rule #{rule_name.milestone} - #{rule_name.description}"
-#  when rule_name.target_time_operator == "<" #time to target is <
-#    puts "condition 2"
-#    puts "#{rule_name.ticket_id} | match rule #{rule_name.milestone} - #{rule_name.description}"
-#end
-#end
-
-#puts "Default Rules"
-#rule [Event, :m, m.milestone == "AKR", m.source =~ /(REMEDY|^)/] do |v|
-#  puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
-#end
-#rule [Event, :m, m.milestone == "WTR", m.source == "REMEDY"] do |v|
-#  puts "#{v[:m].ticket_id} | match rule #{v[:m].milestone} - #{v[:m].description}"
-#end
-
-#####################################################################################################
-
-#rules.each do |rulename|
-#  case
-#    when rulename.milestone_operator == "=" or rulename.milestone_operator == ">" #milestone is equals or count
-#      case
-#        when (other_text_operator == "=" or other_text_operator == "") and (ctc_id_operator == "=" or ctc_id_operator == "")
-#          rule rulename.id [verification_data, :m, m.milestone == rulename.milestone1_value, m.other_text =~ /(#{rulename.other_text_value}|^)/, m.ctc_id_value =~ /(#{rulename.ctc_id_value}|^)/, m.source =~ /(#{rulename.source}|^)/, m.cust_no =~ /(#{rulename.cust_no}|^)/, m.call_type =~ /(#{rulename.call_type}|^)/, m.priority =~ /(#{rulename.priority}|^)/, m.group_owner =~ /(#{rulename.group_owner}|^)/, m.entitlement_code =~ /(#{rulename.entitlement_code}|^)/] do |v|
-#            if rulename.milestone_operator == ">"
-#              #verify if ticket_id, rule & verification data line have been matched before
-#              #notify all users with the matching group subscription & update the rule match log
-#            else #assume equals
-#                 #check if duration since has been specified as part of the rule, if so check if event is the latest
-#                 #verify if ticket_id, rule & verification data line have been matched before
-#                 #notify all users with the matching group subscription & update the rule match log
-#            end
-#          end
-#        when (other_text_operator == "=" or other_text_operator == "") and (ctc_id_operator == "!")
-#          rule rulename.id [verification_data, :m, m.milestone == rulename.milestone1_value, m.other_text =~ /(#{rulename.other_text_value}|^)/, m.ctc_id_value != rulename.ctc_id_value, m.source =~ /(#{rulename.source}|^)/, m.cust_no =~ /(#{rulename.cust_no}|^)/, m.call_type =~ /(#{rulename.call_type}|^)/, m.priority =~ /(#{rulename.priority}|^)/, m.group_owner =~ /(#{rulename.group_owner}|^)/, m.entitlement_code =~ /(#{rulename.entitlement_code}|^)/] do |v|
-#            if rulename.milestone_operator == ">"
-#              #verify if ticket_id, rule & verification data line have been matched before
-#              #notify all users with the matching group subscription & update the rule match log
-#            else #assume equals
-#                 #check if duration since has been specified as part of the rule, if so check if event is the latest
-#                 #verify if ticket_id, rule & verification data line have been matched before
-#                 #notify all users with the matching group subscription & update the rule match log
-#            end
-#          end
-#        when (other_text_operator == "!") and (ctc_id_operator == "=" or ctc_id_operator == "")
-#          rule rulename.id [verification_data, :m, m.milestone == rulename.milestone1_value, m.other_text =~ rulename.other_text_value, m.ctc_id_value =~ /(#{rulename.ctc_id_value}|^)/, m.source =~ /(#{rulename.source}|^)/, m.cust_no =~ /(#{rulename.cust_no}|^)/, m.call_type =~ /(#{rulename.call_type}|^)/, m.priority =~ /(#{rulename.priority}|^)/, m.group_owner =~ /(#{rulename.group_owner}|^)/, m.entitlement_code =~ /(#{rulename.entitlement_code}|^)/] do |v|
-#            if rulename.milestone_operator == ">"
-#              #verify if ticket_id, rule & verification data line have been matched before
-#              #notify all users with the matching group subscription & update the rule match log
-#            else #assume equals
-#                 #check if duration since has been specified as part of the rule, if so check if event is the latest
-#                 #verify if ticket_id, rule & verification data line have been matched before
-#                 #notify all users with the matching group subscription & update the rule match log
-#            end
-#          end
-#      end
-#    when rulename.target_time_operator_operator == "<" #time to target is <
-#      case
-#        when (other_text_operator == "=" or other_text_operator == "") and (ctc_id_operator == "=" or ctc_id_operator == "")
-#          rule rulename.id [verification_data, :m, m.other_text =~ /(#{rulename.other_text_value}|^)/, m.ctc_id_value =~ /(#{rulename.ctc_id_value}|^)/, m.source =~ /(#{rulename.source}|^)/, m.cust_no =~ /(#{rulename.cust_no}|^)/, m.call_type =~ /(#{rulename.call_type}|^)/, m.priority =~ /(#{rulename.priority}|^)/, m.group_owner =~ /(#{rulename.group_owner}|^)/, m.entitlement_code =~ /(#{rulename.entitlement_code}|^)/] do |v|
-#            #check if event is the 'latest' duration event & compare time current to the time set
-#            #verify if ticket_id, rule & verification data line have been matched before
-#            #notify all users with the matching group subscription & update the rule match log
-#          end
-#        when (other_text_operator == "=" or other_text_operator == "") and (ctc_id_operator == "!")
-#          rule rulename.id [verification_data, :m, m.other_text =~ /(#{rulename.other_text_value}|^)/, m.ctc_id_value != rulename.ctc_id_value, m.source =~ /(#{rulename.source}|^)/, m.cust_no =~ /(#{rulename.cust_no}|^)/, m.call_type =~ /(#{rulename.call_type}|^)/, m.priority =~ /(#{rulename.priority}|^)/, m.group_owner =~ /(#{rulename.group_owner}|^)/, m.entitlement_code =~ /(#{rulename.entitlement_code}|^)/] do |v|
-#            #check if event is the 'latest' duration event & compare time current to the time set
-#            #verify if ticket_id, rule & verification data line have been matched before
-#            #notify all users with the matching group subscription & update the rule match log
-#          end
-#        when (other_text_operator == "!") and (ctc_id_operator == "=" or ctc_id_operator == "")
-#          rule rulename.id [verification_data, :m, m.other_text =~ rulename.other_text_value, m.ctc_id_value =~ /(#{rulename.ctc_id_value}|^)/, m.source =~ /(#{rulename.source}|^)/, m.cust_no =~ /(#{rulename.cust_no}|^)/, m.call_type =~ /(#{rulename.call_type}|^)/, m.priority =~ /(#{rulename.priority}|^)/, m.group_owner =~ /(#{rulename.group_owner}|^)/, m.entitlement_code =~ /(#{rulename.entitlement_code}|^)/] do |v|
-#            #check if event is the 'latest' duration event & compare time current to the time set
-#            #verify if ticket_id, rule & verification data line have been matched before
-#            #notify all users with the matching group subscription & update the rule match log
-#          end
-#      end
-#  end
-#end
