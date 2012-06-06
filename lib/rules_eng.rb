@@ -27,6 +27,7 @@ class EngineRulebook < Rulebook
               #remove all entries of the terminated event
               #TODO re-enable the below line when thats figured out too
               #Event.delete_all(:ticket_id => v[:m].ticket_id, :source => v[:m].source)
+              #Retract v[:m] would remove the fact from the rules engine, need to remove all related facts though
             end
           end
         # milestone 1 =, no other text, no ctc, denomination not used
@@ -49,25 +50,27 @@ class EngineRulebook < Rulebook
               modify v[:m]
             end
           end
+        #milestone1 =, no other text, no ctc, duration based
         when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination != "count"
-          #milestone1 =, no other text, no ctc, duration based
           rule [Event, :m, m.milestone == rule_name.milestone1_value, m.milestone_type =~ /^D|^S/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
                   #convert hours to minutes
-                  milestone1_time_value_minutes = rule_name.milestone1_time_value * 60
+                  milestone1_target_time = (v[:m].time_stamp) + (rule_name.milestone1_time_value * 60).minutes
                 elsif rule_name.milestone1_time_value_denomination == "D"
                   #convert days to minutes
-                  milestone1_time_value_minutes = rule_name.milestone1_time_value * 60 * 24
+                  milestone1_target_time = (v[:m].time_stamp) + (rule_name.milestone1_time_value * 60 * 24).minutes
+                else
+                  milestone1_target_time = Time.now.utc
                 end
 
                 #check time now against the target specified
-                if Time.now.utc >= ((v[:m].created_at) + milestone1_time_value_minutes.minutes)
+                if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
@@ -95,8 +98,8 @@ class EngineRulebook < Rulebook
               end
             end
           end
+        #milestone1 =, no other text, no ctc, milestone count
         when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination == "count"
-          #milestone1 =, no other text, no ctc, milestone count
           rule [Event, :m, m.milestone == rule_name.milestone1_value, m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
@@ -128,9 +131,57 @@ class EngineRulebook < Rulebook
               end
             end
           end
-        when rule_name.milestone1_operator == "" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value == "<"
-          #target time, duration based
-          #includes rule condition for milestone being duration based
+        #target time, duration based
+        when rule_name.target_time_operator == "<" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "" && rule_name.milestone1_operator == ""
+          rule [Event, :m, m.milestone_type =~ /^D/,m.source =~ /#{rule_name.source}|^$/, m.cust_no =~ /#{rule_name.cust_no}|^$/, m.call_type =~ /#{rule_name.call_type}|^$/, m.priority =~ /#{rule_name.priority}|^$/, m.group_owner =~ /#{rule_name.group_owner}|^$/, m.entitlement_code =~ /#{rule_name.entitlement_code}|^$/ ] do |v|
+            #check if rule has already fired
+            if v[:m].rules.include?(rule_name) == false
+              #find the last event
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+
+              #check current event against the last duration type event
+              if v[:m].id == @last_event.id
+                #is the last event so need to check the target against current
+                if v[:m].target_time.nil? == false
+                  #convert the target to a date
+                  if rule_name.target_time_value_denomination == "H"
+                    #convert hours to minutes
+                    target_target_time = v[:m].updated_at.advance(:minutes => ((rule_name.target_time_value * 60).to_int))
+                    #target_target_time = (v[:m].target_time) - ((rule_name.target_time_value * 60).to_int).minutes
+                    puts "#{target_target_time} = #{v[:m].target_time} + #{(rule_name.target_time_value * 60).to_int}"
+                  elsif rule_name.target_time_value_denomination == "D"
+                    #convert days to minutes
+                    target_target_time = (v[:m].target_time) + (rule_name.target_time_value * 60 * 24).minutes
+                    puts "#{target_target_time} = #{v[:m].target_time} + #{rule_name.target_time_value * 60 * 24}"
+                    v[:m].start_time
+                    v[:m].target_time
+                    v[:m].time_stamp
+                    puts "days"
+                  elsif rule_name.target_time_value_denomination == "%"
+                    #determine current %
+                    target_target_time = (time.now.utc - v[:m].start_time) / (v[:m].target_time - v[:m].start_time)
+                    #need to do more here
+                    puts "perc"
+                  else
+                    target_target_time = Time.now.utc
+                  end
+
+                  #if target then do stuff
+                  #if not past defined target then do nothing might be on the next cycle
+                else
+                  #no target date specified unable to calculate a target
+                  #skip adding to exclude in case value is added in later milestones
+                end
+              else
+                #not the last event for duration calculation
+                #add reference so rule doesn't fire again
+                @event = Event.find_by_id(v[:m].id)
+                @event.rules << rule_name
+                v[:m].rules << rule_name
+                modify v[:m]
+              end
+            end
+          end
       end
     end
   end

@@ -18,7 +18,6 @@ class CreateEvents < ActiveRecord::Migration
       t.string :description
       t.string :milestone_type
       t.integer :terminate_flag
-      t.string :triggered_rules
 
       t.timestamps
     end

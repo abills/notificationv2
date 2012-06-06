@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20120525032119) do
     t.string   "description"
     t.string   "milestone_type"
     t.integer  "terminate_flag"
-    t.string   "triggered_rules"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
