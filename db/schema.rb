@@ -124,6 +124,12 @@ ActiveRecord::Schema.define(:version => 20120525032119) do
     t.integer  "business_hrs_start"
     t.integer  "business_hrs_end"
     t.integer  "business_days"
+    t.string   "nma_api_key"
+    t.integer  "use_nma_flag"
+    t.string   "nmwp_api_key"
+    t.integer  "use_nmwp_flag"
+    t.string   "rss_address"
+    t.float    "timezone"
     t.string   "invitation_token",       :limit => 60
     t.datetime "invitation_sent_at"
     t.datetime "invitation_accepted_at"

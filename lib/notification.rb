@@ -1,0 +1,109 @@
+class Notification
+  # To change this template use File | Settings | File Templates.
+  require 'uri'
+  require 'net/http'
+  require 'ruby-notify-my-android'
+  require 'mail'
+
+  def initialize
+    @username = ""
+    @source_system = ""
+    @message = ""
+  end
+
+  #master notify function
+  def notify_user(rule_id, event_id)
+    @rule = Rule.find_by_id(rule_id)
+    puts @rule.group.title
+    @event = Event.find_by_id(event_id)
+
+    @users = @rule.group.users.all
+
+    @users.each do |user|
+      #TODO this is where you would add an event to the user, only keeping 20 at a time for use with the RSS builder
+      case
+        when user.use_boxcar_flag == 1
+          boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+        when user.use_email_flag == 1
+          mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+        when user.use_im_flag == 1
+          im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+        when user.use_mobile_ph_flag == 1
+          sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+        when user.use_nma_flag == 1
+          nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+        when user.use_nmwp_flag == 1
+          nma_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+      end
+      rss_notify(user.rss_address, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+    end
+  end
+
+  #notify by boxcar
+  def boxcar_notify(username, source_system, message)
+    if username.nil?
+      #add username blank, no send
+      Rails.logger.info "#{Time.now.utc} - Failed boxcar_notify - User ID not specified"
+    elsif username.respond_to?("each")
+      username.each do |username|
+        params = {'email' => username, 'notification[from_screen_name]' => source_system, 'notification[message]' => message, 'notification[icon_url]' => 'https://si0.twimg.com/profile_images/1817574149/Twitter_logo.jpg'}
+        post = Net::HTTP.post_form(URI.parse('http://boxcar.io/devices/providers/MH0S7xOFSwVLNvNhTpiC/notifications'), params)
+        Rails.logger.info "#{Time.now.utc} - boxcar_notify - #{username} - #{source_system} - #{message}"
+      end
+    else
+      params = {'email' => username, 'notification[from_screen_name]' => source_system, 'notification[message]' => message, 'notification[icon_url]' => 'https://si0.twimg.com/profile_images/1817574149/Twitter_logo.jpg'}
+      post = Net::HTTP.post_form(URI.parse('http://boxcar.io/devices/providers/MH0S7xOFSwVLNvNhTpiC/notifications'), params)
+      Rails.logger.info "#{Time.now.utc} - boxcar_notify - #{username} - #{source_system} - #{message}"
+    end
+  end
+
+  #notify by android
+  def nma_notify(api_key, source_system, message)
+    NMA.notify do |n|
+      n.apikey = api_key
+      n.priority = NMA::Priority::HIGH
+      n.application = "Ventyx"
+      n.event = source_system
+      n.description = message
+      Rails.logger.info "#{Time.now.utc} - nma_notify - #{api_key} - #{source_system} - #{message}"
+    end
+  end
+
+  #notify by windows phone
+  def nmwp_notify(api_key, source_system, message)
+    uri = URI.parse('https://notifymywindowsphone.com/publicapi/notify/')
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    params = {'apikey' => api_key, 'application' => "Ventyx", 'event' => source_system, 'description' => message}
+
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.set_form_data(params)
+    response = http.request(request)
+
+    Rails.logger.info "#{Time.now.utc} - nmwp_notify - #{api_key} - #{source_system} - #{message}"
+  end
+
+  #notify by email
+  def mail_notify(username, source_system, message)
+    #TODO the mail out function
+  end
+
+  #notify by sms(username, source_system, message)
+  def sms_notify(username, source_system, message)
+    #TODO link to SMS gateway
+    #limit char length here?
+  end
+
+  def im_notify(username, source_system, message)
+    #TODO figure out what to do about IM
+  end
+
+  #notify by rss
+  def rss_notify(username, source_system, message)
+    #TODO add RSS generator for each individual user
+    #requires users to have a record of the last 20 events & rebuild the RSS each time per user
+    #code to solve is here - http://techoctave.com/c7/posts/32-create-an-rss-feed-in-rails
+  end
+end

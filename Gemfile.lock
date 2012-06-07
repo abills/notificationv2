@@ -170,6 +170,8 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.10.0)
+    ruby-notify-my-android (0.4.1)
+      xml-simple (>= 1.0.15)
     rubyzip (0.9.8)
     rufus-scheduler (2.0.16)
       tzinfo (>= 0.3.23)
@@ -201,6 +203,7 @@ GEM
     warden (1.1.1)
       rack (>= 1.0)
     will_paginate (3.0.3)
+    xml-simple (1.1.1)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -227,10 +230,12 @@ DEPENDENCIES
   guard-rspec (>= 0.4.3)
   jquery-rails
   launchy (>= 2.1.0)
+  mail
   mysql2
   rails (= 3.2.3)
   rolify (>= 3.1.0)
   rspec-rails (>= 2.10.1)
+  ruby-notify-my-android
   rufus-scheduler
   ruleby
   sass-rails (~> 3.2.3)

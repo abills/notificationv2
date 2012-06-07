@@ -1,3 +1,4 @@
+require_relative 'notification'
 require 'ruleby'
 include Ruleby
 
@@ -5,6 +6,7 @@ class EngineRulebook < Rulebook
   def rules
     puts "#{Time.now.utc} - Loading Rules into Rulebook"
     Rails.logger.debug "#{Time.now.utc} - Loading Rules into Rulebook"
+    msg = Notification.new()
     @rules = Rule.all
 
     @rules.each do |rule_name|
@@ -24,7 +26,7 @@ class EngineRulebook < Rulebook
               v[:m].rules << rule_name
               modify v[:m]
 
-              #remove all entries of the terminated event
+              #remove all entries of the terminated event? or wait until rules are reloaded?
               #TODO re-enable the below line when thats figured out too
               #Event.delete_all(:ticket_id => v[:m].ticket_id, :source => v[:m].source)
               #Retract v[:m] would remove the fact from the rules engine, need to remove all related facts though
@@ -40,9 +42,8 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-              #TODO do actual alert
-              #or queue alert to be done by another task?
-              #pass event id & rule id to function for alerting
+              #do actual alert
+              msg.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -81,9 +82,8 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #TODO do actual alert
-                  #or queue alert to be done by another task?
-                  #pass event id & rule id to function for alerting
+                  #do actual alert
+                  msg.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -117,9 +117,8 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #TODO do actual alert
-                #or queue alert to be done by another task?
-                #pass event id & rule id to function for alerting
+                #do actual alert
+                msg.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -176,9 +175,8 @@ class EngineRulebook < Rulebook
                     puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #TODO do actual alert
-                    #or queue alert to be done by another task?
-                    #pass event id & rule id to function for alerting
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
 
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -212,10 +210,8 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-
-              #TODO do actual alert
-              #or queue alert to be done by another task?
-              #pass event id & rule id to function for alerting
+              #do actual alert
+              msg.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -254,9 +250,8 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #TODO do actual alert
-                  #or queue alert to be done by another task?
-                  #pass event id & rule id to function for alerting
+                  #do actual alert
+                  msg.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -290,9 +285,8 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #TODO do actual alert
-                #or queue alert to be done by another task?
-                #pass event id & rule id to function for alerting
+                #do actual alert
+                msg.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -349,9 +343,8 @@ class EngineRulebook < Rulebook
                     puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #TODO do actual alert
-                    #or queue alert to be done by another task?
-                    #pass event id & rule id to function for alerting
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
 
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -385,10 +378,8 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-
-              #TODO do actual alert
-              #or queue alert to be done by another task?
-              #pass event id & rule id to function for alerting
+              #do actual alert
+              msg.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -427,9 +418,8 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #TODO do actual alert
-                  #or queue alert to be done by another task?
-                  #pass event id & rule id to function for alerting
+                  #do actual alert
+                  msg.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -463,9 +453,8 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #TODO do actual alert
-                #or queue alert to be done by another task?
-                #pass event id & rule id to function for alerting
+                #do actual alert
+                msg.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -522,9 +511,8 @@ class EngineRulebook < Rulebook
                     puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #TODO do actual alert
-                    #or queue alert to be done by another task?
-                    #pass event id & rule id to function for alerting
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
 
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -558,10 +546,8 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-
-              #TODO do actual alert
-              #or queue alert to be done by another task?
-              #pass event id & rule id to function for alerting
+              #do actual alert
+              msg.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -600,9 +586,8 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #TODO do actual alert
-                  #or queue alert to be done by another task?
-                  #pass event id & rule id to function for alerting
+                  #do actual alert
+                  msg.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -636,9 +621,8 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #TODO do actual alert
-                #or queue alert to be done by another task?
-                #pass event id & rule id to function for alerting
+                #do actual alert
+                msg.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -695,9 +679,8 @@ class EngineRulebook < Rulebook
                     puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #TODO do actual alert
-                    #or queue alert to be done by another task?
-                    #pass event id & rule id to function for alerting
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
 
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -731,10 +714,8 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-
-              #TODO do actual alert
-              #or queue alert to be done by another task?
-              #pass event id & rule id to function for alerting
+              #do actual alert
+              msg.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -773,9 +754,8 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #TODO do actual alert
-                  #or queue alert to be done by another task?
-                  #pass event id & rule id to function for alerting
+                  #do actual alert
+                  msg.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -809,9 +789,8 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #TODO do actual alert
-                #or queue alert to be done by another task?
-                #pass event id & rule id to function for alerting
+                #do actual alert
+                msg.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -868,9 +847,8 @@ class EngineRulebook < Rulebook
                     puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #TODO do actual alert
-                    #or queue alert to be done by another task?
-                    #pass event id & rule id to function for alerting
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
 
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -904,10 +882,8 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-
-              #TODO do actual alert
-              #or queue alert to be done by another task?
-              #pass event id & rule id to function for alerting
+              #do actual alert
+              msg.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -946,9 +922,8 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #TODO do actual alert
-                  #or queue alert to be done by another task?
-                  #pass event id & rule id to function for alerting
+                  #do actual alert
+                  msg.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -982,9 +957,8 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #TODO do actual alert
-                #or queue alert to be done by another task?
-                #pass event id & rule id to function for alerting
+                #do actual alert
+                msg.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -1041,9 +1015,8 @@ class EngineRulebook < Rulebook
                     puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #TODO do actual alert
-                    #or queue alert to be done by another task?
-                    #pass event id & rule id to function for alerting
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
 
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -1077,10 +1050,8 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-
-              #TODO do actual alert
-              #or queue alert to be done by another task?
-              #pass event id & rule id to function for alerting
+              #do actual alert
+              msg.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -1119,9 +1090,8 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #TODO do actual alert
-                  #or queue alert to be done by another task?
-                  #pass event id & rule id to function for alerting
+                  #do actual alert
+                  msg.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -1155,9 +1125,8 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #TODO do actual alert
-                #or queue alert to be done by another task?
-                #pass event id & rule id to function for alerting
+                #do actual alert
+                msg.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -1214,9 +1183,8 @@ class EngineRulebook < Rulebook
                     puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #TODO do actual alert
-                    #or queue alert to be done by another task?
-                    #pass event id & rule id to function for alerting
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
 
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -1250,10 +1218,8 @@ class EngineRulebook < Rulebook
               puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-
-              #TODO do actual alert
-              #or queue alert to be done by another task?
-              #pass event id & rule id to function for alerting
+              #do actual alert
+              msg.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -1292,9 +1258,8 @@ class EngineRulebook < Rulebook
                   puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                  #TODO do actual alert
-                  #or queue alert to be done by another task?
-                  #pass event id & rule id to function for alerting
+                  #do actual alert
+                  msg.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -1328,9 +1293,8 @@ class EngineRulebook < Rulebook
                 puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                #TODO do actual alert
-                #or queue alert to be done by another task?
-                #pass event id & rule id to function for alerting
+                #do actual alert
+                msg.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -1387,9 +1351,8 @@ class EngineRulebook < Rulebook
                     puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #TODO do actual alert
-                    #or queue alert to be done by another task?
-                    #pass event id & rule id to function for alerting
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
 
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
