@@ -3,7 +3,7 @@ class Notification
   require 'uri'
   require 'net/http'
   require 'ruby-notify-my-android'
-  require 'mail'
+  require 'gmail'
 
   def initialize
     @username = ""
@@ -87,8 +87,22 @@ class Notification
 
   #notify by email
   def mail_notify(username, source_system, message)
-    #TODO the mail out function
+  #note - email through gmail is blocked within the corp firewall, works fine otherwise
+    Gmail.connect("ventyx.service.no.reply", "Ell1pse8") do |gmail|
+      gmail.deliver do
+        to username
+        subject "Notification from #{source_system}"
+        text_part do
+          body "#{message} \n\nThis email is sent via an external service from an un-monitored inbox. \n\nDo not reply."
+        end
+        html_part do
+          body "<p>#{message}</p><p>This email is sent via an external service from an un-monitored inbox.</p><p>Do not reply.</p>"
+        end
+        #add_file "/path/to/some_image.jpg"
+      end
+    end
   end
+
 
   #notify by sms(username, source_system, message)
   def sms_notify(username, source_system, message)

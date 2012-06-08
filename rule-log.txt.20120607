@@ -1,0 +1,3072 @@
+# Logfile created on 2012-06-07 10:25:00 +1000 by logger.rb/31641
+2012-06-07 00:25:00 UTC - Created New Rules Engine
+2012-06-07 00:25:00 UTC - Loading Rules into Rulebook
+2012-06-07 00:25:02 UTC - Added Rules to New Rules Engine
+2012-06-07 03:36:15 UTC - Created New Rules Engine
+2012-06-07 03:36:15 UTC - Loading Rules into Rulebook
+2012-06-07 03:36:17 UTC - Added Rules to New Rules Engine
+2012-06-07 05:02:30 UTC - Created New Rules Engine
+2012-06-07 05:02:30 UTC - Loading Rules into Rulebook
+2012-06-07 05:02:31 UTC - Added Rules to New Rules Engine
+2012-06-07 05:03:01 UTC - Run Engine
+2012-06-07 05:03:01 UTC - Finished Engine Match 0.0 
+2012-06-07 05:03:31 UTC - Loading Rules into Rulebook
+2012-06-07 05:03:36 UTC - Started loading Events
+2012-06-07 05:03:42 UTC - Finished loading Events
+2012-06-07 05:03:42 UTC - Run Engine
+2012-06-07 05:03:50 UTC - Finished Engine Match 7.515722 
+2012-06-07 05:09:53 UTC - Created New Rules Engine
+2012-06-07 05:09:53 UTC - Loading Rules into Rulebook
+2012-06-07 05:09:53 UTC - Added Rules to New Rules Engine
+2012-06-07 05:10:23 UTC - Run Engine
+2012-06-07 05:10:23 UTC - Finished Engine Match 0.0 
+2012-06-07 05:10:53 UTC - Loading Rules into Rulebook
+2012-06-07 05:10:58 UTC - Started loading Events
+2012-06-07 05:11:04 UTC - Finished loading Events
+2012-06-07 05:11:04 UTC - Run Engine
+2012-06-07 05:11:13 UTC - Finished Engine Match 8.859488 
+2012-06-07 05:16:39 UTC - Created New Rules Engine
+2012-06-07 05:16:39 UTC - Added Rules to New Rules Engine
+2012-06-07 05:17:49 UTC - Created New Rules Engine
+2012-06-07 05:17:49 UTC - Loading Rules into Rulebook
+2012-06-07 05:17:50 UTC - Added Rules to New Rules Engine
+2012-06-07 05:18:20 UTC - Run Engine
+2012-06-07 05:18:20 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-07 15:18:36 +1000
+
+
+Started GET "/d/users/sign_in" for 127.0.0.1 at 2012-06-07 15:18:37 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:39 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:40 +1000
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2012-06-07 15:18:44 +1000
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-07 15:18:45 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:46 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-06-07 15:18:49 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:49 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:49 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+2012-06-07 05:18:50 UTC - Loading Rules into Rulebook
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+2012-06-07 05:18:50 UTC - Started loading Events
+2012-06-07 05:18:50 UTC - Finished loading Events
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+2012-06-07 05:18:50 UTC - Run Engine
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+2012-06-07 05:18:50 UTC - Finished Engine Match 0.015625 
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:50 +1000
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2012-06-07 15:18:52 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:18:53 +1000
+
+
+Started PUT "/users/2" for 127.0.0.1 at 2012-06-07 15:19:05 +1000
+
+
+Started GET "/users/2" for 127.0.0.1 at 2012-06-07 15:19:05 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:05 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:05 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:06 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:09 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:10 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:10 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:10 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:10 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:10 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:10 +1000
+
+
+Started GET "/groups/new" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:11 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:12 +1000
+
+
+Started POST "/groups" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:19 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:20 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:20 +1000
+2012-06-07 05:19:20 UTC - Run Engine
+2012-06-07 05:19:20 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:22 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:23 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:23 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:23 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:23 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:23 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:23 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:23 +1000
+
+
+Started GET "/rules/new" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:24 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:25 +1000
+2012-06-07 05:19:50 UTC - Loading Rules into Rulebook
+2012-06-07 05:19:50 UTC - Started loading Events
+2012-06-07 05:19:50 UTC - Finished loading Events
+2012-06-07 05:19:50 UTC - Run Engine
+2012-06-07 05:19:50 UTC - Finished Engine Match 0.0 
+
+
+Started POST "/rules" for 127.0.0.1 at 2012-06-07 15:19:51 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 15:19:51 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:51 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:19:52 +1000
+2012-06-07 05:20:20 UTC - Run Engine
+2012-06-07 05:20:20 UTC - Finished Engine Match 0.0 
+2012-06-07 05:20:50 UTC - Loading Rules into Rulebook
+2012-06-07 05:20:50 UTC - Started loading Events
+2012-06-07 05:20:50 UTC - Finished loading Events
+2012-06-07 05:20:50 UTC - Run Engine
+2012-06-07 05:20:50 UTC - Finished Engine Match 0.0 
+2012-06-07 05:21:20 UTC - Run Engine
+2012-06-07 05:21:20 UTC - Finished Engine Match 0.0 
+2012-06-07 05:21:50 UTC - Loading Rules into Rulebook
+2012-06-07 05:21:51 UTC - Started loading Events
+2012-06-07 05:21:51 UTC - Finished loading Events
+2012-06-07 05:21:51 UTC - Run Engine
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003973002 - WWW_Outage-Critical
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003973017 - MARS_APPS-Warning
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003973015 - Document Transmission Errors - Prod
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003973002 - UX_Perf-Warning
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003973000 - Document Transmission Errors - Prod
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971809 - Document Transmission Errors - Prod
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971690 - Domain - Account Deletion - Richard Lucas
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971552 - Document Transmission Errors - Prod
+2012-06-07 05:21:51 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003915100 - UX_OS-Warning
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003915100 - UX_OS-Warning
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972970 - Document Mapping Errors - Prod
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972961 - MARS_APPS-Warning
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972960 - MARS_APPS-Warning
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003968551 - UX_Services-Warning
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972929 - Document Transmission Errors - Prod
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972867 - OpC-Major
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972954 - MARS_APPS-Warning
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972932 - Document Mapping Errors - Prod
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972931 - Document Mapping Errors - Prod
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003965250 - UX_HW-Minor
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972964 - MARS_APPS-Critical
+2012-06-07 05:21:52 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972959 - MARS_APPS-Warning
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972954 - MARS_APPS-Warning
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003965810 - UX_Services-Warning
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972929 - OpC-Minor
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972926 - OpC-Minor
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972925 - OpC-Minor
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003944601 - Hardware - Desktop/Laptop General Issue
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972922 - Document Mapping Errors - Prod
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972372 - UX_Perf-Critical
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003940847 - Nickel West Health Check 31/05/2012
+2012-06-07 05:21:53 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972909 - OpC-Minor
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972875 - Document Transmission Errors - Prod
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003963104 - OpC-Minor
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003964249 - Document Transmission Errors - Prod
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003964049 - Document Mapping Errors - Prod
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971118 - Document Transmission Errors - Prod
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003957842 - OpC-Minor
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971671 - Lismore Online Bushing Install
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972883 - OpC-Minor
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972890 - OpC-Minor
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972356 - NT_MMS-Warning
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971809 - SNMP-Critical
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972342 - Document Transmission Errors - Prod
+2012-06-07 05:21:54 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972883 - OpC-Minor
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972879 - OpC-Minor
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003970855 - PC not detecting Monitor
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971566 - Document Transmission Errors - Prod
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972687 - Document Transmission Errors - Prod
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003970101 - Document Transmission Errors - Prod
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972875 - OpC-Minor
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971844 - Document Transmission Errors - Prod
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972819 - Document Transmission Errors - Prod
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003944597 - Document Transmission Errors - Prod
+2012-06-07 05:21:55 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003937242 - Document Transmission Errors - Prod
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972069 - Temporary VPN solution - Howard Hayes
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972867 - Document Transmission Errors - Prod
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972169 - NT_FS-Warning
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971285 - Ellipse Batch failure for program MSUEFS01 with U
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971118 - Document Transmission Errors - Prod
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972840 - NT_OS-Critical
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972788 - NT_Default-Major
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003970541 - NT_Default-Major
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972829 - Document Transmission Errors - Prod
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972718 - NT_OS-Critical
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003970147 - Document Transmission Errors - Prod
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972821 - Document Transmission Errors - Prod
+2012-06-07 05:21:56 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003919144 - Document Transmission Errors - Prod
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972819 - DB_Database-Major
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972791 - MARS_APPS-Warning
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003968429 - OpC-Major
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003968420 - UX_Services-Warning
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972768 - Document Transmission Errors - Prod
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972634 - Document Transmission Errors - Prod
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972240 - NT_Default-Warning
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972517 - Document Transmission Errors - Prod
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972483 - UX_Perf-Major
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971928 - Word Template issue - disabled or inactive
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971926 - Document Transmission Errors - Prod
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972794 - DB_Database-Minor
+2012-06-07 05:21:57 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003874012 - Document Transmission Errors - Prod
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003970681 - SNMP-Critical
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003958696 - Vision Manager
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972603 - Document Transmission Errors - Prod
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972453 - NT_MMS-Warning
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972124 - Document Transmission Errors - Prod
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972767 - Document Transmission Errors - Prod
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972764 - Document Transmission Errors - Prod
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003919586 - Document Transmission Errors - Prod
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003969218 - Document Transmission Errors - Prod
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971536 - JLM - AD Account Deletion - Murphy, Justin
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003968834 - UX_Services-Warning
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972727 - Name for my phone extension
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972727 - Document Transmission Errors - Prod
+2012-06-07 05:21:58 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972412 - NT_MMS-Warning
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972412 - UX_Perf-Major
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972235 - Document Transmission Errors - Prod
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003970398 - Document Transmission Errors - Prod
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972721 - Document Transmission Errors - Prod
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003971946 - Security - Building Access Extension - D Gatward
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003970541 - SNMP-Critical
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972719 - Document Transmission Errors - Prod
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972680 - Document Transmission Errors - Prod
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003947457 - MMS - Account Deletion - Esha Goel
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003969069 - UX_Services-Warning
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972653 - NT_FS-Warning
+2012-06-07 05:21:59 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - SC0000003972698 - Document Transmission Errors - Prod
+2012-06-07 05:22:00 UTC - Finished Engine Match 8.671986 
+2012-06-07 05:22:20 UTC - Run Engine
+2012-06-07 05:22:20 UTC - Finished Engine Match 0.218752 
+
+
+Started GET "/rules/2/edit" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:41 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:42 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:42 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:42 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:42 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:42 +1000
+2012-06-07 05:22:50 UTC - Loading Rules into Rulebook
+2012-06-07 05:22:51 UTC - Started loading Events
+2012-06-07 05:22:51 UTC - Finished loading Events
+2012-06-07 05:22:51 UTC - Run Engine
+2012-06-07 05:22:51 UTC - Finished Engine Match 0.140627 
+
+
+Started PUT "/rules/2" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/rules/2" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:57 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:22:58 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:23:01 +1000
+2012-06-07 05:23:20 UTC - Run Engine
+2012-06-07 05:23:20 UTC - Finished Engine Match 0.312504 
+2012-06-07 05:23:50 UTC - Loading Rules into Rulebook
+2012-06-07 05:23:51 UTC - Started loading Events
+2012-06-07 05:23:51 UTC - Finished loading Events
+2012-06-07 05:23:51 UTC - Run Engine
+2012-06-07 05:23:51 UTC - Finished Engine Match 0.203127 
+
+
+Started GET "/rules/new" for 127.0.0.1 at 2012-06-07 15:24:15 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:16 +1000
+2012-06-07 05:24:20 UTC - Run Engine
+2012-06-07 05:24:20 UTC - Finished Engine Match 0.234378 
+
+
+Started POST "/rules" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:35 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:36 +1000
+
+
+Started GET "/rules/3/edit" for 127.0.0.1 at 2012-06-07 15:24:42 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:43 +1000
+
+
+Started PUT "/rules/3" for 127.0.0.1 at 2012-06-07 15:24:46 +1000
+
+
+Started GET "/rules/3" for 127.0.0.1 at 2012-06-07 15:24:46 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:47 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+2012-06-07 05:24:50 UTC - Loading Rules into Rulebook
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:24:50 +1000
+2012-06-07 05:24:51 UTC - Started loading Events
+2012-06-07 05:24:51 UTC - Finished loading Events
+2012-06-07 05:24:51 UTC - Run Engine
+2012-06-07 05:24:52 UTC - Finished Engine Match 0.296879 
+2012-06-07 05:25:20 UTC - Run Engine
+2012-06-07 05:25:20 UTC - Finished Engine Match 0.125002 
+2012-06-07 05:25:50 UTC - Loading Rules into Rulebook
+2012-06-07 05:25:51 UTC - Started loading Events
+2012-06-07 05:25:51 UTC - Finished loading Events
+2012-06-07 05:25:51 UTC - Run Engine
+2012-06-07 05:25:51 UTC - Finished Engine Match 0.296879 
+
+
+Started GET "/rules/new" for 127.0.0.1 at 2012-06-07 15:25:58 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:25:59 +1000
+
+
+Started POST "/rules" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:19 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+2012-06-07 05:26:20 UTC - Run Engine
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:20 +1000
+2012-06-07 05:26:20 UTC - Finished Engine Match 0.328129 
+
+
+Started GET "/rules/4/edit" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:22 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:23 +1000
+
+
+Started PUT "/rules/4" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/rules/4" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:26 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:27 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 15:26:28 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:28 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:28 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:28 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:28 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:28 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:28 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:29 +1000
+
+
+Started GET "/rules/new" for 127.0.0.1 at 2012-06-07 15:26:31 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:31 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:31 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:32 +1000
+
+
+Started POST "/rules" for 127.0.0.1 at 2012-06-07 15:26:46 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 15:26:47 +1000
+2012-06-07 05:26:50 UTC - Loading Rules into Rulebook
+2012-06-07 05:26:51 UTC - Started loading Events
+2012-06-07 05:26:51 UTC - Finished loading Events
+2012-06-07 05:26:51 UTC - Run Engine
+2012-06-07 05:26:51 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 06:49:34 UTC - Created New Rules Engine
+2012-06-07 06:49:34 UTC - Loading Rules into Rulebook
+2012-06-07 06:49:35 UTC - Added Rules to New Rules Engine
+2012-06-07 06:50:05 UTC - Run Engine
+2012-06-07 06:50:05 UTC - Finished Engine Match 0.0 
+2012-06-07 06:50:35 UTC - Loading Rules into Rulebook
+2012-06-07 06:50:36 UTC - Started loading Events
+2012-06-07 06:50:36 UTC - Finished loading Events
+2012-06-07 06:50:36 UTC - Run Engine
+2012-06-07 06:50:37 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 06:54:00 UTC - Created New Rules Engine
+2012-06-07 06:54:00 UTC - Loading Rules into Rulebook
+2012-06-07 06:54:00 UTC - Added Rules to New Rules Engine
+2012-06-07 06:54:31 UTC - Run Engine
+2012-06-07 06:54:31 UTC - Finished Engine Match 0.046875 
+2012-06-07 06:55:01 UTC - Loading Rules into Rulebook
+2012-06-07 06:55:01 UTC - Started loading Events
+2012-06-07 06:55:01 UTC - Finished loading Events
+2012-06-07 06:55:01 UTC - Run Engine
+2012-06-07 06:55:02 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 06:57:56 UTC - Created New Rules Engine
+2012-06-07 06:57:56 UTC - Loading Rules into Rulebook
+2012-06-07 06:57:58 UTC - Added Rules to New Rules Engine
+2012-06-07 06:58:28 UTC - Run Engine
+2012-06-07 06:58:28 UTC - Finished Engine Match 0.0 
+2012-06-07 06:58:58 UTC - Loading Rules into Rulebook
+2012-06-07 06:58:59 UTC - Started loading Events
+2012-06-07 06:58:59 UTC - Finished loading Events
+2012-06-07 06:58:59 UTC - Run Engine
+2012-06-07 06:58:59 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 07:01:14 UTC - Created New Rules Engine
+2012-06-07 07:01:14 UTC - Loading Rules into Rulebook
+2012-06-07 07:01:14 UTC - Added Rules to New Rules Engine
+2012-06-07 07:01:44 UTC - Run Engine
+2012-06-07 07:01:44 UTC - Finished Engine Match 0.0 
+2012-06-07 07:02:15 UTC - Loading Rules into Rulebook
+2012-06-07 07:02:15 UTC - Started loading Events
+2012-06-07 07:02:16 UTC - Finished loading Events
+2012-06-07 07:02:16 UTC - Run Engine
+2012-06-07 07:02:16 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 07:04:03 UTC - Created New Rules Engine
+2012-06-07 07:04:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:04:04 UTC - Added Rules to New Rules Engine
+2012-06-07 07:04:34 UTC - Run Engine
+2012-06-07 07:04:34 UTC - Finished Engine Match 0.0 
+2012-06-07 07:05:04 UTC - Loading Rules into Rulebook
+2012-06-07 07:05:05 UTC - Started loading Events
+2012-06-07 07:05:05 UTC - Finished loading Events
+2012-06-07 07:05:05 UTC - Run Engine
+2012-06-07 07:05:06 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 07:08:44 UTC - Created New Rules Engine
+2012-06-07 07:08:44 UTC - Loading Rules into Rulebook
+2012-06-07 07:08:45 UTC - Added Rules to New Rules Engine
+2012-06-07 07:09:15 UTC - Run Engine
+2012-06-07 07:09:15 UTC - Finished Engine Match 0.0 
+2012-06-07 07:09:45 UTC - Loading Rules into Rulebook
+2012-06-07 07:09:46 UTC - Started loading Events
+2012-06-07 07:09:46 UTC - Finished loading Events
+2012-06-07 07:09:46 UTC - Run Engine
+2012-06-07 07:09:47 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 07:11:55 UTC - Created New Rules Engine
+2012-06-07 07:11:55 UTC - Loading Rules into Rulebook
+2012-06-07 07:11:56 UTC - Added Rules to New Rules Engine
+2012-06-07 07:12:26 UTC - Run Engine
+2012-06-07 07:12:26 UTC - Finished Engine Match 0.0 
+2012-06-07 07:12:56 UTC - Loading Rules into Rulebook
+2012-06-07 07:12:57 UTC - Started loading Events
+2012-06-07 07:12:57 UTC - Finished loading Events
+2012-06-07 07:12:57 UTC - Run Engine
+2012-06-07 07:12:58 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 07:18:57 UTC - Created New Rules Engine
+2012-06-07 07:18:57 UTC - Loading Rules into Rulebook
+2012-06-07 07:18:57 UTC - Added Rules to New Rules Engine
+2012-06-07 07:20:40 UTC - Created New Rules Engine
+2012-06-07 07:20:40 UTC - Loading Rules into Rulebook
+2012-06-07 07:20:41 UTC - Added Rules to New Rules Engine
+2012-06-07 07:21:11 UTC - Run Engine
+2012-06-07 07:21:11 UTC - Finished Engine Match 0.0 
+2012-06-07 07:21:41 UTC - Loading Rules into Rulebook
+2012-06-07 07:21:42 UTC - Started loading Events
+2012-06-07 07:21:42 UTC - Finished loading Events
+2012-06-07 07:21:42 UTC - Run Engine
+2012-06-07 07:21:42 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 07:22:49 UTC - Created New Rules Engine
+2012-06-07 07:22:49 UTC - Loading Rules into Rulebook
+2012-06-07 07:22:50 UTC - Added Rules to New Rules Engine
+2012-06-07 07:23:20 UTC - Run Engine
+2012-06-07 07:23:20 UTC - Finished Engine Match 0.0 
+2012-06-07 07:23:50 UTC - Loading Rules into Rulebook
+2012-06-07 07:23:50 UTC - Started loading Events
+2012-06-07 07:23:50 UTC - Finished loading Events
+2012-06-07 07:23:50 UTC - Run Engine
+2012-06-07 07:23:51 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972998 - Connecting to Ventyx Employee Self Service
+2012-06-07 07:23:51 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972996 - Unix CFG Input into Monthly report Delta
+2012-06-07 07:23:51 UTC - match rule 5 MS Unix Admin P1 Incidents (OV) - SC0000003972990 - RightFax emails won't go to Public Folder
+2012-06-07 07:23:52 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972977 - Modificacion local_batch.xml en ambiente
+2012-06-07 07:23:52 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972969 - EL_Bat-Warning
+2012-06-07 07:23:52 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972968 - Daily check of Mincom Firewall Logs
+2012-06-07 07:23:52 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972952 - EL_Bat-Warning
+2012-06-07 07:23:52 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972938 - Sin Acceso a MER PRODUCCION
+2012-06-07 07:23:52 UTC - match rule 5 MS Unix Admin P1 Incidents (OV) - SC0000003972936 - RFC : Internet access for QLD Room pc
+2012-06-07 07:23:52 UTC - match rule 5 MS Unix Admin P1 Incidents (OV) - SC0000003972873 - Newcrest IT RE: Call No. : 2148078
+2012-06-07 07:25:02 UTC - Created New Rules Engine
+2012-06-07 07:25:02 UTC - Loading Rules into Rulebook
+2012-06-07 07:25:03 UTC - Added Rules to New Rules Engine
+2012-06-07 07:25:33 UTC - Run Engine
+2012-06-07 07:25:33 UTC - Finished Engine Match 0.0 
+2012-06-07 07:26:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:26:04 UTC - Started loading Events
+2012-06-07 07:26:04 UTC - Finished loading Events
+2012-06-07 07:26:04 UTC - Run Engine
+2012-06-07 07:26:05 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972845 - Domain - Account Creation - Sal Haider
+2012-06-07 07:26:06 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972805 - NT_MMS-Warning
+2012-06-07 07:26:07 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972731 - Attn Ellipse Prod Support - Ventyx
+2012-06-07 07:26:08 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972728 - AD Account Deletion - Miklos Norbert
+2012-06-07 07:26:09 UTC - match rule 4 MS Unix Admin P1 Incidents (Zenoss) - SC0000003972726 - Domain - Account Deletion - Peter Roelofs
+2012-06-07 07:26:10 UTC - match rule 5 MS Unix Admin P1 Incidents (OV) - SC0000003972717 - BACKUP Report to Include additional servers
+2012-06-07 07:26:10 UTC - Finished Engine Match 6.187579 
+2012-06-07 07:26:33 UTC - Run Engine
+2012-06-07 07:26:34 UTC - Finished Engine Match 0.250003 
+2012-06-07 07:27:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:27:04 UTC - Started loading Events
+2012-06-07 07:27:04 UTC - Finished loading Events
+2012-06-07 07:27:04 UTC - Run Engine
+2012-06-07 07:27:05 UTC - Finished Engine Match 0.171878 
+2012-06-07 07:27:33 UTC - Run Engine
+2012-06-07 07:27:33 UTC - Finished Engine Match 0.234378 
+2012-06-07 07:28:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:28:04 UTC - Started loading Events
+2012-06-07 07:28:04 UTC - Finished loading Events
+2012-06-07 07:28:04 UTC - Run Engine
+2012-06-07 07:28:05 UTC - Finished Engine Match 0.171877 
+2012-06-07 07:28:33 UTC - Run Engine
+2012-06-07 07:28:34 UTC - Finished Engine Match 0.250003 
+2012-06-07 07:29:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:29:04 UTC - Started loading Events
+2012-06-07 07:29:04 UTC - Finished loading Events
+2012-06-07 07:29:04 UTC - Run Engine
+2012-06-07 07:29:04 UTC - Finished Engine Match 0.171877 
+2012-06-07 07:29:33 UTC - Run Engine
+2012-06-07 07:29:34 UTC - Finished Engine Match 0.265628 
+2012-06-07 07:30:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:30:04 UTC - Started loading Events
+2012-06-07 07:30:05 UTC - Finished loading Events
+2012-06-07 07:30:05 UTC - Run Engine
+2012-06-07 07:30:05 UTC - Finished Engine Match 0.187502 
+
+
+Started GET "/rules/new" for 127.0.0.1 at 2012-06-07 17:30:23 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 17:30:25 +1000
+2012-06-07 07:30:33 UTC - Run Engine
+2012-06-07 07:30:33 UTC - Finished Engine Match 0.281254 
+2012-06-07 07:31:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:31:04 UTC - Started loading Events
+2012-06-07 07:31:05 UTC - Finished loading Events
+2012-06-07 07:31:05 UTC - Run Engine
+2012-06-07 07:31:05 UTC - Finished Engine Match 0.218753 
+
+
+Started POST "/rules" for 127.0.0.1 at 2012-06-07 17:31:12 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:13 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:14 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 17:31:14 +1000
+2012-06-07 07:31:33 UTC - Run Engine
+2012-06-07 07:31:34 UTC - Finished Engine Match 0.312504 
+2012-06-07 07:32:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:32:04 UTC - Started loading Events
+2012-06-07 07:32:04 UTC - Finished loading Events
+2012-06-07 07:32:04 UTC - Run Engine
+2012-06-07 07:32:04 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003973015 - Document Transmission Errors - Prod
+2012-06-07 07:32:05 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003972978 - EL_Bat-Warning
+2012-06-07 07:32:06 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003834322 - Network Shares - Cannot Access (Next G)
+2012-06-07 07:32:07 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003972940 - EL_Bat-Warning
+2012-06-07 07:32:08 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003950319 - OpC-Minor
+2012-06-07 07:32:10 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003956643 - OpC-Minor
+2012-06-07 07:32:11 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003972887 - AD Account Deletion - Omeega Gamage (MMS)
+2012-06-07 07:32:12 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003964207 - Blackberry / Smartphone - Issue/Configuration/Erro
+2012-06-07 07:32:13 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003972684 - Domain - Account Creation -Non Personal Account
+2012-06-07 07:32:14 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003972793 - NT_Default-Minor
+2012-06-07 07:32:15 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003899355 - Nickel West Health Check 2012/05/30
+2012-06-07 07:32:16 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003971511 - Slow PC (TRW800065)
+2012-06-07 07:32:17 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003972806 - DB_Object-Warning
+2012-06-07 07:32:18 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003972691 - Temporary VPN solution for affected Trade staff wh
+2012-06-07 07:32:19 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003972590 - OpC-Minor
+2012-06-07 07:32:20 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003970681 - SNMP-Critical
+2012-06-07 07:32:21 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003891870 - Check OpenView config on TRSLONDC3
+2012-06-07 07:32:23 UTC - match rule 6 MS Unix Admin WTR Idle > 2Hrs - SC0000003520997 - CA188638 - Ellipse Asia Pacific Access
+2012-06-07 07:32:25 UTC - Finished Engine Match 21.015894 
+2012-06-07 07:32:33 UTC - Run Engine
+2012-06-07 07:32:34 UTC - Finished Engine Match 0.328129 
+2012-06-07 07:33:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:33:04 UTC - Started loading Events
+2012-06-07 07:33:04 UTC - Finished loading Events
+2012-06-07 07:33:04 UTC - Run Engine
+2012-06-07 07:33:04 UTC - Finished Engine Match 0.265628 
+2012-06-07 07:33:33 UTC - Run Engine
+2012-06-07 07:33:34 UTC - Finished Engine Match 0.437505 
+2012-06-07 07:34:03 UTC - Loading Rules into Rulebook
+2012-06-07 07:34:04 UTC - Started loading Events
+2012-06-07 07:34:04 UTC - Finished loading Events
+2012-06-07 07:34:04 UTC - Run Engine
+2012-06-07 07:34:05 UTC - Finished Engine Match 0.593757 
+2012-06-07 07:34:33 UTC - Run Engine
+2012-06-07 07:34:34 UTC - Finished Engine Match 0.328129 
+2012-06-07 07:35:36 UTC - Created New Rules Engine
+2012-06-07 07:35:36 UTC - Loading Rules into Rulebook
+2012-06-07 07:35:36 UTC - Added Rules to New Rules Engine
+
+
+Started GET "/rules/new" for 127.0.0.1 at 2012-06-07 17:35:55 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 17:35:57 +1000
+2012-06-07 07:36:06 UTC - Run Engine
+2012-06-07 07:36:06 UTC - Finished Engine Match 0.0 
+2012-06-07 07:36:36 UTC - Loading Rules into Rulebook
+2012-06-07 07:36:37 UTC - Started loading Events
+2012-06-07 07:36:37 UTC - Finished loading Events
+2012-06-07 07:36:37 UTC - Run Engine
+2012-06-07 07:36:37 UTC - Finished Engine Match 0.265628 
+
+
+Started POST "/rules" for 127.0.0.1 at 2012-06-07 17:36:39 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-06-07 17:36:39 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-06-07 17:36:39 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-06-07 17:36:39 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-06-07 17:36:39 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-06-07 17:36:39 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-06-07 17:36:39 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-06-07 17:36:39 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-06-07 17:36:40 +1000
+2012-06-07 07:37:06 UTC - Run Engine
+2012-06-07 07:37:07 UTC - Finished Engine Match 0.328129 
+2012-06-07 07:37:36 UTC - Loading Rules into Rulebook
+2012-06-07 07:37:37 UTC - Started loading Events
+2012-06-07 07:37:37 UTC - Finished loading Events
+2012-06-07 07:37:37 UTC - Run Engine
+2012-06-07 07:37:37 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972935 - EL_Bat-Warning
+2012-06-07 07:37:38 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972935 - EL_Bat-Warning
+2012-06-07 07:37:38 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003971129 - NT_FS-Warning
+2012-06-07 07:37:39 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003971129 - NT_FS-Warning
+2012-06-07 07:37:39 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003971197 - OpC-Major
+2012-06-07 07:37:40 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003971197 - OpC-Major
+2012-06-07 07:37:40 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003971552 - Document Transmission Errors - Prod
+2012-06-07 07:37:40 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003971552 - Document Transmission Errors - Prod
+2012-06-07 07:37:41 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972859 - OpC-Minor
+2012-06-07 07:37:41 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972859 - OpC-Minor
+2012-06-07 07:37:41 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003955649 - Disposals - Newcastle
+2012-06-07 07:37:42 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003955649 - Disposals - Newcastle
+2012-06-07 07:37:42 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003968551 - UX_Services-Warning
+2012-06-07 07:37:43 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003968551 - UX_Services-Warning
+2012-06-07 07:37:43 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972867 - OpC-Major
+2012-06-07 07:37:44 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972867 - OpC-Major
+2012-06-07 07:37:44 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972786 - OpC-Minor
+2012-06-07 07:37:45 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972786 - OpC-Minor
+2012-06-07 07:37:45 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972894 - NT Account Deletion - Esha Goel (MMS)
+2012-06-07 07:37:46 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972894 - NT Account Deletion - Esha Goel (MMS)
+2012-06-07 07:37:46 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972791 - DB_Database-Major
+2012-06-07 07:37:47 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972791 - DB_Database-Major
+2012-06-07 07:37:47 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003960172 - Instalar version v_3.36.5 de MWP
+2012-06-07 07:37:47 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003960172 - Instalar version v_3.36.5 de MWP
+2012-06-07 07:37:48 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972886 - OpC-Minor
+2012-06-07 07:37:48 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972886 - OpC-Minor
+2012-06-07 07:37:48 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003969537 - Document Transmission Errors - Prod
+2012-06-07 07:37:49 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003969537 - Document Transmission Errors - Prod
+2012-06-07 07:37:49 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972777 - threshold of high load exceeded: current value 15
+2012-06-07 07:37:50 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972777 - threshold of high load exceeded: current value 15
+2012-06-07 07:37:50 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003969241 - requesting printer IP to be change to  IP_10.135
+2012-06-07 07:37:51 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003969241 - requesting printer IP to be change to  IP_10.135
+2012-06-07 07:37:51 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003971463 - NT_Default-Minor
+2012-06-07 07:37:52 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003971463 - NT_Default-Minor
+2012-06-07 07:37:52 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972656 - Ellipse Batch failure for program ACB426 with UUI
+2012-06-07 07:37:53 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972656 - Ellipse Batch failure for program ACB426 with UUI
+2012-06-07 07:37:53 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003800581 - Document Transmission Errors - Prod
+2012-06-07 07:37:54 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003800581 - Document Transmission Errors - Prod
+2012-06-07 07:37:54 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003919645 - Outlook, IE - Keeps getting prompted for Login
+2012-06-07 07:37:55 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003919645 - Outlook, IE - Keeps getting prompted for Login
+2012-06-07 07:37:55 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003970101 - Document Transmission Errors - Prod
+2012-06-07 07:37:56 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003970101 - Document Transmission Errors - Prod
+2012-06-07 07:37:56 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003971359 - OpC-Minor
+2012-06-07 07:37:56 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003971359 - OpC-Minor
+2012-06-07 07:37:57 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003937238 - AD Account Creation - Evan Reid
+2012-06-07 07:37:57 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003937238 - AD Account Creation - Evan Reid
+2012-06-07 07:37:57 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972657 - Ellipse Batch failure for program ACB426 with UUI
+2012-06-07 07:37:58 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972657 - Ellipse Batch failure for program ACB426 with UUI
+2012-06-07 07:37:58 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972848 - SNMP-Major
+2012-06-07 07:37:59 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972848 - SNMP-Major
+2012-06-07 07:37:59 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003969278 - access Enterprise Vault archived items from OWA
+2012-06-07 07:38:00 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003969278 - access Enterprise Vault archived items from OWA
+2012-06-07 07:38:00 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003964969 - Citrix - PN agent missing & objective not working
+2012-06-07 07:38:01 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003964969 - Citrix - PN agent missing & objective not working
+2012-06-07 07:38:01 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972837 - MMS - Account Deletion - Omeega Gamage
+2012-06-07 07:38:01 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972837 - MMS - Account Deletion - Omeega Gamage
+2012-06-07 07:38:02 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972788 - NT_Default-Major
+2012-06-07 07:38:03 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972788 - NT_Default-Major
+2012-06-07 07:38:03 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972699 - Tier 2 Application - Installation - Visio 2007
+2012-06-07 07:38:03 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972699 - Tier 2 Application - Installation - Visio 2007
+2012-06-07 07:38:03 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972823 - SNMP-Critical
+2012-06-07 07:38:04 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972823 - SNMP-Critical
+2012-06-07 07:38:04 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003946312 - FYI: Newcrest IT RE: Call No. : 2162111
+2012-06-07 07:38:05 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003946312 - FYI: Newcrest IT RE: Call No. : 2162111
+2012-06-07 07:38:05 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003946661 - FYI: Newcrest IT RE: Call No. : 2162111
+2012-06-07 07:38:06 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003946661 - FYI: Newcrest IT RE: Call No. : 2162111
+2012-06-07 07:38:06 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003970498 - Issue to open up MSQ660
+2012-06-07 07:38:07 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003970498 - Issue to open up MSQ660
+2012-06-07 07:38:08 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003966081 - P19GC03 - Add Name To Printer
+2012-06-07 07:38:08 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003966081 - P19GC03 - Add Name To Printer
+2012-06-07 07:38:09 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003821299 - Document Transmission Errors - Prod
+2012-06-07 07:38:10 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003821299 - Document Transmission Errors - Prod
+2012-06-07 07:38:10 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003970100 - Domain - Account Deletion - Omeega Gamage
+2012-06-07 07:38:11 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003970100 - Domain - Account Deletion - Omeega Gamage
+2012-06-07 07:38:11 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972746 - Firewall Updates for Cell Server hosts
+2012-06-07 07:38:12 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972746 - Firewall Updates for Cell Server hosts
+2012-06-07 07:38:12 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003971516 - Daily Backup Check - TransGrid
+2012-06-07 07:38:13 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003971516 - Daily Backup Check - TransGrid
+2012-06-07 07:38:13 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003970512 - Govnet document replacement
+2012-06-07 07:38:14 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003970512 - Govnet document replacement
+2012-06-07 07:38:14 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003971579 - Document Transmission Errors - Prod
+2012-06-07 07:38:15 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003971579 - Document Transmission Errors - Prod
+2012-06-07 07:38:16 UTC - match rule 7 MS Unix Admin PEN Idle > 4Hrs - SC0000003972655 - Ellipse Batch failure for program ACB426 with UUI
+2012-06-07 07:38:16 UTC - boxcar_notify - evilspyboy@gmail.com - REMEDY - Support Call assigned to Unix Admin has been in Idle in Pending for > 4 Hours | SC0000003972655 - Ellipse Batch failure for program ACB426 with UUI
+2012-06-07 07:38:17 UTC - Finished Engine Match 39.703633 
+2012-06-07 07:38:17 UTC - Run Engine
+2012-06-07 07:38:18 UTC - Finished Engine Match 0.515632 
+2012-06-07 07:38:36 UTC - Loading Rules into Rulebook
+2012-06-07 07:38:37 UTC - Started loading Events
+2012-06-07 07:38:37 UTC - Finished loading Events
+2012-06-07 07:38:37 UTC - Run Engine
+2012-06-07 07:38:38 UTC - Finished Engine Match 0.515631 
+2012-06-07 07:39:06 UTC - Run Engine
+2012-06-07 07:39:07 UTC - Finished Engine Match 0.609383 
+2012-06-07 07:39:36 UTC - Loading Rules into Rulebook
+2012-06-07 07:39:38 UTC - Started loading Events
+2012-06-07 07:39:38 UTC - Finished loading Events
+2012-06-07 07:39:38 UTC - Run Engine
+2012-06-07 07:39:39 UTC - Finished Engine Match 0.531257 
+2012-06-07 07:40:06 UTC - Run Engine
+2012-06-07 07:40:07 UTC - Finished Engine Match 0.578132 
