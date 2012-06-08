@@ -16,20 +16,23 @@
 
 
     <div><b>Country</b>
-      <%= f.select :country_iso, [['Australia','AU'],['United States','US'],['Chile','CL'],['Malaysia','MY']] %><br /></div>
+      <%= f.select :country_iso, [['Australia','AU'],['United States','US'],['Chile','CL'],['Malaysia','MY']] %>
+      <%= f.select :timezone, [['+12 Auckland','12.0'],['+11 AEST (Daylight Savings)','11.0'],['+10 AEST (Brisbane/Sydney Melbourne)','10.0'],['+9.5 Darwin/Adelaide','9.5'],['+9 Tokyo','9.0'],['+8 Perth/Kuala Lumpur','8.0'],['+7 Bangkok','7.0'],['+6 Chelyabinsk','6.0'],['+5.5 New Delhi/Bangalore','5.5'],['+4 Dubai','4.0'],['+3 Helsinki/Istanbul','3.0'],['+2 Stockholm','2.0'],['+1 London','1.0'],['+0 UTC','0.0'],['-1 Praia','-1.0'],['-2 Nuuk','-2.0'],['-3 Buenos Aires','-3.0'],['-4 Atlanta/Santiago','-4.0'],['-5 Austin','-5.0'],['-6 Denver','-6'],['-7 Los Angeles/San Fransisco/Las Vegas','-7.0'],['-8 Anchorage','-8.0'],['-9 Adak','-9.0'],['-10 Honolulu','-10.0'],['-11 Midway','-11.0']] %><br /><br /></div>
+
 
     <div><b>Notification Methods</b><br>
-      <b>(</b> Email <%= f.check_box :use_email_flag %> <b>)</b>
-      <b>(</b> Instant Messenger OCS <%= f.check_box :use_im_flag %> <b>)</b>
-      <b>(</b> Boxcar <%= f.check_box :use_boxcar_flag %> <b>)</b>
-      <b>(</b> Mobile Ph TXT/SMS <%= f.check_box :use_mobile_ph_flag %> <b>)</b><br /></div>
-
-    <br><div><b>Boxcar Login/ID</b>
-  <%=  f.text_field :boxcar_id %><br /></div>
-
-    <div><b>Mobile Phone#</b><br />
-      <i>(add the full international number including + and country code)</i><br />
-      <%=  f.text_field :mobile_phone_no %><br /></div>
+      <%= f.check_box :use_email_flag %> - Email<br />
+      <i>(Uses your notification login ID)</i><br /><br />
+      <%= f.check_box :use_boxcar_flag %> - Boxcar |<b>Boxcar Login/ID</b><%=  f.text_field :boxcar_id %><br />
+      <i>(<a href="http://boxcar.io/">Signup for a Boxcar ID for IOS Devices</a>)</i><br /><br />
+      <%= f.check_box :use_nma_flag %> - Notify My Android |<b>API Key</b><%=  f.text_field :nma_api_key %><br />
+      <i>(<a href="http://www.notifymyandroid.com/">Signup for a Notify My Android Account & Get a Personal API Key</a>)</i><br /><br />
+      <%= f.check_box :use_nmwp_flag %> - Notify My Windows Phone |<b>API Key</b><%=  f.text_field :nmwp_api_key %><br />
+      <i>(<a href="https://notifymywindowsphone.com">Signup for a Notify My Windows Phone Account & Get a Personal API Key</a>)</i><br /><br />
+      <%= f.check_box :use_im_flag %> - Instant Messenger [TBD]<br />
+      <i>(To be implemented at a later date)</i><br /><br />
+      <%= f.check_box :use_mobile_ph_flag %> - Mobile Ph TXT/SMS |<b>API Key</b><%=  f.text_field :mobile_phone_no %><br />
+      <i>(add the full international number including + and country code)</i><br /></div><br />
 
     <h3>Coverage Settings</h3>
     <div>Business Days<br />

@@ -1,9 +1,10 @@
 <h1 xmlns="http://www.w3.org/1999/html">User Summary</h1>
-<legend><p>User: <%= @user.name %> | Country: <%= @user.country_iso %></p></legend>
+<legend><p>User: <%= @user.name %> | Country: <%= @user.country_iso %> | Offset: <%= @user.timezone %></p></legend>
 <p>Coverage Settings: <%= @user.business_days %> Days, From <%= @user.business_hrs_start %>:00 to <%= @user.business_hrs_end %>:00</p><br/>
 <p><% if @user.use_email_flag == 0 %>Dont <% end %>Use Email: <%= @user.email if @user.email %> & <% if @user.use_im_flag == 0 %>Dont <% end %>Use Instant Messenger</p>
 <p><% if @user.use_boxcar_flag == 0 %>Dont <% end %>Use Boxcar ID: <%= @user.boxcar_id %></p>
+<p><% if @user.use_nma_flag == 0 %>Dont <% end %>Use Notify My Android ID: <%= @user.nma_api_key %></p>
+<p><% if @user.use_nmwp_flag == 0 %>Dont <% end %>Use Notify My Windows Phone ID: <%= @user.nmwp_api_key %></p>
 <p><% if @user.use_mobile_ph_flag == 0 %>Dont <% end %>SMS/Txt Mobile Phone: <%= @user.mobile_phone_no %></p><br/>
-<p>Find me in app/views/users/show.html.erb</p>
 
 

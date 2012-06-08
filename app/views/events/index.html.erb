@@ -9,8 +9,14 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= event.id %></td>
+    <td>|<%= event.time_stamp %></td>
+    <td>|<%= event.ticket_id %></td>
+    <td>|<%= event.call_type %></td>
+    <td>|<%= event.milestone %></td>
+    <td>|<%= event.source %></td>
+    <td>|<%= event.terminate_flag %></td>
+    <td>|<%= link_to 'Show', event %></td>
     <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>

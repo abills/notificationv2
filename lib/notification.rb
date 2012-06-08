@@ -4,6 +4,7 @@ class Notification
   require 'net/http'
   require 'ruby-notify-my-android'
   require 'gmail'
+  require 'smsglobal'
 
   def initialize
     @username = ""
@@ -19,23 +20,35 @@ class Notification
 
     @users = @rule.group.users.all
 
+
+
     @users.each do |user|
       #TODO this is where you would add an event to the user, only keeping 20 at a time for use with the RSS builder
-      case
-        when user.use_boxcar_flag == 1
-          boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-        when user.use_email_flag == 1
-          mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-        when user.use_im_flag == 1
-          im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-        when user.use_mobile_ph_flag == 1
-          sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-        when user.use_nma_flag == 1
-          nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-        when user.use_nmwp_flag == 1
-          nma_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+      #check user's timezone
+      current_user_time = Time.now.utc + user.timezone.hours
+
+      if (user.business_days == 0) || ((user.business_days == 5) && (current_user_time.wday != 0) && (current_user_time.wday != 6))
+        #notifications disabled
+      else
+        #need to check time
+        if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
+          case
+            when user.use_boxcar_flag == 1
+              boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            when user.use_email_flag == 1
+              mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            when user.use_im_flag == 1
+              im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            when user.use_mobile_ph_flag == 1
+              sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            when user.use_nma_flag == 1
+              nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            when user.use_nmwp_flag == 1
+              nma_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          rss_notify(user.rss_address, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+        end
       end
-      rss_notify(user.rss_address, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
     end
   end
 
@@ -88,7 +101,7 @@ class Notification
   #notify by email
   def mail_notify(username, source_system, message)
   #note - email through gmail is blocked within the corp firewall, works fine otherwise
-    Gmail.connect("ventyx.service.no.reply", "Ell1pse8") do |gmail|
+    Gmail.connect("username", "password") do |gmail|
       gmail.deliver do
         to username
         subject "Notification from #{source_system}"
@@ -106,8 +119,9 @@ class Notification
 
   #notify by sms(username, source_system, message)
   def sms_notify(username, source_system, message)
-    #TODO link to SMS gateway
-    #limit char length here?
+    sender = SmsGlobal::Sender.new :user => 'username', :password => 'password'
+
+    sender.send_text message, username, source_system
   end
 
   def im_notify(username, source_system, message)
@@ -121,3 +135,7 @@ class Notification
     #code to solve is here - http://techoctave.com/c7/posts/32-create-an-rss-feed-in-rails
   end
 end
+
+
+msg = Notification.new
+msg.sms_notify("61414346739", "remedy", "textytextytexytexty")

@@ -5,6 +5,7 @@
         <li class="nav-header">Administrator</li>
         <li <%= raw 'class="active"' if params[:controller].to_sym == :rules %> > <%= link_to("Rules", rules_path) %></li>
         <li <%= raw 'class="active"' if params[:controller].to_sym == :rule_groups %> > <%= link_to("Groups", groups_path) %></li>
+        <li <%= raw 'class="active"' if params[:controller].to_sym == :events %> > <%= link_to("Events", events_path) %></li>
     <% end %>
 
     <li class="nav-header">Tasks</li>
