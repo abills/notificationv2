@@ -20,7 +20,6 @@
   <div class="control-group">
     <%%= f.label :<%= attribute.name %>, :class => "control-label" %>
     <div class="controls">
-      <!-- TODO: need to map types better -->
       <%%= f.<%= attribute.reference? ? :association : :text_field %> :<%= attribute.name %>, :class => "input-xlarge" %>
       <p class="help-block"></p>
     </div>

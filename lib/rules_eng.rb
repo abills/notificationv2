@@ -20,16 +20,52 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #add reference so rule doesn't fire again
-              #TODO can remove the next 2 lines when have figured out how to delete the entries properly
               @event = Event.find_by_id(v[:m].id)
               @event.rules << rule_name
               v[:m].rules << rule_name
               modify v[:m]
-
-              #remove all entries of the terminated event? or wait until rules are reloaded?
-              #TODO re-enable the below line when thats figured out too
-              #Event.delete_all(:ticket_id => v[:m].ticket_id, :source => v[:m].source)
               #Retract v[:m] would remove the fact from the rules engine, need to remove all related facts though
+              #so dont use this as other rules may be requires as rules do not fire in order
+            end
+          end
+        #TODO need to test this heartbeat rule when there is a constant input
+        #hard coded rule - heartbeat for all sources defined in rules
+        when (rule_name.title == "SYSTEM ADMIN - heartbeat rule") && (rule_name.group.title == "Notification Admin")
+          #for each source type that exists in the defined rules
+          @rules.select("DISTINCT(source)").each do |source|
+            #for each type of source
+            rule [Event, :m, m.source == source] do |v|
+              if v[:m].rules.include?(rule_name) == false
+                #find the last event for this source and confirm if this is it
+                @last_event = Event.where(source: v[:m].source).last
+
+                if v[:m].id == @last_event.id
+                  #is the last event
+                  target_minutes = (1 * 60).to_int
+                  heartbeat_target_time = (v[:m].time_stamp) + target_minutes.minutes
+                  #check if the current time is greater than 1 hour since the last event
+                  if Time.now.utc >= heartbeat_target_time
+                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+
+                    #do actual alert
+                    msg.notify_user(rule_name.id, v[:m].id)
+
+                    #add reference so rule doesn't fire again
+                    @event = Event.find_by_id(v[:m].id)
+                    @event.rules << rule_name
+                    v[:m].rules << rule_name
+                    modify v[:m]
+                  end
+                else
+                  #not the last event
+                  #add reference so rule doesn't fire again
+                  @event = Event.find_by_id(v[:m].id)
+                  @event.rules << rule_name
+                  v[:m].rules << rule_name
+                  modify v[:m]
+                end
+              end
             end
           end
         ##### Rules for no other text & no ctc #####
@@ -72,7 +108,7 @@ class EngineRulebook < Rulebook
                 else
                   #erroneous data error, do not trigger but record in log
                   milestone1_target_time = Time.now.utc - 100.years
-                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 end
 
                 #check time now against the target specified
@@ -165,7 +201,7 @@ class EngineRulebook < Rulebook
                   else
                     #erroneous data error, do not trigger but record in log
                     milestone1_target_time = Time.now.utc - 100.years
-                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
@@ -240,7 +276,7 @@ class EngineRulebook < Rulebook
                 else
                   #erroneous data error, do not trigger but record in log
                   milestone1_target_time = Time.now.utc - 100.years
-                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 end
 
                 #check time now against the target specified
@@ -333,7 +369,7 @@ class EngineRulebook < Rulebook
                   else
                     #erroneous data error, do not trigger but record in log
                     milestone1_target_time = Time.now.utc - 100.years
-                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
@@ -408,7 +444,7 @@ class EngineRulebook < Rulebook
                 else
                   #erroneous data error, do not trigger but record in log
                   milestone1_target_time = Time.now.utc - 100.years
-                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 end
 
                 #check time now against the target specified
@@ -501,7 +537,7 @@ class EngineRulebook < Rulebook
                   else
                     #erroneous data error, do not trigger but record in log
                     milestone1_target_time = Time.now.utc - 100.years
-                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
@@ -576,7 +612,7 @@ class EngineRulebook < Rulebook
                 else
                   #erroneous data error, do not trigger but record in log
                   milestone1_target_time = Time.now.utc - 100.years
-                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 end
 
                 #check time now against the target specified
@@ -669,7 +705,7 @@ class EngineRulebook < Rulebook
                   else
                     #erroneous data error, do not trigger but record in log
                     milestone1_target_time = Time.now.utc - 100.years
-                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
@@ -744,7 +780,7 @@ class EngineRulebook < Rulebook
                 else
                   #erroneous data error, do not trigger but record in log
                   milestone1_target_time = Time.now.utc - 100.years
-                  Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                  Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 end
 
                 #check time now against the target specified
@@ -837,7 +873,7 @@ class EngineRulebook < Rulebook
                   else
                     #erroneous data error, do not trigger but record in log
                     milestone1_target_time = Time.now.utc - 100.years
-                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition

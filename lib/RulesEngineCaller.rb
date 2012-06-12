@@ -9,7 +9,9 @@ class RulesEngineCaller
   end
 
   def rebuild_engine
-    #TODO need to be able to ditch facts & rules and reload with current facts and current rules
+    #TODO need to add deleting all terminated events on a reload to clear out engine
+    #Event.delete_all(:ticket_id => v[:m].ticket_id, :source => v[:m].source)
+
     @rule_engine = Ruleby::Core::Engine.new
     EngineRulebook.new(@rule_engine).rules
 
@@ -34,13 +36,6 @@ class RulesEngineCaller
     @rule_engine.match
     puts "#{Time.now.utc} - Finished Engine Match #{Time.now.utc - d}"
     Rails.logger.debug "#{Time.now.utc} - Finished Engine Match #{Time.now.utc - d} "
-  end
-
-  def add_fact__to_engine
-    #TODO need to pass current 'event' to add to existing engine
-    #@rule_engine.assert Verification_Record.new('SC00000067890', 'WTR', 'INC', 'REMEDY')
-    @rule_engine.match
-    Rails.logger.debug "#{Time.now.utc} - Fact pushed"
   end
 end
 

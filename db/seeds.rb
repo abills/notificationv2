@@ -17,7 +17,11 @@ def createUser(name, email, password, roles)
                                       :email => email,
                                       :password => password,
                                       :password_confirmation => password,
-                                      :confirmed_at => DateTime.now
+                                      :confirmed_at => DateTime.now,
+                                      :business_days => 5,
+                                      :business_hrs_start => 9,
+                                      :business_hrs_end => 17,
+                                      :timezone => 0
   roles.each do |role|
     user.add_role role.to_sym
   end
@@ -41,4 +45,5 @@ puts 'New user created: ' << createUser("Neil Pennell", 'neil.pennell@ventyx.abb
 puts 'New user created: ' << createUser("Andrew Bills", 'andrew.bills@ventyx.abb.com', 'password', [:roleSystemAdmin, :admin]).name
 puts 'New group created:' << createGroup('Notification Admin').title
 puts 'New rule created: ' << createRule('SYSTEM ADMIN - auto-clean delete rule', 'Notification Admin').title
+puts 'New rule created: ' << createRule('SYSTEM ADMIN - heartbeat rule', 'Notification Admin').title
 

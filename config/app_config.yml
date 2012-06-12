@@ -1,0 +1,9 @@
+#configurable settings for the notification app
+:sms_global_settings:
+  :user_name: -
+  :password: -
+:gmail_notification_settings:
+  :user_name: -
+  :password: -
+:boxcar_settings:
+  :public_notification_api_uri: -

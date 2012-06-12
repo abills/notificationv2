@@ -16,7 +16,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    # TODO Need to add build_sql_query into populating new rule
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

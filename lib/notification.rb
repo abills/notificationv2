@@ -20,8 +20,6 @@ class Notification
 
     @users = @rule.group.users.all
 
-
-
     @users.each do |user|
       #TODO this is where you would add an event to the user, only keeping 20 at a time for use with the RSS builder
       #check user's timezone
@@ -56,16 +54,16 @@ class Notification
   def boxcar_notify(username, source_system, message)
     if username.nil?
       #add username blank, no send
-      Rails.logger.info "#{Time.now.utc} - Failed boxcar_notify - User ID not specified"
+      Rails.logger.warn "#{Time.now.utc} - Failed boxcar_notify - User ID not specified"
     elsif username.respond_to?("each")
       username.each do |username|
         params = {'email' => username, 'notification[from_screen_name]' => source_system, 'notification[message]' => message, 'notification[icon_url]' => 'https://si0.twimg.com/profile_images/1817574149/Twitter_logo.jpg'}
-        post = Net::HTTP.post_form(URI.parse('http://boxcar.io/devices/providers/MH0S7xOFSwVLNvNhTpiC/notifications'), params)
+        post = Net::HTTP.post_form(URI.parse(CONFIG[:boxcar_settings][:public_notification_api_uri].to_s), params)
         Rails.logger.info "#{Time.now.utc} - boxcar_notify - #{username} - #{source_system} - #{message}"
       end
     else
       params = {'email' => username, 'notification[from_screen_name]' => source_system, 'notification[message]' => message, 'notification[icon_url]' => 'https://si0.twimg.com/profile_images/1817574149/Twitter_logo.jpg'}
-      post = Net::HTTP.post_form(URI.parse('http://boxcar.io/devices/providers/MH0S7xOFSwVLNvNhTpiC/notifications'), params)
+      post = Net::HTTP.post_form(URI.parse(CONFIG[:boxcar_settings][:public_notification_api_uri].to_s), params)
       Rails.logger.info "#{Time.now.utc} - boxcar_notify - #{username} - #{source_system} - #{message}"
     end
   end
@@ -101,7 +99,7 @@ class Notification
   #notify by email
   def mail_notify(username, source_system, message)
   #note - email through gmail is blocked within the corp firewall, works fine otherwise
-    Gmail.connect("username", "password") do |gmail|
+    Gmail.connect(CONFIG[:gmail_notification_settings][:user_name].to_s, CONFIG[:gmail_notification_settings][:password].to_s) do |gmail|
       gmail.deliver do
         to username
         subject "Notification from #{source_system}"
@@ -116,10 +114,9 @@ class Notification
     end
   end
 
-
   #notify by sms(username, source_system, message)
   def sms_notify(username, source_system, message)
-    sender = SmsGlobal::Sender.new :user => 'username', :password => 'password'
+    sender = SmsGlobal::Sender.new :user => CONFIG[:sms_global_settings][:user_name].to_s, :password => CONFIG[:sms_global_settings][:password].to_s
 
     sender.send_text message, username, source_system
   end
@@ -135,7 +132,3 @@ class Notification
     #code to solve is here - http://techoctave.com/c7/posts/32-create-an-rss-feed-in-rails
   end
 end
-
-
-msg = Notification.new
-msg.sms_notify("61414346739", "remedy", "textytextytexytexty")
