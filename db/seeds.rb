@@ -34,9 +34,10 @@ def createGroup(name)
   group
 end
 
-def createRule(name, groupname)
+def createRule(name, groupname, message)
   rule = Rule.find_or_create_by_title :title => name,
-                                      :group_id => Group.find_by_title(groupname)
+                                      :group_id => Group.find_by_title(groupname),
+                                      :syntax_msg => message
   rule
 end
 
@@ -45,6 +46,6 @@ puts 'SETTING UP DEFAULT USER LOGIN'
 puts 'New user created: ' << createUser("Neil Pennell", 'neil.pennell@ventyx.abb.com', "password", [:SystemAdmin, :admin]).name
 puts 'New user created: ' << createUser("Andrew Bills", 'andrew.bills@ventyx.abb.com', 'password', [:SystemAdmin, :admin]).name
 puts 'New group created:' << createGroup('Notification Admin').title
-puts 'New rule created: ' << createRule('SYSTEM ADMIN - auto-clean delete rule', 'Notification Admin').title
-puts 'New rule created: ' << createRule('SYSTEM ADMIN - heartbeat rule', 'Notification Admin').title
+puts 'New rule created: ' << createRule('SYSTEM ADMIN - auto-clean delete rule', 'Notification Admin', 'Auto-clean no notification do not delete').title
+puts 'New rule created: ' << createRule('SYSTEM ADMIN - heartbeat rule', 'Notification Admin', 'Heartbeat failed for source').title
 

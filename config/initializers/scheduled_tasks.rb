@@ -13,9 +13,9 @@ end
 
 Rails.logger.debug "#{Time.now.utc} - Added Rules to New Rules Engine"
 
-scheduler.every('2m', :blocking => true, :allow_overlapping => false) do
+scheduler.every(CONFIG[:core_settings][:run_engine_time], :blocking => true, :allow_overlapping => false) do
   RULES_ENG.run_engine
 end
-scheduler.every('5m', :blocking => true, :allow_overlapping => false) do
+scheduler.every(CONFIG[:core_settings][:forced_engine_restart], :blocking => true, :allow_overlapping => false) do
   RULES_ENG.rebuild_engine
 end

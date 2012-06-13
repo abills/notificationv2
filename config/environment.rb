@@ -7,3 +7,5 @@ CONFIG = YAML.load_file(File.dirname(__FILE__) + "/app_config.yml") # From file
 
 # Initialize the rails application
 Notificationv2::Application.initialize!
+
+$fail_count = 0

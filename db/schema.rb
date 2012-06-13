@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(:version => 20120525032119) do
   create_table "rules", :force => true do |t|
     t.string   "title"
     t.integer  "group_id"
-    t.string   "sql_query"
     t.string   "syntax_msg"
     t.string   "group_owner"
     t.string   "source"

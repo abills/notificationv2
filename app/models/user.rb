@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  require 'notification'
+
 	rolify
   # Include default devise modules. Others available are:
   # :confirmable,
@@ -16,8 +18,40 @@ class User < ActiveRecord::Base
 
   def test_notification_settings
     #create a notification object
-    #check each "enabled" value against changed
-    #send a notification
-    #if boxcar is "changed" then register
+    msg = Notification.new
+
+    #if boxcar changed do registration
+    if self.boxcar_id_changed? and not self.boxcar_id.empty?
+      #do changes
+      msg.boxcar_register(self.boxcar_id)
+    end
+
+    #check each "enabled" value against changed & notify if value has been changed as a test, ignore time of day
+    case
+      when self.use_boxcar_flag == 1
+        if (self.use_boxcar_flag_changed? and not self.boxcar_id.empty?) or (self.boxcar_id_changed?)
+          msg.boxcar_notify(self.boxcar_id, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
+        end
+      when self.use_email_flag == 1
+        if (self.use_email_flag_changed? and not self.email.empty?) or (self.email_changed?)
+          msg.mail_notify(self.email, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
+        end
+      when self.use_im_flag == 1
+        if (self.use_im_flag_changed? and not self.email.empty?) or (self.email_changed?)
+          msg.im_notify(self.email, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
+        end
+      when self.use_mobile_ph_flag == 1
+        if (self.use_mobile_ph_flag_changed? and not self.mobile_phone_no.empty?) or (self.mobile_phone_no_changed?)
+          msg.sms_notify(self.mobile_phone_no, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
+        end
+      when self.use_nma_flag == 1
+        if (self.use_nma_flag_changed? and not self.nma_api_key.empty?) or (self.nma_api_key_changed?)
+          msg.nma_notify(self.nma_api_key, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
+        end
+      when self.use_nmwp_flag == 1
+        if (self.use_nmwp_flag_changed? and not self.nmwp_api_key.empty?) or (self.nmwp_api_key_changed?)
+          msg.nma_notify(self.nmwp_api_key, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
+        end
+    end
   end
 end

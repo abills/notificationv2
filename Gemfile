@@ -8,6 +8,7 @@ gem 'rufus-scheduler'
 gem 'ruby-notify-my-android'
 gem 'gmail'
 gem 'smsglobal'
+gem 'thin'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

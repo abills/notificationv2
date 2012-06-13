@@ -3,7 +3,6 @@ class CreateRules < ActiveRecord::Migration
     create_table :rules do |t|
       t.string :title
       t.belongs_to :group
-      t.string :sql_query
       t.string :syntax_msg
       t.string :group_owner
       t.string :source
