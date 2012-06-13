@@ -10,7 +10,7 @@
 <% end %>
 <br />
 
-<% if not current_user.has_role? :roleSystemAdmin %>
+<% if not current_user.has_role? :SystemAdmin %>
     <h2>Available Groups</h2>
     <% @groups.each do |group| %>
         <% if not current_user.groups.include? group %>
@@ -20,7 +20,7 @@
 <% end %>
 <br />
 
-<% if current_user.has_role? :roleSystemAdmin %>
+<% if current_user.has_role? :SystemAdmin %>
     <h2>All Groups</h2>
     <table>
     <tr>
@@ -32,7 +32,7 @@
     <% @groups.each do |group| %>
     <tr>
         <td><%= group.title %></td>
-        <!-- <td><%= link_to 'Show', group %></td> -->
+        <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, confirm: 'Are you sure?', method: :delete %></td>
     </tr>
@@ -52,7 +52,6 @@
     <br/>
 <% end %>
 <div>
-  <%= debug(params) if Rails.env.development? %>
 </div>
 
 

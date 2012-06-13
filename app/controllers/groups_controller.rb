@@ -86,8 +86,6 @@ class GroupsController < ApplicationController
         end
       end
     end
-
-
   end
 
   # DELETE /groups/1
@@ -98,6 +96,16 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to groups_url }
+      format.json { head :no_content }
+    end
+  end
+
+  def notify
+    #TODO figure out how to do a notify against form data which is not a record update & change below to use a value from a text field
+    @group.notify_group(params[:id], "message")
+
+    respond_to do |format|
+      format.html { redirect_to groups_url, notice: 'Notification Sent.' }
       format.json { head :no_content }
     end
   end

@@ -6,5 +6,7 @@
 <p><% if @user.use_nma_flag == 0 %>Dont <% end %>Use Notify My Android ID: <%= @user.nma_api_key %></p>
 <p><% if @user.use_nmwp_flag == 0 %>Dont <% end %>Use Notify My Windows Phone ID: <%= @user.nmwp_api_key %></p>
 <p><% if @user.use_mobile_ph_flag == 0 %>Dont <% end %>SMS/Txt Mobile Phone: <%= @user.mobile_phone_no %></p><br/>
+<% if current_user.has_role? :SystemAdmin %><p>Token: <%= @user.authentication_token %></p><% end %>
+
 
 

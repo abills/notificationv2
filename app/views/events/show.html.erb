@@ -7,3 +7,5 @@
 <p>Time Stamp: <%= @event.time_stamp %> | Start Time: <%= @event.start_time %> | Target Time: <%= @event.target_time %></p>
 <p>Created At: <%= @event.created_at %> | Last Updated: <%= @event.updated_at %></p>
 <%= link_to 'Back', events_path %>
+
+<%= debug(params) if Rails.env.development? %>

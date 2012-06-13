@@ -12,6 +12,10 @@ class Notification
     @message = ""
   end
 
+  def notify_group(id, message)
+    #define function for notifying all members of a group
+  end
+
   #master notify function
   def notify_user(rule_id, event_id)
     @rule = Rule.find_by_id(rule_id)

@@ -32,9 +32,9 @@ class EngineRulebook < Rulebook
         #hard coded rule - heartbeat for all sources defined in rules
         when (rule_name.title == "SYSTEM ADMIN - heartbeat rule") && (rule_name.group.title == "Notification Admin")
           #for each source type that exists in the defined rules
-          @rules.select("DISTINCT(source)").each do |source|
+          Rule.select(:source).uniq.each do |s|
             #for each type of source
-            rule [Event, :m, m.source == source] do |v|
+            rule [Event, :m, m.source == s] do |v|
               if v[:m].rules.include?(rule_name) == false
                 #find the last event for this source and confirm if this is it
                 @last_event = Event.where(source: v[:m].source).last

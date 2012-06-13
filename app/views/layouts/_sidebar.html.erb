@@ -1,11 +1,17 @@
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
-    <% if current_user.has_role? :roleSystemAdmin %>
+    <% if current_user.has_role? :SystemAdmin %>
+        <!-- example of how to case roles -->
+        <li class="nav-header">System Administrator</li>
+        <li <%= raw 'class="active"' if params[:controller].to_sym == :events %> > <%= link_to("Events", events_path) %></li>
+        <li <%= raw 'class="active"' if params[:controller].to_sym == :users %> > <%= link_to("Users", users_path) %></li>
+    <% end %>
+
+    <% if current_user.has_role? :Admin %>
         <!-- example of how to case roles -->
         <li class="nav-header">Administrator</li>
         <li <%= raw 'class="active"' if params[:controller].to_sym == :rules %> > <%= link_to("Rules", rules_path) %></li>
         <li <%= raw 'class="active"' if params[:controller].to_sym == :rule_groups %> > <%= link_to("Groups", groups_path) %></li>
-        <li <%= raw 'class="active"' if params[:controller].to_sym == :events %> > <%= link_to("Events", events_path) %></li>
     <% end %>
 
     <li class="nav-header">Tasks</li>
