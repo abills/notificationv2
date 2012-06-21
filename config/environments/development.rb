@@ -14,7 +14,7 @@ Notificationv2::Application.configure do
   config.action_controller.perform_caching = false
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'ec2-23-22-111-242.compute-1.amazonaws.com:8080' }
   config.action_mailer.delivery_method = :smtp
   # change to false to prevent email from being sent during development
   config.action_mailer.perform_deliveries = true
@@ -27,8 +27,8 @@ Notificationv2::Application.configure do
     domain: "example.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: CONFIG[:gmail_notification_settings][:user_name].to_s,
+    password: CONFIG[:gmail_notification_settings][:password].to_s
   }
 
 

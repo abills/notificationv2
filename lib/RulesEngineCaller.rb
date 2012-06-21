@@ -56,5 +56,9 @@ class RulesEngineCaller
       $fail_count = 0
     end
   end
+
+  def assert_event(event)
+    @rule_engine.assert event
+  end
 end
 

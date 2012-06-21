@@ -5,15 +5,12 @@ class Notification
   require 'ruby-notify-my-android'
   require 'gmail'
   require 'smsglobal'
+  require 'builder'
 
   def initialize
     @username = ""
     @source_system = ""
     @message = ""
-  end
-
-  def notify_group(id, message)
-    #define function for notifying all members of a group
   end
 
   #master notify function
@@ -24,7 +21,18 @@ class Notification
     @users = @rule.group.users.all
 
     @users.each do |user|
-      #TODO this is where you would add an event to the user, only keeping 20 at a time for use with the RSS builder
+      #add notification to user feed
+      @record = Record.new
+      @record.source = @rule.source
+      @record.message = "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}"
+      user.records << @record
+
+      #check if user feed is longer than app settings
+      if user.records.all.count > CONFIG[:core_settings][:event_history_length].to_i
+        @first_event = user.records.all.first
+        @first_event.destroy
+      end
+
       #check user's timezone
       current_user_time = Time.now.utc + user.timezone.hours
 
@@ -33,23 +41,27 @@ class Notification
       else
         #need to check time
         if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
-          case
-            when user.use_boxcar_flag == 1
-              boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            when user.use_email_flag == 1
-              mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            when user.use_im_flag == 1
-              im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            when user.use_mobile_ph_flag == 1
-              sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            when user.use_nma_flag == 1
-              nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            when user.use_nmwp_flag == 1
-              nma_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          if user.use_boxcar_flag == 1
+            boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
           end
-          rss_notify(user.rss_address, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          if user.use_email_flag == 1
+            mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          if user.use_im_flag == 1
+            im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          if user.use_mobile_ph_flag == 1
+            sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          if user.use_nma_flag == 1
+            nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          if user.use_nmwp_flag == 1
+            nma_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
         end
       end
+      rss_notify(user.confirmation_token)
     end
   end
 
@@ -58,7 +70,18 @@ class Notification
     @users = @group.users.all
 
     @users.each do |user|
-      #TODO this is where you would add an event to the user, only keeping 20 at a time for use with the RSS builder
+      #add notification to user feed
+      @record = Record.new
+      @record.source = @rule.source
+      @record.message = "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}"
+      user.records << @record
+
+      #check if user feed is longer than app settings
+      if user.records.all.count > CONFIG[:core_settings][:event_history_length].to_i
+        @first_event = user.records.all.first
+        @first_event.destroy
+      end
+
       #check user's timezone
       current_user_time = Time.now.utc + user.timezone.hours
 
@@ -67,23 +90,27 @@ class Notification
       else
         #need to check time
         if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
-          case
-            when user.use_boxcar_flag == 1
-              boxcar_notify(user.boxcar_id, @group.title.to_s, message)
-            when user.use_email_flag == 1
-              mail_notify(user.email, @group.title.to_s, message)
-            when user.use_im_flag == 1
-              im_notify(user.email, @group.title.to_s, message)
-            when user.use_mobile_ph_flag == 1
-              sms_notify(user.mobile_phone_no, @group.title.to_s, message)
-            when user.use_nma_flag == 1
-              nma_notify(user.nma_api_key, @group.title.to_s, message)
-            when user.use_nmwp_flag == 1
-              nma_notify(user.nmwp_api_key, @group.title.to_s, message)
+          if user.use_boxcar_flag == 1
+            boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
           end
-          rss_notify(user.rss_address, @group.title.to_s, message)
+          if user.use_email_flag == 1
+            mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          if user.use_im_flag == 1
+            im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          if user.use_mobile_ph_flag == 1
+            sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          if user.use_nma_flag == 1
+            nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
+          if user.use_nmwp_flag == 1
+            nma_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+          end
         end
       end
+      rss_notify(user.confirmation_token)
     end
   end
 
@@ -114,12 +141,12 @@ class Notification
       username.each do |username|
         params = {'email' => username}
         post = Net::HTTP.post_form(URI.parse(CONFIG[:boxcar_settings][:public_notification__subscription_api_uri].to_s), params)
-        Rails.logger.info "#{Time.now.utc} - boxcar_register - #{username} - #{source_system} - #{message}"
+        Rails.logger.info "#{Time.now.utc} - boxcar_register - #{username}"
       end
     else
       params = {'email' => username}
       post = Net::HTTP.post_form(URI.parse(CONFIG[:boxcar_settings][:public_notification__subscription_api_uri].to_s), params)
-      Rails.logger.info "#{Time.now.utc} - boxcar_register - #{username} - #{source_system} - #{message}"
+      Rails.logger.info "#{Time.now.utc} - boxcar_register - #{username}"
     end
   end
 
@@ -181,9 +208,7 @@ class Notification
   end
 
   #notify by rss
-  def rss_notify(username, source_system, message)
-    #TODO add RSS generator for each individual user
-    #requires users to have a record of the last 20 events & rebuild the RSS each time per user
-    #code to solve is here - http://techoctave.com/c7/posts/32-create-an-rss-feed-in-rails
+  def rss_notify(token)
+    #TODO figure this out, individual RSS feeds based on the records table
   end
 end

@@ -1,2 +1,8 @@
-<h3>Home</h3>
-Welcome to the Notification Solution
+<h3>Welcome <%= current_user.name %></h3>
+<p>Here are your last <%= CONFIG[:core_settings][:event_history_length].to_s %> events per your group memberships</p></br>
+
+<% @records = current_user.records.all %>
+
+<% current_user.records.each do |record| %>
+    <%= record.created_at.localtime %> - <%= record.source %> + <%= record.message %><br>
+<% end %>

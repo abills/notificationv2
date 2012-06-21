@@ -4,9 +4,8 @@ class Group < ActiveRecord::Base
   has_many :rules
   has_and_belongs_to_many :users
 
-  def notify_group(id, message)
-    #TODO when the group controller is figured out add notify for each user in the group here
+  def notify_group(group_id, message)
     msg = Notification.new
-    msg.notify_group(id, message)
+    msg.notify_group(group_id, message)
   end
 end

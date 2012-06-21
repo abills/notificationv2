@@ -1,4 +1,9 @@
 Notificationv2::Application.routes.draw do
+  resources :records
+  #resources :users do |user|
+  #  user.record_feed 'records/:token/feed.:format', :controller => 'records', :action => 'feed', :token => nil
+  #end
+
   resources :groups
   resources :events
 
@@ -12,5 +17,4 @@ Notificationv2::Application.routes.draw do
   #resources :users
   #devise_for :users
   resources :users, :only => [:show, :index, :edit, :update]
-
 end

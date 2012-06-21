@@ -61,7 +61,7 @@ Notificationv2::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { :host => 'ec2-23-22-111-242.compute-1.amazonaws.com:8080' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
@@ -75,8 +75,10 @@ Notificationv2::Application.configure do
     domain: "example.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"]
+    user_name: CONFIG[:gmail_notification_settings][:user_name].to_s,
+    password: CONFIG[:gmail_notification_settings][:password].to_s
+    #user_name: ENV["GMAIL_USERNAME"],
+    #password: ENV["GMAIL_PASSWORD"]
   }
 
 

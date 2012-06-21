@@ -84,7 +84,7 @@
       <%= f.text_field :milestone1_value %>
       Duration/Value
       <%= f.text_field :milestone1_time_value %>
-      <%= f.select :milestone1_time_value_denomination, [['Not Used',''],['Count','count'],['Hours','H'],['Days','D'],['Perc %','%']] %>
+      <%= f.select :milestone1_time_value_denomination, [['Not Used',''],['Count','count'],['Hours','H'],['Days','D']] %>
       <p class="help-block"></p>
     </div>
   </div>
@@ -114,11 +114,11 @@
     </div>
   </div>
 
-  <h3>Query</h3>
+  <h3>Message</h3>
   <div class="control-group">
-    <%= f.label :sql_query, :class => "control-label" %>
+    <%= f.label :syntax_msg, :class => "control-label" %>
     <div class="controls">
-      <%= f.text_field :sql_query %>
+      <%= f.text_field :syntax_msg %>
     </div>
   </div>
 

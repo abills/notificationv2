@@ -18,7 +18,7 @@ class AddConfirmableToUsers < ActiveRecord::Migration
     add_column :users, :use_nma_flag, :integer
     add_column :users, :nmwp_api_key, :string
     add_column :users, :use_nmwp_flag, :integer
-    add_column :users, :rss_address, :string
+    add_column :users, :rss_token, :string
     add_column :users, :timezone, :float
   end
 end

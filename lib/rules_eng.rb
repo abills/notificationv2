@@ -4,7 +4,6 @@ include Ruleby
 
 class EngineRulebook < Rulebook
   def rules
-    puts "#{Time.now.utc} - Loading Rules into Rulebook"
     Rails.logger.debug "#{Time.now.utc} - Loading Rules into Rulebook"
     msg = Notification.new()
     @rules = Rule.all
@@ -16,7 +15,6 @@ class EngineRulebook < Rulebook
           rule [Event, :m, m.terminate_flag == 1] do |v|
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #add reference so rule doesn't fire again
@@ -45,7 +43,6 @@ class EngineRulebook < Rulebook
                   heartbeat_target_time = (v[:m].time_stamp) + target_minutes.minutes
                   #check if the current time is greater than 1 hour since the last event
                   if Time.now.utc >= heartbeat_target_time
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
@@ -75,7 +72,6 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
@@ -115,7 +111,6 @@ class EngineRulebook < Rulebook
                 if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
-                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
@@ -150,7 +145,6 @@ class EngineRulebook < Rulebook
               if @event_count.count() == rule_name.milestone1_time_value.to_int
                 #matches condition
                 #output matched rule to console & logfile
-                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
@@ -208,7 +202,6 @@ class EngineRulebook < Rulebook
                   if Time.now.utc >= target_target_time
                     #matches condition
                     #output matched rule to console & logfile
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
@@ -243,7 +236,6 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
@@ -283,7 +275,6 @@ class EngineRulebook < Rulebook
                 if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
-                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
@@ -318,7 +309,6 @@ class EngineRulebook < Rulebook
               if @event_count.count() == rule_name.milestone1_time_value.to_int
                 #matches condition
                 #output matched rule to console & logfile
-                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
@@ -376,7 +366,6 @@ class EngineRulebook < Rulebook
                   if Time.now.utc >= target_target_time
                     #matches condition
                     #output matched rule to console & logfile
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
@@ -411,7 +400,6 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
@@ -451,7 +439,6 @@ class EngineRulebook < Rulebook
                 if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
-                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
@@ -486,7 +473,6 @@ class EngineRulebook < Rulebook
               if @event_count.count() == rule_name.milestone1_time_value.to_int
                 #matches condition
                 #output matched rule to console & logfile
-                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
@@ -544,7 +530,6 @@ class EngineRulebook < Rulebook
                   if Time.now.utc >= target_target_time
                     #matches condition
                     #output matched rule to console & logfile
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
@@ -579,7 +564,6 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
@@ -619,7 +603,6 @@ class EngineRulebook < Rulebook
                 if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
-                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
@@ -654,7 +637,6 @@ class EngineRulebook < Rulebook
               if @event_count.count() == rule_name.milestone1_time_value.to_int
                 #matches condition
                 #output matched rule to console & logfile
-                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
@@ -712,7 +694,6 @@ class EngineRulebook < Rulebook
                   if Time.now.utc >= target_target_time
                     #matches condition
                     #output matched rule to console & logfile
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
@@ -747,7 +728,6 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
@@ -787,7 +767,6 @@ class EngineRulebook < Rulebook
                 if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
-                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
@@ -822,7 +801,6 @@ class EngineRulebook < Rulebook
               if @event_count.count() == rule_name.milestone1_time_value.to_int
                 #matches condition
                 #output matched rule to console & logfile
-                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
@@ -880,7 +858,6 @@ class EngineRulebook < Rulebook
                   if Time.now.utc >= target_target_time
                     #matches condition
                     #output matched rule to console & logfile
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
@@ -915,7 +892,6 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
@@ -955,7 +931,6 @@ class EngineRulebook < Rulebook
                 if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
-                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
@@ -990,7 +965,6 @@ class EngineRulebook < Rulebook
               if @event_count.count() == rule_name.milestone1_time_value.to_int
                 #matches condition
                 #output matched rule to console & logfile
-                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
@@ -1048,7 +1022,6 @@ class EngineRulebook < Rulebook
                   if Time.now.utc >= target_target_time
                     #matches condition
                     #output matched rule to console & logfile
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
@@ -1083,7 +1056,6 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
@@ -1123,7 +1095,6 @@ class EngineRulebook < Rulebook
                 if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
-                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
@@ -1158,7 +1129,6 @@ class EngineRulebook < Rulebook
               if @event_count.count() == rule_name.milestone1_time_value.to_int
                 #matches condition
                 #output matched rule to console & logfile
-                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
@@ -1216,7 +1186,6 @@ class EngineRulebook < Rulebook
                   if Time.now.utc >= target_target_time
                     #matches condition
                     #output matched rule to console & logfile
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
@@ -1251,7 +1220,6 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #output matched rule to console & logfile
-              puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
@@ -1291,7 +1259,6 @@ class EngineRulebook < Rulebook
                 if Time.now.utc >= milestone1_target_time
                   #matches condition
                   #output matched rule to console & logfile
-                  puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
@@ -1326,7 +1293,6 @@ class EngineRulebook < Rulebook
               if @event_count.count() == rule_name.milestone1_time_value.to_int
                 #matches condition
                 #output matched rule to console & logfile
-                puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
@@ -1384,7 +1350,6 @@ class EngineRulebook < Rulebook
                   if Time.now.utc >= target_target_time
                     #matches condition
                     #output matched rule to console & logfile
-                    puts "match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                     Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                     #do actual alert
