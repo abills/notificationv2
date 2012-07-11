@@ -10,7 +10,7 @@
 <% end %>
 <br />
 
-<% if not current_user.has_role? :SystemAdmin %>
+<% if current_user.has_role? :user %>
     <h2>Available Groups</h2>
     <% @groups.each do |group| %>
         <% if not current_user.groups.include? group %>
@@ -20,7 +20,7 @@
 <% end %>
 <br />
 
-<% if current_user.has_role? :SystemAdmin %>
+<% if current_user.has_role? :admin %>
     <h2>All Groups</h2>
     <table>
     <tr>

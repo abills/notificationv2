@@ -43,10 +43,12 @@ end
 
 
 puts 'SETTING UP DEFAULT USER LOGIN'
-puts 'New user created: ' << createUser("Neil Pennell", 'neil.pennell@ventyx.abb.com', "password", [:SystemAdmin, :admin]).name
-puts 'New user created: ' << createUser("Andrew Bills", 'andrew.bills@ventyx.abb.com', 'password', [:SystemAdmin, :admin]).name
-puts 'New user created: ' << createUser("Tania Khor", 'tania.khor@ventyx.abb.com', 'password', [:SystemAdmin, :admin]).name
+puts 'New user created: ' << createUser("Neil Pennell", 'neil.pennell@ventyx.abb.com', 'Ell1pse8', [:SystemAdmin, :admin, :user]).name
+puts 'New user created: ' << createUser("Andrew Bills", 'andrew.bills@ventyx.abb.com', 'Ell1pse8', [:SystemAdmin, :admin, :user]).name
+puts 'New user created: ' << createUser("Tania Khor", 'tania.khor@ventyx.abb.com', 'Ell1pse8', [:SystemAdmin, :admin, :user]).name
+puts 'New user created: ' << createUser("Melinda Rettke", 'melinda.rettke@ventyx.abb.com', 'Ell1pse8', [:admin, :user]).name
+puts 'New user created: ' << createUser("MMS Interface Account", 'mms-clientreporting@ventyx.abb.com', 'Ell1pse8', [:SystemAdmin, :admin, :user]).name
 puts 'New group created:' << createGroup('Notification Admin').title
 puts 'New rule created: ' << createRule('SYSTEM ADMIN - auto-clean delete rule', 'Notification Admin', 'Auto-clean no notification do not delete').title
-puts 'New rule created: ' << createRule('SYSTEM ADMIN - heartbeat rule', 'Notification Admin', 'Heartbeat failed for source').title
+puts 'New rule created: ' << createRule('SYSTEM ADMIN - heartbeat rule', 'Notification Admin', 'Heartbeat Failed, Last received event').title
 

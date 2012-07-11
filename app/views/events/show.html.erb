@@ -1,7 +1,7 @@
 <h1 xmlns="http://www.w3.org/1999/html">Event Summary</h1>
 <legend><p>Event ID: <%= @event.id %> | Ticket ID: <%= @event.ticket_id %> | Source: <%= @event.source %></p></legend>
 <p>Call Type: <%= @event.call_type %> | Milestone: <%= @event.milestone %> & Type: <%= @event.milestone_type %><% if @event.terminate_flag == 1 %> Includes Terminate Event<% end %></p>
-<p>Group Owner: <%= @event.group_owner %> | Milestone: <%= @event.milestone %><% if @event.terminate_flag == 1 %> Terminate Event<% end %></p><br>
+<p>Group Owner: <%= @event.group_owner %> | CTC ID: <%= @event.ctc_id %> | Other Text: <%= @event.other_text %></p><br>
 <p>Customer No: <%= @event.cust_no %> | Customer: <%= @event.cust_region %> | Description: <%= @event.description %></p>
 <p>Entitlement Code: <%= @event.entitlement_code %> | Priority: <%= @event.priority %></p><br>
 <p>Time Stamp: <%= @event.time_stamp %> | Start Time: <%= @event.start_time %> | Target Time: <%= @event.target_time %></p>

@@ -32,14 +32,14 @@ class EngineRulebook < Rulebook
           #for each source type that exists in the defined rules
           Rule.select(:source).uniq.each do |s|
             #for each type of source
-            rule [Event, :m, m.source == s] do |v|
+            rule [Event, :m, m.source == s.source] do |v|
               if v[:m].rules.include?(rule_name) == false
                 #find the last event for this source and confirm if this is it
                 @last_event = Event.where(source: v[:m].source).last
 
                 if v[:m].id == @last_event.id
                   #is the last event
-                  target_minutes = (1 * 60).to_int
+                  target_minutes = (1 * CONFIG[:core_settings][:first_heartbeat].to_i).to_int
                   heartbeat_target_time = (v[:m].time_stamp) + target_minutes.minutes
                   #check if the current time is greater than 1 hour since the last event
                   if Time.now.utc >= heartbeat_target_time

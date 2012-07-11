@@ -58,9 +58,17 @@ ActiveRecord::Schema.define(:version => 20120614231006) do
   create_table "records", :force => true do |t|
     t.string   "source"
     t.string   "message"
+    t.integer  "rule_id_ref"
+    t.integer  "boxcar_notify"
+    t.integer  "nma_notify"
+    t.integer  "nmwp_notify"
+    t.integer  "mobile_ph_notify"
+    t.integer  "im_notify"
+    t.integer  "email_notify"
+    t.integer  "salesforce_notify"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -129,6 +137,8 @@ ActiveRecord::Schema.define(:version => 20120614231006) do
     t.integer  "use_email_flag"
     t.integer  "use_im_flag"
     t.integer  "use_boxcar_flag"
+    t.string   "salesforce_id"
+    t.integer  "use_salesforce_flag"
     t.integer  "business_hrs_start"
     t.integer  "business_hrs_end"
     t.integer  "business_days"

@@ -24,13 +24,20 @@ class Notification
       #add notification to user feed
       @record = Record.new
       @record.source = @rule.source
+
+      #for heartbeat & system rules where source is not defined
+      if @record.source.empty?
+        @record.source == CONFIG[:core_settings][:app_name]
+      end
+
       @record.message = "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}"
-      user.records << @record
 
       #check if user feed is longer than app settings
-      if user.records.all.count > CONFIG[:core_settings][:event_history_length].to_i
+      if user.records.all.count > CONFIG[:core_settings][:event_history_display].to_i
         @first_event = user.records.all.first
         @first_event.destroy
+        #@old_records = user.records.all.where(user.records.created_at < Date.parse(CONFIG[:core_settings][:event_history_length].to_i.days.ago))
+        #@old_records.destroy
       end
 
       #check user's timezone
@@ -43,25 +50,33 @@ class Notification
         if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
           if user.use_boxcar_flag == 1
             boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.boxcar_notify = user.use_boxcar_flag
           end
           if user.use_email_flag == 1
             mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.email_notify = user.use_email_flag
           end
           if user.use_im_flag == 1
             im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.im_notify = user.use_im_flag
           end
           if user.use_mobile_ph_flag == 1
             sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.mobile_ph_notify = user.use_mobile_ph_flag
           end
           if user.use_nma_flag == 1
             nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.nma_notify = user.use_nma_flag
           end
           if user.use_nmwp_flag == 1
-            nma_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            nmwp_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.nmwp_notify = user.use_nmwp_flag
           end
         end
       end
       rss_notify(user.confirmation_token)
+
+      user.records << @record
     end
   end
 
@@ -73,8 +88,13 @@ class Notification
       #add notification to user feed
       @record = Record.new
       @record.source = @rule.source
+
+      #for heartbeat & system rules where source is not defined
+      if @record.source.empty?
+        @record.source == CONFIG[:core_settings][:app_name]
+      end
+
       @record.message = "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}"
-      user.records << @record
 
       #check if user feed is longer than app settings
       if user.records.all.count > CONFIG[:core_settings][:event_history_length].to_i
@@ -92,25 +112,33 @@ class Notification
         if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
           if user.use_boxcar_flag == 1
             boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.boxcar_notify = user.use_boxcar_flag
           end
           if user.use_email_flag == 1
             mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.email_notify = user.use_email_flag
           end
           if user.use_im_flag == 1
             im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.im_notify = user.use_im_flag
           end
           if user.use_mobile_ph_flag == 1
             sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.mobile_ph_notify = user.use_mobile_ph_flag
           end
           if user.use_nma_flag == 1
             nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.nma_notify = user.use_nma_flag
           end
           if user.use_nmwp_flag == 1
-            nma_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            nmwp_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.nmwp_notify = user.use_nmwp_flag
           end
         end
       end
       rss_notify(user.confirmation_token)
+
+      user.records << @record
     end
   end
 

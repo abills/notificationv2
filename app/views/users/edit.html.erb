@@ -45,5 +45,13 @@
       <%= f.label :business_hrs_end %>
       <%= f.select :business_hrs_end, [['0100','1'],['0200','2'],['0300','3'],['0400','4'],['0500','5'],['0600','6'],['0700','7'],['0800','8'],['0900','9'],['1000','10'],['1100','11'],['1200','12'],['1300','13'],['1400','14'],['1500','15'],['1600','16'],['1700','17'],['1800','18'],['1900','19'],['2000','20'],['2100','21'],['2200','22'],['2300','23'],['2400','24']] %></div><br/>
 
+    <% if current_user.has_role? :SystemAdmin %>
+      <h3>Admin - Change Roles</h3>
+      <%= f.label :roles, :class => "control-label" %>
+      <div class="controls">
+        <%= f.collection_select(:role_ids, Role.all, :id, :name, {:selected => @user.role_ids}, {:multiple => "multiple", :readonly => false}) %>
+      </div>
+    <% end %>
+
     <div><%= f.submit "Update" %></div>
 <% end %>

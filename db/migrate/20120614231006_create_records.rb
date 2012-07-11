@@ -3,6 +3,14 @@ class CreateRecords < ActiveRecord::Migration
     create_table :records do |t|
       t.string :source
       t.string :message
+      t.integer :rule_id_ref
+      t.integer :boxcar_notify
+      t.integer :nma_notify
+      t.integer :nmwp_notify
+      t.integer :mobile_ph_notify
+      t.integer :im_notify
+      t.integer :email_notify
+      t.integer :salesforce_notify
       t.belongs_to :user
 
       t.timestamps

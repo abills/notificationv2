@@ -11,6 +11,8 @@ class AddConfirmableToUsers < ActiveRecord::Migration
     add_column :users, :use_email_flag, :integer
     add_column :users, :use_im_flag, :integer
     add_column :users, :use_boxcar_flag, :integer
+    add_column :users, :salesforce_id, :string
+    add_column :users, :use_salesforce_flag, :integer
     add_column :users, :business_hrs_start, :integer
     add_column :users, :business_hrs_end, :integer
     add_column :users, :business_days, :integer
