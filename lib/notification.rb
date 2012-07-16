@@ -16,16 +16,20 @@ class Notification
   #master notify function
   def notify_user(rule_id, event_id)
     @rule = Rule.find_by_id(rule_id)
+    @users = @rule.group.users.all
     @event = Event.find_by_id(event_id)
 
-    @users = @rule.group.users.all
+    if @event.nil?
+      @event.cust_region = "Unknown"
+      @event.ticket_id = "Not Available"
+      @event.description = "Not Available"
+    end
 
     @users.each do |user|
       #add notification to user feed
       @record = Record.new
       @record.source = @rule.source
-
-      #for heartbeat & system rules where source is not defined
+           #for heartbeat & system rules where source is not defined
       if @record.source.empty?
         @record.source == CONFIG[:core_settings][:app_name]
       end
@@ -43,11 +47,11 @@ class Notification
       #check user's timezone
       current_user_time = Time.now.utc + user.timezone.hours
 
-      if (user.business_days == 0) || ((user.business_days == 5) && (current_user_time.wday != 0) && (current_user_time.wday != 6))
+      if (user.business_days == 0) or ((user.business_days == 5) and ((current_user_time.wday == 0) or (current_user_time.wday == 6)))
         #notifications disabled
       else
         #need to check time
-        if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
+        if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour < user.business_hrs_end)
           if user.use_boxcar_flag == 1
             boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
             @record.boxcar_notify = user.use_boxcar_flag
