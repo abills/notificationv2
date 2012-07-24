@@ -34,7 +34,7 @@
   <div class="control-group">
     <%= f.label :users, :class => "control-label" %>
     <div class="controls">
-      <%= f.collection_select(:user_ids, User.all, :id, :name, {:selected => @group.user_ids}, {:multiple => "multiple", :readonly => false}) %>
+      <%= f.collection_select(:user_ids, User.all, :id, :email, {:selected => @group.user_ids}, {:multiple => "multiple", :readonly => false}) %>
     </div>
   </div>
 

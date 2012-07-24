@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :group_ids, :country_iso, :use_email_flag, :use_boxcar_flag, :use_mobile_ph_flag, :use_im_flag, :boxcar_id, :mobile_phone_no, :business_days, :business_hrs_start, :business_hrs_end, :timezone, :use_nma_flag, :nma_api_key, :use_nmwp_flag, :nmwp_api_key, :authentication_token, :event_records_attributes, :role_ids
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :confirmed_at, :group_ids, :country_iso, :use_email_flag, :use_boxcar_flag, :use_mobile_ph_flag, :use_im_flag, :boxcar_id, :mobile_phone_no, :business_days, :business_hrs_start, :business_hrs_end, :timezone, :use_nma_flag, :nma_api_key, :use_nmwp_flag, :nmwp_api_key, :use_prowl_flag, :prowl_api_key, :authentication_token, :event_records_attributes, :role_ids
   has_and_belongs_to_many :groups
   has_many :records
 
@@ -63,8 +63,14 @@ class User < ActiveRecord::Base
     end
     if self.use_nmwp_flag == 1
       if (self.use_nmwp_flag_changed? and not self.nmwp_api_key.empty?) or (self.nmwp_api_key_changed?)
-        msg.nma_notify(self.nmwp_api_key, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
+        msg.nmwp_notify(self.nmwp_api_key, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
         puts "#{self.name} testing NMWP #{self.nmwp_api_key}"
+      end
+    end
+    if self.use_prowl_flag == 1
+      if (self.use_prowl_flag_changed? and not self.prowl_api_key.empty?) or (self.prowl_api_key_changed?)
+        msg.prowl_notify(self.prowl_api_key, CONFIG[:core_settings][:app_name].to_s, "Test Message, notification settings changed")
+        puts "#{self.name} testing Prowl #{self.prowl_api_key}"
       end
     end
   end
@@ -79,6 +85,27 @@ class User < ActiveRecord::Base
     self.business_days = 5
     self.business_hrs_start = 9
     self.business_hrs_end = 17
+
+    #create a system milestone
+    @event = Event.new
+    @event.call_type = "EVT"
+    @event.ctc_id = ""
+    @event.cust_no = ""
+    @event.cust_region = CONFIG[:core_settings][:app_name].to_s
+    @event.description = "New Account Created for #{self.email}"
+    @event.entitlement_code = ""
+    @event.group_owner = ""
+    @event.milestone = "ESC"
+    @event.milestone_type = "E"
+    @event.other_text = "account creation"
+    @event.priority = ""
+    @event.source = CONFIG[:core_settings][:app_name].to_s
+    @event.start_time = Time.now.utc
+    @event.target_time = Time.now.utc
+    @event.terminate_flag = "1"
+    @event.ticket_id = Digest::SHA1.hexdigest(Time.now.to_s + self.id.to_s)
+    @event.time_stamp = Time.now.utc
+    @event.save
   end
 
   #protected

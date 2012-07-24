@@ -140,6 +140,7 @@ GEM
     oauth (0.4.6)
     orm_adapter (0.0.7)
     polyglot (0.3.3)
+    prowly (0.3.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -247,6 +248,7 @@ DEPENDENCIES
   jquery-rails
   launchy (>= 2.1.0)
   mysql2
+  prowly
   rails (= 3.2.3)
   rolify (>= 3.1.0)
   rspec-rails (>= 2.10.1)

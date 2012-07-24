@@ -1,8 +1,18 @@
 <h3>Welcome <%= current_user.name %></h3>
-<p>Here are your last <%= CONFIG[:core_settings][:event_history_length].to_s %> events per your group memberships</p></br>
+<p>Here are your last <%= CONFIG[:core_settings][:event_history_length].to_s %> events per your group memberships</p>
 
-<% @records = current_user.records.all %>
+<p><% @records = current_user.records.last(CONFIG[:core_settings][:event_history_length].to_i) %>
 
 <% current_user.records.each do |record| %>
     <%= record.created_at.localtime %> - <%= record.source %> + <%= record.message %><br>
+<% end %></p>
+<% if current_user.has_role? :SystemAdmin %>
+    <h3>Notifications</h3>
+    <p><b>Email =</b> <%= Record.sum(:email_notify) %> | <b>Boxcar =</b> <%= Record.sum(:boxcar_notify) %> | <b>Notify My Android =</b> <%= Record.sum(:nma_notify) %> | <b>Notify My Windows Phone =</b> <%= Record.sum(:nmwp_notify) %> | <b>Prowl =</b> <%= Record.sum(:prowl_notify) %> | <b>SMS =</b> <%= Record.sum(:mobile_ph_notify) %></p>
+    <h3>Last Events</h3>
+    <p><% Event.select(:source).uniq.each do |sources| %>
+        <%= sources.source %> last notification @
+        <% @last_event = Event.where(source: sources.source).last %>
+        <%=  @last_event.created_at %><br>
+    <% end %></p>
 <% end %>

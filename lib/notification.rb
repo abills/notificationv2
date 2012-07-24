@@ -6,6 +6,7 @@ class Notification
   require 'gmail'
   require 'smsglobal'
   require 'builder'
+  require 'prowly'
 
   def initialize
     @username = ""
@@ -35,14 +36,6 @@ class Notification
       end
 
       @record.message = "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}"
-
-      #check if user feed is longer than app settings
-      if user.records.all.count > CONFIG[:core_settings][:event_history_display].to_i
-        @first_event = user.records.all.first
-        @first_event.destroy
-        #@old_records = user.records.all.where(user.records.created_at < Date.parse(CONFIG[:core_settings][:event_history_length].to_i.days.ago))
-        #@old_records.destroy
-      end
 
       #check user's timezone
       current_user_time = Time.now.utc + user.timezone.hours
@@ -75,6 +68,10 @@ class Notification
           if user.use_nmwp_flag == 1
             nmwp_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
             @record.nmwp_notify = user.use_nmwp_flag
+          end
+          if user.use_prowl_flag == 1
+            prowl_notify(user.prowl_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.prowl_notify = user.use_prowl_flag
           end
         end
       end
@@ -137,6 +134,10 @@ class Notification
           if user.use_nmwp_flag == 1
             nmwp_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
             @record.nmwp_notify = user.use_nmwp_flag
+          end
+          if user.use_prowl_flag == 1
+            prowl_notify(user.prowl_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
+            @record.prowl_notify = user.use_prowl_flag
           end
         end
       end
@@ -224,6 +225,7 @@ class Notification
           body "<p>#{message}</p><p>This email is sent via an external service from an un-monitored inbox.</p><p>Do not reply.</p>"
         end
         #add_file "/path/to/some_image.jpg"
+        Rails.logger.info "#{Time.now.utc} - mail_notify - #{username} - #{source_system} - #{message}"
       end
     end
   end
@@ -233,6 +235,7 @@ class Notification
     sender = SmsGlobal::Sender.new :user => CONFIG[:sms_global_settings][:user_name].to_s, :password => CONFIG[:sms_global_settings][:password].to_s
 
     sender.send_text message, username, source_system
+    Rails.logger.info "#{Time.now.utc} - sms_notify - #{username} - #{source_system} - #{message}"
   end
 
   def im_notify(username, source_system, message)
@@ -242,5 +245,17 @@ class Notification
   #notify by rss
   def rss_notify(token)
     #TODO figure this out, individual RSS feeds based on the records table
+  end
+
+  #notify by prowl
+  def prowl_notify(username, source_system, message)
+    Prowly.notify do |n|
+      n.apikey = username
+      n.application = source_system
+      n.event = "#{CONFIG[:core_settings][:app_name].to_s} Notification"
+      n.description = message
+    end
+
+    Rails.logger.info "#{Time.now.utc} - prowl_notify - #{username} - #{source_system} - #{message}"
   end
 end

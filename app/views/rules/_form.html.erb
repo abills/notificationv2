@@ -32,6 +32,7 @@
       <%= f.radio_button :source, "ZEN" %> Zenoss
       <%= f.radio_button :source, "OV" %> OpenView
       <%= f.radio_button :source, "AVAYA" %> Avaya
+      <%= f.radio_button :source, CONFIG[:core_settings][:app_name].to_s %> <%= CONFIG[:core_settings][:app_name].to_s %>
       <p class="help-block"></p>
     </div>
   </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614231006) do
+ActiveRecord::Schema.define(:version => 20120723005934) do
 
   create_table "events", :force => true do |t|
     t.string   "milestone"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20120614231006) do
     t.integer  "user_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.integer  "prowl_notify"
   end
 
   create_table "roles", :force => true do |t|
@@ -154,6 +155,8 @@ ActiveRecord::Schema.define(:version => 20120614231006) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
+    t.string   "prowl_api_key"
+    t.integer  "use_prowl_flag"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true

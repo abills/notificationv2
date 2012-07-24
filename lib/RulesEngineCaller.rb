@@ -16,6 +16,9 @@ class RulesEngineCaller
       Event.destroy_all(:ticket_id => ended_ticket.ticket_id, :source => ended_ticket.source)
     end
 
+    #@old_records = Record.all.where(records.created_at < Date.parse(CONFIG[:core_settings][:event_history_length].to_i.days.ago))
+    #@old_records.destroy
+
     @rule_engine = Ruleby::Core::Engine.new
     EngineRulebook.new(@rule_engine).rules
 

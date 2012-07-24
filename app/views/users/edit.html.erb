@@ -24,13 +24,15 @@
       <%= f.check_box :use_email_flag %> - Email<br />
       <i>(Uses your notification login ID)</i><br /><br />
       <%= f.check_box :use_boxcar_flag %> - Boxcar |<b>Boxcar Login/ID</b><%=  f.text_field :boxcar_id %><br />
-      <i>(<a href="http://boxcar.io/">Signup for a Boxcar ID for IOS Devices</a>)</i><br /><br />
+      <i>(<a href="http://boxcar.io/">Click to signup for a Boxcar ID for IOS Devices</a>)</i><br /><br />
       <%= f.check_box :use_nma_flag %> - Notify My Android |<b>API Key</b><%=  f.text_field :nma_api_key %><br />
-      <i>(<a href="http://www.notifymyandroid.com/">Signup for a Notify My Android Account & Get a Personal API Key</a>)</i><br /><br />
+      <i>(<a href="http://www.notifymyandroid.com/">Click to signup for a Notify My Android Account & Get a Personal API Key</a>)</i><br /><br />
       <%= f.check_box :use_nmwp_flag %> - Notify My Windows Phone |<b>API Key</b><%=  f.text_field :nmwp_api_key %><br />
-      <i>(<a href="https://notifymywindowsphone.com">Signup for a Notify My Windows Phone Account & Get a Personal API Key</a>)</i><br /><br />
-      <%= f.check_box :use_im_flag %> - Instant Messenger [TBD]<br />
-      <i>(To be implemented at a later date)</i><br /><br />
+      <i>(<a href="https://notifymywindowsphone.com">Click to signup for a Notify My Windows Phone Account & Get a Personal API Key</a>)</i><br /><br />
+      <%= f.check_box :use_prowl_flag %> - Prowl |<b>API Key</b><%=  f.text_field :prowl_api_key %><br />
+      <i>(<a href="http://www.prowlapp.com/">Click to signup for a Prowl Account & Get a Personal API Key</a>)</i><br /><br />
+      <!-- <%= f.check_box :use_im_flag %> - Instant Messenger [TBD]<br />
+      <i>(To be implemented at a later date)</i><br /><br /> -->
       <%= f.check_box :use_mobile_ph_flag %> - Mobile Ph TXT/SMS |<%=  f.text_field :mobile_phone_no %><br />
       <i>(add the full international number including country code, no + prefix, spaces, hyphens or special characters)</i><br /></div><br />
 

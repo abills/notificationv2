@@ -1,12 +1,17 @@
-<h1 xmlns="http://www.w3.org/1999/html">User Summary</h1>
+<h1 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">User Summary</h1>
 <legend><p>User: <%= @user.name %> | Country: <%= @user.country_iso %> | Offset: <%= @user.timezone %></p></legend>
-<p>Coverage Settings: <%= @user.business_days %> Days, From <%= @user.business_hrs_start %>:00 to <%= @user.business_hrs_end %>:00</p><br/>
-<p><% if @user.use_email_flag == 0 %>Dont <% end %>Use Email: <%= @user.email if @user.email %> & <% if @user.use_im_flag == 0 %>Dont <% end %>Use Instant Messenger</p>
-<p><% if @user.use_boxcar_flag == 0 %>Dont <% end %>Use Boxcar ID: <%= @user.boxcar_id %></p>
-<p><% if @user.use_nma_flag == 0 %>Dont <% end %>Use Notify My Android ID: <%= @user.nma_api_key %></p>
-<p><% if @user.use_nmwp_flag == 0 %>Dont <% end %>Use Notify My Windows Phone ID: <%= @user.nmwp_api_key %></p>
-<p><% if @user.use_mobile_ph_flag == 0 %>Dont <% end %>SMS/Txt Mobile Phone: <%= @user.mobile_phone_no %></p><br/>
-<% if current_user.has_role? :SystemAdmin %><p>Token: <%= @user.authentication_token %></p><% end %>
+<p><b>Coverage Settings:</b> <%= @user.business_days %> Days, From <%= @user.business_hrs_start %>:00 to <%= @user.business_hrs_end %>:00</p><br/>
+<p><b><% if @user.use_email_flag == 0 %>Dont <% end %>Use Email:</b> <%= @user.email if @user.email %> & <% if @user.use_im_flag == 0 %>Dont <% end %>Use Instant Messenger</p>
+<p><b><% if @user.use_boxcar_flag == 0 %>Dont <% end %>Use Boxcar ID:</b> <%= @user.boxcar_id %></p>
+<p><b><% if @user.use_nma_flag == 0 %>Dont <% end %>Use Notify My Android ID:</b> <%= @user.nma_api_key %></p>
+<p><b><% if @user.use_nmwp_flag == 0 %>Dont <% end %>Use Notify My Windows Phone ID:</b> <%= @user.nmwp_api_key %></p>
+<p><b><% if @user.use_prowl_flag == 0 %>Dont <% end %>Use Prowl ID:</b> <%= @user.prowl_api_key %></p>
+<p><b><% if @user.use_mobile_ph_flag == 0 %>Dont <% end %>SMS/Txt Mobile Phone:</b> <%= @user.mobile_phone_no %></p><br/>
+
+<% if current_user.has_role? :SystemAdmin %>
+    <p><b>Token:</b> <%= @user.authentication_token %></p>
+    <p><b>Email =</b> <%= @user.records.sum(:email_notify) %> | <b>Boxcar =</b> <%= @user.records.sum(:boxcar_notify) %> | <b>Notify My Android =</b> <%= @user.records.sum(:nma_notify) %> | <b>Notify My Windows Phone =</b> <%= @user.records.sum(:nmwp_notify) %> | <b>Prowl =</b> <%= @user.records.sum(:prowl_notify) %> | <b>SMS =</b> <%= @user.records.sum(:mobile_ph_notify) %></p>
+<% end %>
 
 
 

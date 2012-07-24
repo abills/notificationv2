@@ -24,5 +24,4 @@ unless ( File.basename($0) == "rake" && ARGV.include?("db:migrate") )
   scheduler.every(CONFIG[:core_settings][:forced_engine_restart], :blocking => true, :allow_overlapping => false) do
     RULES_ENG.rebuild_engine
   end
-
 end
