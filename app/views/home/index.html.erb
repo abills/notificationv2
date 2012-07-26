@@ -3,7 +3,7 @@
 
 <p><% @records = current_user.records.last(CONFIG[:core_settings][:event_history_length].to_i) %>
 
-<% current_user.records.each do |record| %>
+<% @records.each do |record| %>
     <%= record.created_at.localtime %> - <%= record.source %> + <%= record.message %><br>
 <% end %></p>
 <% if current_user.has_role? :SystemAdmin %>

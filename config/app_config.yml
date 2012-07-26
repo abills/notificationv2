@@ -1,7 +1,7 @@
 #configurable settings for the notification app
 :core_settings:
   :app_name: CRaNE
-  :redirect_url: http://www.
+  :redirect_url: http://www.ventyx.com
   :threshold: 45   #length of time (in seconds) to count running engine as too long
   :run_engine_time: 1m   #length of time that the engine is scheduled to run, used by scheduler
   :forced_engine_restart: 1h   #length of time before engine is forced to reload, used by scheduler
