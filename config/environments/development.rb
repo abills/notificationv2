@@ -14,7 +14,7 @@ Notificationv2::Application.configure do
   config.action_controller.perform_caching = false
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'ec2-23-22-111-242.compute-1.amazonaws.com:8080' }
+  config.action_mailer.default_url_options = { :host => CONFIG[:core_settings][:app_url].to_s }
   config.action_mailer.delivery_method = :smtp
   # change to false to prevent email from being sent during development
   config.action_mailer.perform_deliveries = true

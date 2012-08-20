@@ -1,12 +1,19 @@
-<h1>Users#index</h1>
+<h1>Users Index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
 <ul class="users">
   <% @users.each do |user| %>
     <li>
-      <%= link_to user.name, user %> signed up <%= user.created_at.to_date %>
+      <%= link_to user.email, user %> - signed up <%= user.created_at.to_date %>
       <%= link_to 'Edit', edit_user_path(user) %>
     </li>
   <% end %>
 </ul>
 
-<%= will_paginate %>
+<div class="pagination">
+  <%= will_paginate @users %>
+  <div class="page_info">
+    <%= page_entries_info @users %>
+  </div>
+</div>
+<br/>
+<br/>

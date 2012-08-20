@@ -1,27 +1,28 @@
-<h1>Listing groups</h1>
-<h2>My Groups</h2>
+<h1>Subscription Groups</h1>
+<p>Click Add & Remove to change your subscription groups</p>
+<h3>My Groups</h3>
 <% if current_user.groups.empty? %>
     No Groups Found<br>
     <br />
 <% else %>
     <% current_user.groups.each do |group| %>
-        <%= group.title %> <%= link_to 'Remove', group, :method => :put %><br>
+        <%= link_to '<Remove>', group, :method => :put %> <%= group.title %><br>
     <% end %>
 <% end %>
 <br />
 
 <% if current_user.has_role? :user %>
-    <h2>Available Groups</h2>
+    <h3>Available Groups</h3>
     <% @groups.each do |group| %>
         <% if not current_user.groups.include? group %>
-            <%=  group.title %> <%= link_to 'Add', group, :method => :put %><br>
+            <%= link_to '<Add>', group, :method => :put %> <%=  group.title %><br>
         <% end %>
     <% end %>
 <% end %>
 <br />
 
 <% if current_user.has_role? :admin %>
-    <h2>All Groups</h2>
+    <h3>All Groups</h3>
     <table>
     <tr>
         <th>Title</th>

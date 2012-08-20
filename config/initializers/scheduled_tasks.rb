@@ -1,7 +1,7 @@
 require 'rufus/scheduler'
 require 'RulesEngineCaller'
 
-scheduler = Rufus::Scheduler.start_new
+scheduler = Rufus::Scheduler.start_new(:frequency => 1.0)
 Rails.logger = Logger.new("rule-log.txt", 'daily')
 
 rule_engine = Ruleby::Core::Engine.new
@@ -12,16 +12,26 @@ unless ( File.basename($0) == "rake" && ARGV.include?("db:migrate") )
 
 
   #initial data load in case no rules are changed at start
-  Rails.logger.debug "#{Time.now.utc} - Added Rules to New Rules Engine"
-  scheduler.in('30s', :blocking => true, :allow_overlapping => false) do
-    RULES_ENG.rebuild_engine
+  scheduler.in('30s', :allow_overlapping => false) do
+    Rails.logger.debug "#{Time.now.utc} - Added Rules & Facts to New Rules Engine"
+    ActiveRecord::Base.connection_pool.with_connection do
+      RULES_ENG.rebuild_engine
+    end
   end
 
   #run re-occuring per schedule in config
-  scheduler.every(CONFIG[:core_settings][:run_engine_time], :blocking => true, :allow_overlapping => false) do
-    RULES_ENG.run_engine
+  scheduler.every(CONFIG[:core_settings][:run_engine_time], :allow_overlapping => false) do
+    ActiveRecord::Base.connection_pool.with_connection do
+      RULES_ENG.run_engine
+    end
   end
-  scheduler.every(CONFIG[:core_settings][:forced_engine_restart], :blocking => true, :allow_overlapping => false) do
-    RULES_ENG.rebuild_engine
+  scheduler.every(CONFIG[:core_settings][:forced_engine_restart], :allow_overlapping => false) do
+    ActiveRecord::Base.connection_pool.with_connection do
+      RULES_ENG.rebuild_engine
+    end
   end
+end
+
+def scheduler.handle_exception(job, exception)
+  Rails.logger.debug "#{Time.now.utc} - job #{job.job_id} caught exception '#{exception}'"
 end

@@ -51,8 +51,9 @@
       <h3>Admin - Change Roles</h3>
       <%= f.label :roles, :class => "control-label" %>
       <div class="controls">
-        <%= f.collection_select(:role_ids, Role.all, :id, :name, {:selected => @user.role_ids}, {:multiple => "multiple", :readonly => false}) %>
+        <%= f.collection_select(:role_ids, Role.all, :id, :name, {:selected => @user.role_ids}, {:multiple => "multiple", :readonly => false}) %><br />
       </div>
+      <br><p>Display Name <%=  f.text_field :name %>  & Email <%=  f.text_field :email %></p><br />
     <% end %>
 
     <div><%= f.submit "Update" %></div>

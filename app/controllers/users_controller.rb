@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @users = User.paginate(:page => params[:page])
+    #@users = User.all
   end
 
   def show

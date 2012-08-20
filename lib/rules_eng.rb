@@ -26,45 +26,6 @@ class EngineRulebook < Rulebook
               #so dont use this as other rules may be requires as rules do not fire in order
             end
           end
-        #TODO need to test this heartbeat rule when there is a constant input
-        #hard coded rule - heartbeat for all sources defined in rules
-        when (rule_name.title == "SYSTEM ADMIN - heartbeat rule") && (rule_name.group.title == "Notification Admin")
-          #for each source type that exists in the defined rules
-          Rule.select(:source).uniq.each do |s|
-            #for each type of source
-            rule [Event, :m, m.source == s.source] do |v|
-              if v[:m].rules.include?(rule_name) == false
-                #find the last event for this source and confirm if this is it
-                @last_event = Event.where(source: v[:m].source).last
-
-                if v[:m].id == @last_event.id
-                  #is the last event
-                  target_minutes = (1 * CONFIG[:core_settings][:first_heartbeat].to_i).to_int
-                  heartbeat_target_time = (v[:m].time_stamp) + target_minutes.minutes
-                  #check if the current time is greater than 1 hour since the last event
-                  if Time.now.utc >= heartbeat_target_time
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
-
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
-                    #add reference so rule doesn't fire again
-                    @event = Event.find_by_id(v[:m].id)
-                    @event.rules << rule_name
-                    v[:m].rules << rule_name
-                    modify v[:m]
-                  end
-                else
-                  #not the last event
-                  #add reference so rule doesn't fire again
-                  @event = Event.find_by_id(v[:m].id)
-                  @event.rules << rule_name
-                  v[:m].rules << rule_name
-                  modify v[:m]
-                end
-              end
-            end
-          end
         ##### Rules for no other text & no ctc #####
         # milestone 1 =, other text na, ctc na, denomination not used
         when rule_name.milestone1_operator == "=" && rule_name.other_text_operator == "" && rule_name.ctc_id_operator == "" && rule_name.milestone1_time_value_denomination == ""
@@ -90,7 +51,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -171,8 +132,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
-
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -181,32 +141,37 @@ class EngineRulebook < Rulebook
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
                     target_minutes = (rule_name.target_time_value * 60).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
                     target_minutes = (rule_name.target_time_value * 60 * 24).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_remaining_perc = rule_name.target_time_value / 100
-                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_remaining_perc = (rule_name.target_time_value / 100)
+                    total_minutes = ((v[:m].target_time - v[:m].start_time) / 60)
                     target_minutes = (total_minutes * target_remaining_perc).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   else
                     #erroneous data error, do not trigger but record in log
-                    milestone1_target_time = Time.now.utc - 100.years
+                    milestone1_target_time = Time.now.utc - 5.years
                     Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
                   if Time.now.utc >= target_target_time
-                    #matches condition
-                    #output matched rule to console & logfile
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    #find this rule & ticket id match
+                    @event_history = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E')
+                    @last_history = Record.where(event_id_ref: @event_history, rule_id_ref: rule_name.id).last
+                    #if (this rule & ticket id has not fired) or (fired & target time changed)
+                    if (@last_history.nil? == true) or (Event.find_by_id(@last_history.event_id_ref).target_time != v[:m].target_time)
+                      #matches condition
+                      #output matched rule to console & logfile
+                      Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
+                      #do actual alert
+                      msg.notify_user(rule_name.id, v[:m].id)
+                    end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
                     @event.rules << rule_name
@@ -254,7 +219,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -335,8 +300,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
-
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -345,32 +309,37 @@ class EngineRulebook < Rulebook
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
                     target_minutes = (rule_name.target_time_value * 60).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
                     target_minutes = (rule_name.target_time_value * 60 * 24).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_remaining_perc = rule_name.target_time_value / 100
-                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_remaining_perc = (rule_name.target_time_value / 100)
+                    total_minutes = ((v[:m].target_time - v[:m].start_time) / 60)
                     target_minutes = (total_minutes * target_remaining_perc).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   else
                     #erroneous data error, do not trigger but record in log
-                    milestone1_target_time = Time.now.utc - 100.years
+                    milestone1_target_time = Time.now.utc - 5.years
                     Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
                   if Time.now.utc >= target_target_time
-                    #matches condition
-                    #output matched rule to console & logfile
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    #find this rule & ticket id match
+                    @event_history = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E')
+                    @last_history = Record.where(event_id_ref: @event_history, rule_id_ref: rule_name.id).last
+                    #if (this rule & ticket id has not fired) or (fired & target time changed)
+                    if (@last_history.nil? == true) or (Event.find_by_id(@last_history.event_id_ref).target_time != v[:m].target_time)
+                      #matches condition
+                      #output matched rule to console & logfile
+                      Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
+                      #do actual alert
+                      msg.notify_user(rule_name.id, v[:m].id)
+                    end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
                     @event.rules << rule_name
@@ -418,7 +387,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -499,8 +468,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
-
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -509,32 +477,37 @@ class EngineRulebook < Rulebook
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
                     target_minutes = (rule_name.target_time_value * 60).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
                     target_minutes = (rule_name.target_time_value * 60 * 24).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_remaining_perc = rule_name.target_time_value / 100
-                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_remaining_perc = (rule_name.target_time_value / 100)
+                    total_minutes = ((v[:m].target_time - v[:m].start_time) / 60)
                     target_minutes = (total_minutes * target_remaining_perc).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   else
                     #erroneous data error, do not trigger but record in log
-                    milestone1_target_time = Time.now.utc - 100.years
+                    milestone1_target_time = Time.now.utc - 5.years
                     Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
                   if Time.now.utc >= target_target_time
-                    #matches condition
-                    #output matched rule to console & logfile
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    #find this rule & ticket id match
+                    @event_history = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E')
+                    @last_history = Record.where(event_id_ref: @event_history, rule_id_ref: rule_name.id).last
+                    #if (this rule & ticket id has not fired) or (fired & target time changed)
+                    if (@last_history.nil? == true) or (Event.find_by_id(@last_history.event_id_ref).target_time != v[:m].target_time)
+                      #matches condition
+                      #output matched rule to console & logfile
+                      Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
+                      #do actual alert
+                      msg.notify_user(rule_name.id, v[:m].id)
+                    end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
                     @event.rules << rule_name
@@ -582,7 +555,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -663,8 +636,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
-
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -673,32 +645,37 @@ class EngineRulebook < Rulebook
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
                     target_minutes = (rule_name.target_time_value * 60).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
                     target_minutes = (rule_name.target_time_value * 60 * 24).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_remaining_perc = rule_name.target_time_value / 100
-                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_remaining_perc = (rule_name.target_time_value / 100)
+                    total_minutes = ((v[:m].target_time - v[:m].start_time) / 60)
                     target_minutes = (total_minutes * target_remaining_perc).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   else
                     #erroneous data error, do not trigger but record in log
-                    milestone1_target_time = Time.now.utc - 100.years
+                    milestone1_target_time = Time.now.utc - 5.years
                     Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
                   if Time.now.utc >= target_target_time
-                    #matches condition
-                    #output matched rule to console & logfile
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    #find this rule & ticket id match
+                    @event_history = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E')
+                    @last_history = Record.where(event_id_ref: @event_history, rule_id_ref: rule_name.id).last
+                    #if (this rule & ticket id has not fired) or (fired & target time changed)
+                    if (@last_history.nil? == true) or (Event.find_by_id(@last_history.event_id_ref).target_time != v[:m].target_time)
+                      #matches condition
+                      #output matched rule to console & logfile
+                      Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
+                      #do actual alert
+                      msg.notify_user(rule_name.id, v[:m].id)
+                    end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
                     @event.rules << rule_name
@@ -746,7 +723,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -827,8 +804,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
-
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -837,32 +813,37 @@ class EngineRulebook < Rulebook
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
                     target_minutes = (rule_name.target_time_value * 60).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
                     target_minutes = (rule_name.target_time_value * 60 * 24).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_remaining_perc = rule_name.target_time_value / 100
-                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_remaining_perc = (rule_name.target_time_value / 100)
+                    total_minutes = ((v[:m].target_time - v[:m].start_time) / 60)
                     target_minutes = (total_minutes * target_remaining_perc).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   else
                     #erroneous data error, do not trigger but record in log
-                    milestone1_target_time = Time.now.utc - 100.years
+                    milestone1_target_time = Time.now.utc - 5.years
                     Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
                   if Time.now.utc >= target_target_time
-                    #matches condition
-                    #output matched rule to console & logfile
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    #find this rule & ticket id match
+                    @event_history = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E')
+                    @last_history = Record.where(event_id_ref: @event_history, rule_id_ref: rule_name.id).last
+                    #if (this rule & ticket id has not fired) or (fired & target time changed)
+                    if (@last_history.nil? == true) or (Event.find_by_id(@last_history.event_id_ref).target_time != v[:m].target_time)
+                      #matches condition
+                      #output matched rule to console & logfile
+                      Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
+                      #do actual alert
+                      msg.notify_user(rule_name.id, v[:m].id)
+                    end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
                     @event.rules << rule_name
@@ -910,7 +891,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -991,8 +972,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
-
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -1001,32 +981,37 @@ class EngineRulebook < Rulebook
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
                     target_minutes = (rule_name.target_time_value * 60).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
                     target_minutes = (rule_name.target_time_value * 60 * 24).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_remaining_perc = rule_name.target_time_value / 100
-                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_remaining_perc = (rule_name.target_time_value / 100)
+                    total_minutes = ((v[:m].target_time - v[:m].start_time) / 60)
                     target_minutes = (total_minutes * target_remaining_perc).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   else
                     #erroneous data error, do not trigger but record in log
-                    milestone1_target_time = Time.now.utc - 100.years
-                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    milestone1_target_time = Time.now.utc - 5.years
+                    Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
                   if Time.now.utc >= target_target_time
-                    #matches condition
-                    #output matched rule to console & logfile
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    #find this rule & ticket id match
+                    @event_history = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E')
+                    @last_history = Record.where(event_id_ref: @event_history, rule_id_ref: rule_name.id).last
+                    #if (this rule & ticket id has not fired) or (fired & target time changed)
+                    if (@last_history.nil? == true) or (Event.find_by_id(@last_history.event_id_ref).target_time != v[:m].target_time)
+                      #matches condition
+                      #output matched rule to console & logfile
+                      Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
+                      #do actual alert
+                      msg.notify_user(rule_name.id, v[:m].id)
+                    end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
                     @event.rules << rule_name
@@ -1074,7 +1059,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -1155,8 +1140,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
-
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -1165,32 +1149,37 @@ class EngineRulebook < Rulebook
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
                     target_minutes = (rule_name.target_time_value * 60).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
                     target_minutes = (rule_name.target_time_value * 60 * 24).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_remaining_perc = rule_name.target_time_value / 100
-                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_remaining_perc = (rule_name.target_time_value / 100)
+                    total_minutes = ((v[:m].target_time - v[:m].start_time) / 60)
                     target_minutes = (total_minutes * target_remaining_perc).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   else
                     #erroneous data error, do not trigger but record in log
-                    milestone1_target_time = Time.now.utc - 100.years
-                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    milestone1_target_time = Time.now.utc - 5.years
+                    Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
                   if Time.now.utc >= target_target_time
-                    #matches condition
-                    #output matched rule to console & logfile
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    #find this rule & ticket id match
+                    @event_history = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E')
+                    @last_history = Record.where(event_id_ref: @event_history, rule_id_ref: rule_name.id).last
+                    #if (this rule & ticket id has not fired) or (fired & target time changed)
+                    if (@last_history.nil? == true) or (Event.find_by_id(@last_history.event_id_ref).target_time != v[:m].target_time)
+                      #matches condition
+                      #output matched rule to console & logfile
+                      Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
+                      #do actual alert
+                      msg.notify_user(rule_name.id, v[:m].id)
+                    end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
                     @event.rules << rule_name
@@ -1238,7 +1227,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -1319,8 +1308,7 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').last
-
+              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -1329,32 +1317,37 @@ class EngineRulebook < Rulebook
                   if rule_name.target_time_value_denomination == "H"
                     #convert hours to minutes
                     target_minutes = (rule_name.target_time_value * 60).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "D"
                     #convert days to minutes
                     target_minutes = (rule_name.target_time_value * 60 * 24).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   elsif rule_name.target_time_value_denomination == "%"
                     #determine current %
-                    target_remaining_perc = rule_name.target_time_value / 100
-                    total_minutes = (v[:m].target_time - v[:m].start_time) / 60
+                    target_remaining_perc = (rule_name.target_time_value / 100)
+                    total_minutes = ((v[:m].target_time - v[:m].start_time) / 60)
                     target_minutes = (total_minutes * target_remaining_perc).to_int
-                    target_target_time = v[:m].target_time - target_minutes.minutes
+                    target_target_time = (v[:m].target_time - target_minutes.minutes)
                   else
                     #erroneous data error, do not trigger but record in log
-                    milestone1_target_time = Time.now.utc - 100.years
-                    Rails.logger.info "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    milestone1_target_time = Time.now.utc - 5.years
+                    Rails.logger.warn "#{Time.now.utc} - DATA ERROR in #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
                   end
 
                   #matches the condition
                   if Time.now.utc >= target_target_time
-                    #matches condition
-                    #output matched rule to console & logfile
-                    Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
+                    #find this rule & ticket id match
+                    @event_history = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E')
+                    @last_history = Record.where(event_id_ref: @event_history, rule_id_ref: rule_name.id).last
+                    #if (this rule & ticket id has not fired) or (fired & target time changed)
+                    if (@last_history.nil? == true) or (Event.find_by_id(@last_history.event_id_ref).target_time != v[:m].target_time)
+                      #matches condition
+                      #output matched rule to console & logfile
+                      Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
-                    #do actual alert
-                    msg.notify_user(rule_name.id, v[:m].id)
-
+                      #do actual alert
+                      msg.notify_user(rule_name.id, v[:m].id)
+                    end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
                     @event.rules << rule_name

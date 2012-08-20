@@ -26,58 +26,79 @@ class Notification
       @event.description = "Not Available"
     end
 
-    @users.each do |user|
-      #add notification to user feed
-      @record = Record.new
-      @record.source = @rule.source
-           #for heartbeat & system rules where source is not defined
-      if @record.source.empty?
-        @record.source == CONFIG[:core_settings][:app_name]
-      end
+    if @users.nil?
+      #do nothing
+      Rails.logger.info "#{Time.now.utc} - Nil Users to notify in #{@group.title.to_s}"
+    else
+      @users.each do |user|
+        #add notification to user feed
+        Rails.logger.info "#{Time.now.utc} - User to Notify #{user.name.to_s}"
+        @record = Record.new
+        @record.rule_id_ref = rule_id
+        @record.event_id_ref = event_id
+        @record.source = @rule.source
+        #for heartbeat & system rules where source is not defined
+        if @record.source.nil?
+          @record.source == CONFIG[:core_settings][:app_name]
+        end
 
-      @record.message = "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}"
+        @record.message = "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}"
+        #check user's timezone
+        current_user_time = Time.now.utc + user.timezone.hours
 
-      #check user's timezone
-      current_user_time = Time.now.utc + user.timezone.hours
-
-      if (user.business_days == 0) or ((user.business_days == 5) and ((current_user_time.wday == 0) or (current_user_time.wday == 6)))
-        #notifications disabled
-      else
-        #need to check time
-        if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour < user.business_hrs_end)
-          if user.use_boxcar_flag == 1
-            boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.boxcar_notify = user.use_boxcar_flag
-          end
-          if user.use_email_flag == 1
-            mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.email_notify = user.use_email_flag
-          end
-          if user.use_im_flag == 1
-            im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.im_notify = user.use_im_flag
-          end
-          if user.use_mobile_ph_flag == 1
-            sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.mobile_ph_notify = user.use_mobile_ph_flag
-          end
-          if user.use_nma_flag == 1
-            nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.nma_notify = user.use_nma_flag
-          end
-          if user.use_nmwp_flag == 1
-            nmwp_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.nmwp_notify = user.use_nmwp_flag
-          end
-          if user.use_prowl_flag == 1
-            prowl_notify(user.prowl_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.prowl_notify = user.use_prowl_flag
+        if (user.business_days == 0) or ((user.business_days == 5) and ((current_user_time.wday == 0) or (current_user_time.wday == 6)))
+          #notifications disabled
+        else
+          #need to check time
+          if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour < user.business_hrs_end)
+            if user.use_boxcar_flag == 1
+              #Thread.new do
+                boxcar_notify(user.boxcar_id, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.boxcar_notify = user.use_boxcar_flag
+            end
+            if user.use_email_flag == 1
+              #Thread.new do
+                mail_notify(user.email, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.email_notify = user.use_email_flag
+            end
+            if user.use_im_flag == 1
+              #Thread.new do
+                im_notify(user.email, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.im_notify = user.use_im_flag
+            end
+            if user.use_mobile_ph_flag == 1
+              #Thread.new do
+                sms_notify(user.mobile_phone_no, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.mobile_ph_notify = user.use_mobile_ph_flag
+            end
+            if user.use_nma_flag == 1
+              #Thread.new do
+                nma_notify(user.nma_api_key, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.nma_notify = user.use_nma_flag
+            end
+            if user.use_nmwp_flag == 1
+              #Thread.new do
+                nmwp_notify(user.nmwp_api_key, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.nmwp_notify = user.use_nmwp_flag
+            end
+            if user.use_prowl_flag == 1
+              #Thread.new do
+                prowl_notify(user.prowl_api_key, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.prowl_notify = user.use_prowl_flag
+            end
           end
         end
-      end
-      rss_notify(user.confirmation_token)
 
-      user.records << @record
+        Rails.logger.info "#{Time.now.utc} - Add #{@record.to_s} to records"
+        user.records << @record
+      end
     end
   end
 
@@ -85,65 +106,79 @@ class Notification
     @group = Group.find_by_id(group_id)
     @users = @group.users.all
 
-    @users.each do |user|
-      #add notification to user feed
-      @record = Record.new
-      @record.source = @rule.source
+    if @users.nil?
+      #do nothing
+      Rails.logger.info "#{Time.now.utc} - Nil Users to notify in #{@group.title.to_s}"
+    else
+      @users.each do |user|
+        #add notification to user feed
+        Rails.logger.info "#{Time.now.utc} - User to Notify #{user.name.to_s}"
+        @record = Record.new
+        #for heartbeat & system rules where source is not defined
+        @record.source = CONFIG[:core_settings][:app_name]
+        @record.message = "#{message}"
 
-      #for heartbeat & system rules where source is not defined
-      if @record.source.empty?
-        @record.source == CONFIG[:core_settings][:app_name]
-      end
+        #check if user feed is longer than app settings
+        if user.records.all.count > CONFIG[:core_settings][:event_history_length].to_i
+          @first_event = user.records.all.first
+          @first_event.destroy
+        end
 
-      @record.message = "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}"
+        #check user's timezone
+        current_user_time = Time.now.utc + user.timezone.hours
 
-      #check if user feed is longer than app settings
-      if user.records.all.count > CONFIG[:core_settings][:event_history_length].to_i
-        @first_event = user.records.all.first
-        @first_event.destroy
-      end
-
-      #check user's timezone
-      current_user_time = Time.now.utc + user.timezone.hours
-
-      if (user.business_days == 0) || ((user.business_days == 5) && (current_user_time.wday != 0) && (current_user_time.wday != 6))
-        #notifications disabled
-      else
-        #need to check time
-        if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
-          if user.use_boxcar_flag == 1
-            boxcar_notify(user.boxcar_id, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.boxcar_notify = user.use_boxcar_flag
-          end
-          if user.use_email_flag == 1
-            mail_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.email_notify = user.use_email_flag
-          end
-          if user.use_im_flag == 1
-            im_notify(user.email, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.im_notify = user.use_im_flag
-          end
-          if user.use_mobile_ph_flag == 1
-            sms_notify(user.mobile_phone_no, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.mobile_ph_notify = user.use_mobile_ph_flag
-          end
-          if user.use_nma_flag == 1
-            nma_notify(user.nma_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.nma_notify = user.use_nma_flag
-          end
-          if user.use_nmwp_flag == 1
-            nmwp_notify(user.nmwp_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.nmwp_notify = user.use_nmwp_flag
-          end
-          if user.use_prowl_flag == 1
-            prowl_notify(user.prowl_api_key, @rule.source, "#{@rule.syntax_msg} | #{@event.cust_region} | #{@event.ticket_id} - #{@event.description}")
-            @record.prowl_notify = user.use_prowl_flag
+        if (user.business_days == 0) || ((user.business_days == 5) && (current_user_time.wday != 0) && (current_user_time.wday != 6))
+          #notifications disabled
+        else
+          #need to check time
+          if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
+            if user.use_boxcar_flag == 1
+              #Thread.new do
+                boxcar_notify(user.boxcar_id, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.boxcar_notify = user.use_boxcar_flag
+            end
+            if user.use_email_flag == 1
+              #Thread.new do
+                mail_notify(user.email, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.email_notify = user.use_email_flag
+            end
+            if user.use_im_flag == 1
+              #Thread.new do
+                im_notify(user.email, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.im_notify = user.use_im_flag
+            end
+            if user.use_mobile_ph_flag == 1
+              #Thread.new do
+                sms_notify(user.mobile_phone_no, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.mobile_ph_notify = user.use_mobile_ph_flag
+            end
+            if user.use_nma_flag == 1
+              #Thread.new do
+                nma_notify(user.nma_api_key, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.nma_notify = user.use_nma_flag
+            end
+            if user.use_nmwp_flag == 1
+              #Thread.new do
+                nmwp_notify(user.nmwp_api_key, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.nmwp_notify = user.use_nmwp_flag
+            end
+            if user.use_prowl_flag == 1
+              #Thread.new do
+                prowl_notify(user.prowl_api_key, @record.source.to_s, @record.message.to_s)
+              #end
+              @record.prowl_notify = user.use_prowl_flag
+            end
           end
         end
-      end
-      rss_notify(user.confirmation_token)
 
-      user.records << @record
+        user.records << @record
+      end
     end
   end
 
@@ -242,11 +277,6 @@ class Notification
     #TODO figure out what to do about IM
   end
 
-  #notify by rss
-  def rss_notify(token)
-    #TODO figure this out, individual RSS feeds based on the records table
-  end
-
   #notify by prowl
   def prowl_notify(username, source_system, message)
     Prowly.notify do |n|
@@ -255,7 +285,6 @@ class Notification
       n.event = "#{CONFIG[:core_settings][:app_name].to_s} Notification"
       n.description = message
     end
-
     Rails.logger.info "#{Time.now.utc} - prowl_notify - #{username} - #{source_system} - #{message}"
   end
 end

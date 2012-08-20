@@ -1,0 +1,1671 @@
+# Logfile created on 2012-08-16 10:53:23 +1000 by logger.rb/31641
+2012-08-16 00:53:23 UTC - Created New Rules Engine
+2012-08-16 00:53:23 UTC - Loading Rules into Rulebook
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-16 10:53:36 +1000
+
+
+Started GET "/d/users/sign_in" for 127.0.0.1 at 2012-08-16 10:53:37 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:53:40 +1000
+2012-08-16 00:53:55 UTC - Added Rules & Facts to New Rules Engine
+2012-08-16 00:53:55 UTC - Acquiring Mutex
+2012-08-16 00:53:55 UTC - Mutex Acquired
+2012-08-16 00:53:56 UTC - Loading Rules into Rulebook
+2012-08-16 00:53:56 UTC - Started loading Events
+2012-08-16 00:53:56 UTC - Finished loading Events
+2012-08-16 00:53:56 UTC - Releasing Mutex
+2012-08-16 00:53:56 UTC - Mutex Released
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2012-08-16 10:54:02 +1000
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-16 10:54:02 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:04 +1000
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2012-08-16 10:54:08 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:09 +1000
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:12 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:15 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:16 +1000
+
+
+Started DELETE "/groups/11" for 127.0.0.1 at 2012-08-16 10:54:20 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:20 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:21 +1000
+
+
+Started DELETE "/groups/5" for 127.0.0.1 at 2012-08-16 10:54:23 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:24 +1000
+2012-08-16 00:54:26 UTC - Run Engine
+2012-08-16 00:54:26 UTC - Acquiring Mutex
+2012-08-16 00:54:26 UTC - Mutex Acquired
+2012-08-16 00:54:26 UTC - Releasing Mutex
+2012-08-16 00:54:26 UTC - Mutex Released
+2012-08-16 00:54:26 UTC - Finished Engine Match 0.125001 
+
+
+Started DELETE "/groups/4" for 127.0.0.1 at 2012-08-16 10:54:26 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:26 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:26 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:26 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:26 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:26 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:26 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:26 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:27 +1000
+
+
+Started DELETE "/groups/7" for 127.0.0.1 at 2012-08-16 10:54:28 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:29 +1000
+
+
+Started DELETE "/groups/9" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:31 +1000
+
+
+Started DELETE "/groups/10" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:33 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:34 +1000
+
+
+Started DELETE "/groups/6" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:36 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:37 +1000
+
+
+Started DELETE "/groups/3" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:39 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:40 +1000
+
+
+Started DELETE "/groups/8" for 127.0.0.1 at 2012-08-16 10:54:41 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:41 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:41 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:42 +1000
+
+
+Started DELETE "/groups/2" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:44 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:45 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:45 +1000
+
+
+Started GET "/groups/new" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:46 +1000
+
+
+Started POST "/groups" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-16 10:54:53 +1000
+2012-08-16 00:55:26 UTC - Run Engine
+2012-08-16 00:55:26 UTC - Acquiring Mutex
+2012-08-16 00:55:26 UTC - Mutex Acquired
+2012-08-16 00:55:26 UTC - match rule 6 new group - 8ea6f4600dacc2ec7193d19fdffc22516f2237fe - New Group Created - Test Group #2
+2012-08-16 00:55:26 UTC - User to Notify Andrew Bills
+2012-08-16 00:55:26 UTC - New Record
+2012-08-16 00:55:26 UTC - Set New Record Values
+2012-08-16 00:55:26 UTC - Set New Record Source
+2012-08-16 00:55:26 UTC - Build Message
+2012-08-16 00:55:26 UTC - Trigger Boxcar Notification
+2012-08-16 00:55:26 UTC - boxcar_notify - evilspyboy@gmail.com - CRaNE - heya! alert! | CRaNE | 8ea6f4600dacc2ec7193d19fdffc22516f2237fe - New Group Created - Test Group #2
+2012-08-16 00:55:26 UTC - Add #<Record:0x2d36af8> to records
+2012-08-16 00:55:26 UTC - Trigger Prowl Notification
+2012-08-16 00:55:26 UTC - Prowl Notification to Use - 0ccaea952cb64e364150473abfcb56f428f2aefb, CRaNE, heya! alert! | CRaNE | 8ea6f4600dacc2ec7193d19fdffc22516f2237fe - New Group Created - Test Group #2
+2012-08-16 00:55:27 UTC - match rule 1 SYSTEM ADMIN - auto-clean delete rule - 8ea6f4600dacc2ec7193d19fdffc22516f2237fe - New Group Created - Test Group #2
+2012-08-16 00:55:27 UTC - Releasing Mutex
+2012-08-16 00:55:27 UTC - Mutex Released
+2012-08-16 00:55:27 UTC - Finished Engine Match 0.828131 
+2012-08-16 00:55:28 UTC - prowl_notify - 0ccaea952cb64e364150473abfcb56f428f2aefb - CRaNE - heya! alert! | CRaNE | 8ea6f4600dacc2ec7193d19fdffc22516f2237fe - New Group Created - Test Group #2
+2012-08-16 00:56:26 UTC - Run Engine
+2012-08-16 00:56:26 UTC - Acquiring Mutex
+2012-08-16 00:56:26 UTC - Mutex Acquired
+2012-08-16 00:56:26 UTC - Releasing Mutex
+2012-08-16 00:56:26 UTC - Mutex Released
+2012-08-16 00:56:26 UTC - Finished Engine Match 0.0625 
+2012-08-16 00:57:26 UTC - Run Engine
+2012-08-16 00:57:26 UTC - Acquiring Mutex
+2012-08-16 00:57:26 UTC - Mutex Acquired
+2012-08-16 00:57:26 UTC - Releasing Mutex
+2012-08-16 00:57:26 UTC - Mutex Released
+2012-08-16 00:57:26 UTC - Finished Engine Match 0.078125 
+2012-08-16 00:58:26 UTC - Run Engine
+2012-08-16 00:58:26 UTC - Acquiring Mutex
+2012-08-16 00:58:26 UTC - Mutex Acquired
+2012-08-16 00:58:26 UTC - Releasing Mutex
+2012-08-16 00:58:26 UTC - Mutex Released
+2012-08-16 00:58:26 UTC - Finished Engine Match 0.0625 
+2012-08-16 00:59:26 UTC - Run Engine
+2012-08-16 00:59:26 UTC - Acquiring Mutex
+2012-08-16 00:59:26 UTC - Mutex Acquired
+2012-08-16 00:59:26 UTC - Releasing Mutex
+2012-08-16 00:59:26 UTC - Mutex Released
+2012-08-16 00:59:26 UTC - Finished Engine Match 0.0625 
+2012-08-16 01:00:26 UTC - Run Engine
+2012-08-16 01:00:26 UTC - Acquiring Mutex
+2012-08-16 01:00:26 UTC - Mutex Acquired
+2012-08-16 01:00:26 UTC - Releasing Mutex
+2012-08-16 01:00:26 UTC - Mutex Released
+2012-08-16 01:00:26 UTC - Finished Engine Match 0.0625 
+2012-08-16 01:01:26 UTC - Run Engine
+2012-08-16 01:01:26 UTC - Acquiring Mutex
+2012-08-16 01:01:26 UTC - Mutex Acquired
+2012-08-16 01:01:26 UTC - Releasing Mutex
+2012-08-16 01:01:26 UTC - Mutex Released
+2012-08-16 01:01:26 UTC - Finished Engine Match 0.046875 
+2012-08-16 01:02:26 UTC - Run Engine
+2012-08-16 01:02:26 UTC - Acquiring Mutex
+2012-08-16 01:02:26 UTC - Mutex Acquired
+2012-08-16 01:02:26 UTC - Releasing Mutex
+2012-08-16 01:02:26 UTC - Mutex Released
+2012-08-16 01:02:26 UTC - Finished Engine Match 0.0625 
+2012-08-16 01:03:26 UTC - Run Engine
+2012-08-16 01:03:26 UTC - Acquiring Mutex
+2012-08-16 01:03:26 UTC - Mutex Acquired
+2012-08-16 01:03:26 UTC - Releasing Mutex
+2012-08-16 01:03:26 UTC - Mutex Released
+2012-08-16 01:03:26 UTC - Finished Engine Match 0.0625 
+2012-08-16 01:04:26 UTC - Run Engine
+2012-08-16 01:04:26 UTC - Acquiring Mutex
+2012-08-16 01:04:26 UTC - Mutex Acquired
+2012-08-16 01:04:26 UTC - Releasing Mutex
+2012-08-16 01:04:26 UTC - Mutex Released
+2012-08-16 01:04:26 UTC - Finished Engine Match 0.03125 
+2012-08-16 01:05:26 UTC - Run Engine
+2012-08-16 01:05:26 UTC - Acquiring Mutex
+2012-08-16 01:05:26 UTC - Mutex Acquired
+2012-08-16 01:05:26 UTC - Releasing Mutex
+2012-08-16 01:05:26 UTC - Mutex Released
+2012-08-16 01:05:26 UTC - Finished Engine Match 0.078125 
+2012-08-16 01:06:26 UTC - Run Engine
+2012-08-16 01:06:26 UTC - Acquiring Mutex
+2012-08-16 01:06:26 UTC - Mutex Acquired
+2012-08-16 01:06:26 UTC - Releasing Mutex
+2012-08-16 01:06:26 UTC - Mutex Released
+2012-08-16 01:06:26 UTC - Finished Engine Match 0.046875 

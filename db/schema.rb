@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723005934) do
+ActiveRecord::Schema.define(:version => 20120801021052) do
 
   create_table "events", :force => true do |t|
     t.string   "milestone"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20120723005934) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "prowl_notify"
+    t.integer  "event_id_ref"
   end
 
   create_table "roles", :force => true do |t|
