@@ -45,8 +45,6 @@ class RulesEngineCaller
   end
 
   def run_engine
-    caller_msg = Notification.new()
-
     Rails.logger.debug "#{Time.now.utc} - Run Engine"
     d = Time.now.utc
     puts "#{Time.now.utc} - Run Engine"
@@ -60,11 +58,11 @@ class RulesEngineCaller
         @fail_count = @fail_count + 1
         Rails.logger.debug "#{Time.now.utc} - Processing above set threshold #{Time.now.utc - d} seconds, fail count #{@fail_count}"
         if @fail_count == 5
-          caller_msg.notify_group(1, "Alert Processing above set threshold x5, last processing #{Time.now.utc - d} seconds")
+          MSG_NOTIFY.notify_group(1, "Alert Processing above set threshold x5, last processing #{Time.now.utc - d} seconds")
         elsif @fail_count == 30
-          caller_msg.notify_group(1, "Alert Processing above set threshold x30, last processing #{Time.now.utc - d} seconds")
+          MSG_NOTIFY.notify_group(1, "Alert Processing above set threshold x30, last processing #{Time.now.utc - d} seconds")
         elsif @fail_count == 60
-          caller_msg.notify_group(1, "Alert Processing above set threshold x60, last processing #{Time.now.utc - d} seconds")
+          MSG_NOTIFY.notify_group(1, "Alert Processing above set threshold x60, last processing #{Time.now.utc - d} seconds")
           @fail_count = 0
         end
       else

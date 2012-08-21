@@ -5,7 +5,7 @@ include Ruleby
 class EngineRulebook < Rulebook
   def rules
     Rails.logger.debug "#{Time.now.utc} - Loading Rules into Rulebook"
-    msg = Notification.new()
+    #msg = Notification.new()
     @rules = Rule.all
 
     @rules.each do |rule_name|
@@ -36,7 +36,7 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
-              msg.notify_user(rule_name.id, v[:m].id)
+              MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -51,7 +51,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -75,7 +76,7 @@ class EngineRulebook < Rulebook
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
-                  msg.notify_user(rule_name.id, v[:m].id)
+                  MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -109,7 +110,7 @@ class EngineRulebook < Rulebook
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
-                msg.notify_user(rule_name.id, v[:m].id)
+                MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -132,7 +133,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -170,7 +172,7 @@ class EngineRulebook < Rulebook
                       Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                       #do actual alert
-                      msg.notify_user(rule_name.id, v[:m].id)
+                      MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
                     end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -204,7 +206,7 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
-              msg.notify_user(rule_name.id, v[:m].id)
+              MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -219,7 +221,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -243,7 +246,7 @@ class EngineRulebook < Rulebook
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
-                  msg.notify_user(rule_name.id, v[:m].id)
+                  MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -277,7 +280,7 @@ class EngineRulebook < Rulebook
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
-                msg.notify_user(rule_name.id, v[:m].id)
+                MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -300,7 +303,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -338,7 +342,7 @@ class EngineRulebook < Rulebook
                       Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                       #do actual alert
-                      msg.notify_user(rule_name.id, v[:m].id)
+                      MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
                     end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -372,7 +376,7 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
-              msg.notify_user(rule_name.id, v[:m].id)
+              MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -387,7 +391,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -411,7 +416,7 @@ class EngineRulebook < Rulebook
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
-                  msg.notify_user(rule_name.id, v[:m].id)
+                  MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -445,7 +450,7 @@ class EngineRulebook < Rulebook
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
-                msg.notify_user(rule_name.id, v[:m].id)
+                MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -468,7 +473,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -506,7 +512,7 @@ class EngineRulebook < Rulebook
                       Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                       #do actual alert
-                      msg.notify_user(rule_name.id, v[:m].id)
+                      MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
                     end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -540,7 +546,7 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
-              msg.notify_user(rule_name.id, v[:m].id)
+              MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -555,7 +561,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -579,7 +586,7 @@ class EngineRulebook < Rulebook
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
-                  msg.notify_user(rule_name.id, v[:m].id)
+                  MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -613,7 +620,7 @@ class EngineRulebook < Rulebook
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
-                msg.notify_user(rule_name.id, v[:m].id)
+                MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -636,7 +643,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -674,7 +682,7 @@ class EngineRulebook < Rulebook
                       Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                       #do actual alert
-                      msg.notify_user(rule_name.id, v[:m].id)
+                      MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
                     end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -708,7 +716,7 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
-              msg.notify_user(rule_name.id, v[:m].id)
+              MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -723,7 +731,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -747,7 +756,7 @@ class EngineRulebook < Rulebook
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
-                  msg.notify_user(rule_name.id, v[:m].id)
+                  MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -781,7 +790,7 @@ class EngineRulebook < Rulebook
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
-                msg.notify_user(rule_name.id, v[:m].id)
+                MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -842,7 +851,7 @@ class EngineRulebook < Rulebook
                       Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                       #do actual alert
-                      msg.notify_user(rule_name.id, v[:m].id)
+                      MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
                     end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -876,7 +885,7 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
-              msg.notify_user(rule_name.id, v[:m].id)
+              MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -915,7 +924,7 @@ class EngineRulebook < Rulebook
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
-                  msg.notify_user(rule_name.id, v[:m].id)
+                  MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -949,7 +958,7 @@ class EngineRulebook < Rulebook
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
-                msg.notify_user(rule_name.id, v[:m].id)
+                MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -972,7 +981,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -1010,7 +1020,7 @@ class EngineRulebook < Rulebook
                       Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                       #do actual alert
-                      msg.notify_user(rule_name.id, v[:m].id)
+                      MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
                     end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -1044,7 +1054,7 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
-              msg.notify_user(rule_name.id, v[:m].id)
+              MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -1059,7 +1069,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -1083,7 +1094,7 @@ class EngineRulebook < Rulebook
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
-                  msg.notify_user(rule_name.id, v[:m].id)
+                  MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -1117,7 +1128,7 @@ class EngineRulebook < Rulebook
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
-                msg.notify_user(rule_name.id, v[:m].id)
+                MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -1140,7 +1151,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -1178,7 +1190,7 @@ class EngineRulebook < Rulebook
                       Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                       #do actual alert
-                      msg.notify_user(rule_name.id, v[:m].id)
+                      MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
                     end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)
@@ -1212,7 +1224,7 @@ class EngineRulebook < Rulebook
               Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
               #do actual alert
-              msg.notify_user(rule_name.id, v[:m].id)
+              MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
               #add reference so rule doesn't fire again
               @event = Event.find_by_id(v[:m].id)
@@ -1227,7 +1239,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 if rule_name.milestone1_time_value_denomination == "H"
@@ -1251,7 +1264,7 @@ class EngineRulebook < Rulebook
                   Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                   #do actual alert
-                  msg.notify_user(rule_name.id, v[:m].id)
+                  MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                   #add reference so rule doesn't fire again
                   @event = Event.find_by_id(v[:m].id)
@@ -1285,7 +1298,7 @@ class EngineRulebook < Rulebook
                 Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                 #do actual alert
-                msg.notify_user(rule_name.id, v[:m].id)
+                MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
 
                 #add reference so rule doesn't fire again
                 @event = Event.find_by_id(v[:m].id)
@@ -1308,7 +1321,8 @@ class EngineRulebook < Rulebook
             #check if rule has already fired
             if v[:m].rules.include?(rule_name) == false
               #find the last event
-              @last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              #@last_event = Event.where(ticket_id: v[:m].ticket_id, source: v[:m].source).where("milestone_type != ?", 'E').sort_by{ |e| e.time_stamp}.last
+              @last_event = Event.find(:first, :order => 'time_stamp DESC', :conditions => ['ticket_id = ? AND source = ? AND milestone_type != ?', v[:m].ticket_id, v[:m].source, 'E'])
               #check current event against the last duration type event
               if v[:m].id == @last_event.id
                 #is the last event so need to check the target against current
@@ -1346,7 +1360,7 @@ class EngineRulebook < Rulebook
                       Rails.logger.info "#{Time.now.utc} - match rule #{rule_name.id} #{rule_name.title} - #{v[:m].ticket_id} - #{v[:m].description}"
 
                       #do actual alert
-                      msg.notify_user(rule_name.id, v[:m].id)
+                      MSG_NOTIFY.notify_user(rule_name.id, v[:m].id)
                     end
                     #add reference so rule doesn't fire again
                     @event = Event.find_by_id(v[:m].id)

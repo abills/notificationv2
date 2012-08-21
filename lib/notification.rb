@@ -52,45 +52,45 @@ class Notification
           #need to check time
           if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour < user.business_hrs_end)
             if user.use_boxcar_flag == 1
-              #Thread.new do
+              Thread.new do
                 boxcar_notify(user.boxcar_id, @record.source.to_s, @record.message.to_s)
-              #end
+              end
               @record.boxcar_notify = user.use_boxcar_flag
             end
             if user.use_email_flag == 1
-              #Thread.new do
+              Thread.new do
                 mail_notify(user.email, @record.source.to_s, @record.message.to_s)
-              #end
+              end
               @record.email_notify = user.use_email_flag
             end
             if user.use_im_flag == 1
-              #Thread.new do
+              Thread.new do
                 im_notify(user.email, @record.source.to_s, @record.message.to_s)
-              #end
+              end
               @record.im_notify = user.use_im_flag
             end
             if user.use_mobile_ph_flag == 1
-              #Thread.new do
+              Thread.new do
                 sms_notify(user.mobile_phone_no, @record.source.to_s, @record.message.to_s)
-              #end
+              end
               @record.mobile_ph_notify = user.use_mobile_ph_flag
             end
             if user.use_nma_flag == 1
-              #Thread.new do
+              Thread.new do
                 nma_notify(user.nma_api_key, @record.source.to_s, @record.message.to_s)
-              #end
+              end
               @record.nma_notify = user.use_nma_flag
             end
             if user.use_nmwp_flag == 1
-              #Thread.new do
+              Thread.new do
                 nmwp_notify(user.nmwp_api_key, @record.source.to_s, @record.message.to_s)
-              #end
+              end
               @record.nmwp_notify = user.use_nmwp_flag
             end
             if user.use_prowl_flag == 1
-              #Thread.new do
+              Thread.new do
                 prowl_notify(user.prowl_api_key, @record.source.to_s, @record.message.to_s)
-              #end
+              end
               @record.prowl_notify = user.use_prowl_flag
             end
           end

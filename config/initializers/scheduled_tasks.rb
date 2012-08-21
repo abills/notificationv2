@@ -4,11 +4,15 @@ require 'RulesEngineCaller'
 scheduler = Rufus::Scheduler.start_new(:frequency => 1.0)
 Rails.logger = Logger.new("rule-log.txt", 'daily')
 
+Rails.logger.debug "#{Time.now.utc} - Created Notification Object"
+MSG_NOTIFY = Notification.new()
+
 rule_engine = Ruleby::Core::Engine.new
 Rails.logger.debug "#{Time.now.utc} - Created New Rules Engine"
 RULES_ENG = RulesEngineCaller.new(rule_engine)
 unless ( File.basename($0) == "rake" && ARGV.include?("db:migrate") )
   EngineRulebook.new(rule_engine).rules
+
 
 
   #initial data load in case no rules are changed at start
