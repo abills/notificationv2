@@ -1,0 +1,59 @@
+# Logfile created on 2012-08-28 10:18:56 +1000 by logger.rb/31641
+2012-08-28 00:18:56 UTC - Created Notification Object
+2012-08-28 00:18:56 UTC - Created New Rules Engine
+2012-08-28 00:18:56 UTC - Loading Rules into Rulebook
+2012-08-28 00:19:27 UTC - Added Rules & Facts to New Rules Engine
+2012-08-28 00:19:27 UTC - Acquiring Mutex
+2012-08-28 00:19:27 UTC - Mutex Acquired
+2012-08-28 00:19:28 UTC - Loading Rules into Rulebook
+2012-08-28 00:19:29 UTC - Started loading Events
+2012-08-28 00:19:29 UTC - Finished loading Events
+2012-08-28 00:19:29 UTC - Releasing Mutex
+2012-08-28 00:19:29 UTC - Mutex Released
+2012-08-28 00:23:58 UTC - Run Engine
+2012-08-28 00:23:58 UTC - Acquiring Mutex
+2012-08-28 00:23:58 UTC - Mutex Acquired
+2012-08-28 00:23:58 UTC - Releasing Mutex
+2012-08-28 00:23:58 UTC - Mutex Released
+2012-08-28 00:23:58 UTC - Finished Engine Match 0.0 
+2012-08-28 00:28:58 UTC - Run Engine
+2012-08-28 00:28:58 UTC - Acquiring Mutex
+2012-08-28 00:28:58 UTC - Mutex Acquired
+2012-08-28 00:28:58 UTC - Releasing Mutex
+2012-08-28 00:28:58 UTC - Mutex Released
+2012-08-28 00:28:58 UTC - Finished Engine Match 0.0 
+2012-08-28 00:31:24 UTC - Created Notification Object
+2012-08-28 00:31:24 UTC - Created New Rules Engine
+2012-08-28 00:31:24 UTC - Loading Rules into Rulebook
+2012-08-28 00:31:55 UTC - Added Rules & Facts to New Rules Engine
+2012-08-28 00:31:55 UTC - Acquiring Mutex
+2012-08-28 00:31:55 UTC - Mutex Acquired
+2012-08-28 00:31:55 UTC - Loading Rules into Rulebook
+2012-08-28 00:31:56 UTC - Started loading Events
+2012-08-28 00:31:56 UTC - Finished loading Events
+2012-08-28 00:31:56 UTC - Releasing Mutex
+2012-08-28 00:31:56 UTC - Mutex Released
+2012-08-28 00:32:25 UTC - Run Engine
+2012-08-28 00:32:25 UTC - Acquiring Mutex
+2012-08-28 00:32:25 UTC - Mutex Acquired
+2012-08-28 00:32:25 UTC - Releasing Mutex
+2012-08-28 00:32:25 UTC - Mutex Released
+2012-08-28 00:32:25 UTC - Finished Engine Match 0.015625 
+2012-08-28 00:33:25 UTC - Run Engine
+2012-08-28 00:33:25 UTC - Acquiring Mutex
+2012-08-28 00:33:25 UTC - Mutex Acquired
+2012-08-28 00:33:25 UTC - Releasing Mutex
+2012-08-28 00:33:25 UTC - Mutex Released
+2012-08-28 00:33:25 UTC - Finished Engine Match 0.0 
+2012-08-28 00:34:25 UTC - Run Engine
+2012-08-28 00:34:25 UTC - Acquiring Mutex
+2012-08-28 00:34:25 UTC - Mutex Acquired
+2012-08-28 00:34:25 UTC - Releasing Mutex
+2012-08-28 00:34:25 UTC - Mutex Released
+2012-08-28 00:34:25 UTC - Finished Engine Match 0.0 
+2012-08-28 00:35:25 UTC - Run Engine
+2012-08-28 00:35:25 UTC - Acquiring Mutex
+2012-08-28 00:35:25 UTC - Mutex Acquired
+2012-08-28 00:35:25 UTC - Releasing Mutex
+2012-08-28 00:35:25 UTC - Mutex Released
+2012-08-28 00:35:25 UTC - Finished Engine Match 0.0 

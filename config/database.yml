@@ -11,11 +11,11 @@
 development:
   adapter: mysql2
   encoding: utf8
-  reconnect: false
+  reconnect: true
   database: notificationv2_development
   pool: 5
   username: root
-  password:
+  password: password
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -24,21 +24,21 @@ development:
 test: &test
   adapter: mysql2
   encoding: utf8
-  reconnect: false
+  reconnect: true
   database: notificationv2_test
   pool: 5
   username: root
-  password:
+  password: password
   host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
-  reconnect: false
+  reconnect: true
   database: notificationv2_production
   pool: 5
   username: root
-  password:
+  password: password
   host: localhost
 
 cucumber:

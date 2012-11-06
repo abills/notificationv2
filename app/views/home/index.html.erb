@@ -1,20 +1,25 @@
+<meta http-equiv="refresh" content="60" />
 <h3>Welcome <%= current_user.name %></h3>
-<p>Here are your last <%= CONFIG[:core_settings][:event_history_length].to_s %> events per your group memberships</p>
+<% if current_user.has_role? :SystemAdmin %>
+    <h3>System Status</h3>
+    <%= image_tag(@notification_pie_chart) %><%= image_tag(@count_bar_chart) %>
+    <p><% Event.select(:source).uniq.each do |sources| %>
+          <b><%= sources.source %></b>
+          last notification @
+          <% @last_event = Event.where(source: sources.source).last %>
+          <%=  @last_event.created_at %><br>
+      <% end %></p>
+    <%= image_tag(@processing_line_chart) %>
+    <p><b>Last Rule Processing @</b> <%= RULES_ENG.last_processing_timestamp.to_s%> <b>for</b> <%= RULES_ENG.last_processing_duration.to_s %> seconds</p>
+<% else %>
+    <h3>Notification Status</h3>
+    <%= image_tag(@notification_pie_chart) %><%= image_tag(@count_bar_chart) %>
+<% end %>
+<p>Here are your last <%= CONFIG[:core_settings][:event_history_display].to_s %> events per your group memberships</p>
 
-<p><% @records = current_user.records.last(CONFIG[:core_settings][:event_history_length].to_i) %>
+<p><% @records = current_user.records.last(CONFIG[:core_settings][:event_history_display].to_i) %>
 
 <% @records.each do |record| %>
     <%= record.created_at.utc %> - <%= record.source %> + <%= record.message %><br>
 <% end %></p>
-<% if current_user.has_role? :SystemAdmin %>
-    <h3>Notifications</h3>
-    <p><b>Email =</b> <%= Record.sum(:email_notify) %> | <b>Boxcar =</b> <%= Record.sum(:boxcar_notify) %> | <b>Notify My Android =</b> <%= Record.sum(:nma_notify) %> | <b>Notify My Windows Phone =</b> <%= Record.sum(:nmwp_notify) %> | <b>Prowl =</b> <%= Record.sum(:prowl_notify) %> | <b>SMS =</b> <%= Record.sum(:mobile_ph_notify) %></p>
-    <h3>Events</h3>
-    <p><% Event.select(:source).uniq.each do |sources| %>
-        <%= Event.where(source: sources.source).count %> <%= sources.source %>
-          events & last notification @
-        <% @last_event = Event.where(source: sources.source).last %>
-        <%=  @last_event.created_at %><br>
-    <% end %></p>
-    <p><b>Last Rule Processing @</b> <%= RULES_ENG.last_processing_timestamp.to_s %> <b>for</b> <%= RULES_ENG.last_processing_duration.to_s %> seconds</p>
-<% end %>
+

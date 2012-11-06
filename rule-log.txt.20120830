@@ -1,0 +1,3181 @@
+# Logfile created on 2012-08-30 11:13:21 +1000 by logger.rb/31641
+2012-08-30 01:13:21 UTC - Created Notification Object
+2012-08-30 01:13:21 UTC - Created New Rules Engine
+2012-08-30 01:13:21 UTC - Loading Rules into Rulebook
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-30 11:13:34 +1000
+
+
+Started GET "/d/users/sign_in" for 127.0.0.1 at 2012-08-30 11:13:34 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:36 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:37 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:37 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:37 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:37 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:37 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:37 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:37 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 11:13:37 +1000
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2012-08-30 11:13:38 +1000
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-30 11:13:39 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 11:13:48 +1000
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    12: 
+    13: <% @rules.each do |rule| %>
+    14:   <tr>
+    15:     <td><%= rule.group.title %></td>
+    16:     <td><%= rule.id %></td>
+    17:     <td><%= rule.title %></td>
+    18:     <td><%= rule.syntax_msg %></td>
+  app/views/rules/index.html.erb:15:in `block in _app_views_rules_index_html_erb__766262711_29403048'
+  app/views/rules/index.html.erb:13:in `_app_views_rules_index_html_erb__766262711_29403048'
+  app/controllers/rules_controller.rb:10:in `index'
+
+
+2012-08-30 01:13:53 UTC - Added Rules & Facts to New Rules Engine
+2012-08-30 01:13:53 UTC - Acquiring Mutex
+2012-08-30 01:13:53 UTC - Mutex Acquired
+2012-08-30 01:13:53 UTC - Loading Rules into Rulebook
+2012-08-30 01:13:53 UTC - Started loading Events
+2012-08-30 01:13:53 UTC - Finished loading Events
+2012-08-30 01:13:53 UTC - Releasing Mutex
+2012-08-30 01:13:53 UTC - Mutex Released
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 11:13:57 +1000
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    12: 
+    13: <% @rules.each do |rule| %>
+    14:   <tr>
+    15:     <td><%= rule.group.title %></td>
+    16:     <td><%= rule.id %></td>
+    17:     <td><%= rule.title %></td>
+    18:     <td><%= rule.syntax_msg %></td>
+  app/views/rules/index.html.erb:15:in `block in _app_views_rules_index_html_erb__766262711_29403048'
+  app/views/rules/index.html.erb:13:in `_app_views_rules_index_html_erb__766262711_29403048'
+  app/controllers/rules_controller.rb:10:in `index'
+
+
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 11:14:05 +1000
+
+
+Started DELETE "/d/users/sign_out" for 127.0.0.1 at 2012-08-30 11:14:14 +1000
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-30 11:14:14 +1000
+
+
+Started GET "/d/users/sign_in" for 127.0.0.1 at 2012-08-30 11:14:14 +1000
+2012-08-30 01:14:23 UTC - Run Engine
+2012-08-30 01:14:23 UTC - Acquiring Mutex
+2012-08-30 01:14:23 UTC - Mutex Acquired
+2012-08-30 01:14:23 UTC - Releasing Mutex
+2012-08-30 01:14:23 UTC - Mutex Released
+2012-08-30 01:14:23 UTC - Finished Engine Match 0.156253 
+2012-08-30 01:15:23 UTC - Run Engine
+2012-08-30 01:15:23 UTC - Acquiring Mutex
+2012-08-30 01:15:23 UTC - Mutex Acquired
+2012-08-30 01:15:23 UTC - Releasing Mutex
+2012-08-30 01:15:23 UTC - Mutex Released
+2012-08-30 01:15:23 UTC - Finished Engine Match 0.046876 
+2012-08-30 01:16:23 UTC - Run Engine
+2012-08-30 01:16:23 UTC - Acquiring Mutex
+2012-08-30 01:16:23 UTC - Mutex Acquired
+2012-08-30 01:16:23 UTC - Releasing Mutex
+2012-08-30 01:16:23 UTC - Mutex Released
+2012-08-30 01:16:23 UTC - Finished Engine Match 0.046876 
+2012-08-30 01:17:23 UTC - Run Engine
+2012-08-30 01:17:23 UTC - Acquiring Mutex
+2012-08-30 01:17:23 UTC - Mutex Acquired
+2012-08-30 01:17:23 UTC - Releasing Mutex
+2012-08-30 01:17:23 UTC - Mutex Released
+2012-08-30 01:17:23 UTC - Finished Engine Match 0.046876 
+2012-08-30 01:18:23 UTC - Run Engine
+2012-08-30 01:18:23 UTC - Acquiring Mutex
+2012-08-30 01:18:23 UTC - Mutex Acquired
+2012-08-30 01:18:23 UTC - Releasing Mutex
+2012-08-30 01:18:23 UTC - Mutex Released
+2012-08-30 01:18:23 UTC - Finished Engine Match 0.046876 
+2012-08-30 08:47:28 UTC - Created Notification Object
+2012-08-30 08:47:28 UTC - Created New Rules Engine
+2012-08-30 08:53:53 UTC - Created Notification Object
+2012-08-30 08:53:53 UTC - Created New Rules Engine
+2012-08-30 08:53:53 UTC - Loading Rules into Rulebook
+2012-08-30 08:56:07 UTC - Created Notification Object
+2012-08-30 08:56:07 UTC - Created New Rules Engine
+2012-08-30 08:56:07 UTC - Loading Rules into Rulebook
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-30 18:56:22 +1000
+
+
+Started GET "/d/users/sign_in" for 127.0.0.1 at 2012-08-30 18:56:23 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:24 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:25 +1000
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2012-08-30 18:56:28 +1000
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-30 18:56:29 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:30 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:36 +1000
+2012-08-30 08:56:38 UTC - Added Rules & Facts to New Rules Engine
+2012-08-30 08:56:38 UTC - Acquiring Mutex
+2012-08-30 08:56:38 UTC - Mutex Acquired
+2012-08-30 08:56:39 UTC - Loading Rules into Rulebook
+2012-08-30 08:56:39 UTC - Started loading Events
+2012-08-30 08:56:39 UTC - Finished loading Events
+2012-08-30 08:56:39 UTC - Releasing Mutex
+2012-08-30 08:56:39 UTC - Mutex Released
+
+
+Started GET "/groups/new" for 127.0.0.1 at 2012-08-30 18:56:43 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:44 +1000
+
+
+Started POST "/groups" for 127.0.0.1 at 2012-08-30 18:56:52 +1000
+2012-08-30 08:56:52 UTC - Acquiring Mutex
+2012-08-30 08:56:52 UTC - Mutex Acquired
+2012-08-30 08:56:52 UTC - Loading Rules into Rulebook
+2012-08-30 08:56:52 UTC - Started loading Events
+2012-08-30 08:56:52 UTC - Finished loading Events
+2012-08-30 08:56:52 UTC - Releasing Mutex
+2012-08-30 08:56:52 UTC - Mutex Released
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:53 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 18:56:55 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:56:56 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 18:56:57 +1000
+
+NoMethodError (undefined method `chomp' for nil:NilClass):
+  bullet (4.1.6) lib/bullet/notification/base.rb:22:in `whoami'
+  bullet (4.1.6) lib/bullet/notification/base.rb:34:in `full_notice'
+  bullet (4.1.6) lib/bullet/notification/base.rb:38:in `notify_inline'
+  bullet (4.1.6) lib/bullet.rb:92:in `block in gather_inline_notifications'
+  bullet (4.1.6) lib/bullet.rb:109:in `block (2 levels) in for_each_active_notifier_with_notification'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `block in each'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each_key'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each'
+  bullet (4.1.6) lib/bullet.rb:107:in `block in for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:106:in `each'
+  bullet (4.1.6) lib/bullet.rb:106:in `for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:91:in `gather_inline_notifications'
+  bullet (4.1.6) lib/bullet/rack.rb:17:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__51500474__call__69386925__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+2012-08-30 08:57:08 UTC - Run Engine
+2012-08-30 08:57:08 UTC - Acquiring Mutex
+2012-08-30 08:57:08 UTC - Mutex Acquired
+2012-08-30 08:57:08 UTC - Releasing Mutex
+2012-08-30 08:57:08 UTC - Mutex Released
+2012-08-30 08:57:08 UTC - Finished Engine Match 0.015626 
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 18:57:34 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 18:57:38 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:39 +1000
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at 2012-08-30 18:57:40 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:41 +1000
+
+
+Started GET "/events" for 127.0.0.1 at 2012-08-30 18:57:43 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:57:44 +1000
+2012-08-30 08:58:07 UTC - Run Engine
+2012-08-30 08:58:07 UTC - Acquiring Mutex
+2012-08-30 08:58:07 UTC - Mutex Acquired
+2012-08-30 08:58:07 UTC - Releasing Mutex
+2012-08-30 08:58:07 UTC - Mutex Released
+2012-08-30 08:58:07 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 18:58:37 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 18:58:37 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 18:58:38 +1000
+2012-08-30 09:01:17 UTC - Created Notification Object
+2012-08-30 09:01:17 UTC - Created New Rules Engine
+2012-08-30 09:02:30 UTC - Created Notification Object
+2012-08-30 09:02:30 UTC - Created New Rules Engine
+2012-08-30 09:02:30 UTC - Loading Rules into Rulebook
+2012-08-30 09:02:37 UTC - Acquiring Mutex
+2012-08-30 09:02:37 UTC - Mutex Acquired
+2012-08-30 09:02:38 UTC - Loading Rules into Rulebook
+2012-08-30 09:02:38 UTC - Started loading Events
+2012-08-30 09:02:38 UTC - Finished loading Events
+2012-08-30 09:02:38 UTC - Releasing Mutex
+2012-08-30 09:02:38 UTC - Mutex Released
+2012-08-30 09:02:38 UTC - Acquiring Mutex
+2012-08-30 09:02:38 UTC - Mutex Acquired
+2012-08-30 09:02:38 UTC - Loading Rules into Rulebook
+2012-08-30 09:02:38 UTC - Started loading Events
+2012-08-30 09:02:38 UTC - Finished loading Events
+2012-08-30 09:02:38 UTC - Releasing Mutex
+2012-08-30 09:02:38 UTC - Mutex Released
+2012-08-30 09:03:40 UTC - Created Notification Object
+2012-08-30 09:03:40 UTC - Created New Rules Engine
+2012-08-30 09:03:40 UTC - Loading Rules into Rulebook
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-30 19:03:49 +1000
+
+
+Started GET "/d/users/sign_in" for 127.0.0.1 at 2012-08-30 19:03:50 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:51 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:52 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:52 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:52 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:52 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:52 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:52 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:52 +1000
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2012-08-30 19:03:54 +1000
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-30 19:03:54 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:55 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:56 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:56 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:56 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:03:56 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:07 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:08 +1000
+
+
+Started GET "/groups/new" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:10 +1000
+2012-08-30 09:04:12 UTC - Added Rules & Facts to New Rules Engine
+2012-08-30 09:04:12 UTC - Acquiring Mutex
+2012-08-30 09:04:12 UTC - Mutex Acquired
+2012-08-30 09:04:12 UTC - Loading Rules into Rulebook
+2012-08-30 09:04:12 UTC - Started loading Events
+2012-08-30 09:04:12 UTC - Finished loading Events
+2012-08-30 09:04:12 UTC - Releasing Mutex
+2012-08-30 09:04:12 UTC - Mutex Released
+
+
+Started POST "/groups" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:22 +1000
+
+
+Started GET "/groups/2" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:25 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:26 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:04:28 +1000
+
+NoMethodError (undefined method `chomp' for nil:NilClass):
+  bullet (4.1.6) lib/bullet/notification/base.rb:22:in `whoami'
+  bullet (4.1.6) lib/bullet/notification/base.rb:34:in `full_notice'
+  bullet (4.1.6) lib/bullet/notification/base.rb:38:in `notify_inline'
+  bullet (4.1.6) lib/bullet.rb:92:in `block in gather_inline_notifications'
+  bullet (4.1.6) lib/bullet.rb:109:in `block (2 levels) in for_each_active_notifier_with_notification'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `block in each'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each_key'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each'
+  bullet (4.1.6) lib/bullet.rb:107:in `block in for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:106:in `each'
+  bullet (4.1.6) lib/bullet.rb:106:in `for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:91:in `gather_inline_notifications'
+  bullet (4.1.6) lib/bullet/rack.rb:17:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__97621896__call__498271764__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+
+
+Started GET "/groups/2" for 127.0.0.1 at 2012-08-30 19:04:34 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:37 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:38 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:38 +1000
+
+
+Started DELETE "/groups/2" for 127.0.0.1 at 2012-08-30 19:04:41 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 19:04:41 +1000
+2012-08-30 09:04:42 UTC - Run Engine
+2012-08-30 09:04:42 UTC - Acquiring Mutex
+2012-08-30 09:04:42 UTC - Mutex Acquired
+2012-08-30 09:04:42 UTC - Releasing Mutex
+2012-08-30 09:04:42 UTC - Mutex Released
+2012-08-30 09:04:42 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:04:42 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:04:43 +1000
+
+NoMethodError (undefined method `chomp' for nil:NilClass):
+  bullet (4.1.6) lib/bullet/notification/base.rb:22:in `whoami'
+  bullet (4.1.6) lib/bullet/notification/base.rb:34:in `full_notice'
+  bullet (4.1.6) lib/bullet/notification/base.rb:38:in `notify_inline'
+  bullet (4.1.6) lib/bullet.rb:92:in `block in gather_inline_notifications'
+  bullet (4.1.6) lib/bullet.rb:109:in `block (2 levels) in for_each_active_notifier_with_notification'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `block in each'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each_key'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each'
+  bullet (4.1.6) lib/bullet.rb:107:in `block in for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:106:in `each'
+  bullet (4.1.6) lib/bullet.rb:106:in `for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:91:in `gather_inline_notifications'
+  bullet (4.1.6) lib/bullet/rack.rb:17:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__97621896__call__498271764__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+2012-08-30 09:05:41 UTC - Run Engine
+2012-08-30 09:05:41 UTC - Acquiring Mutex
+2012-08-30 09:05:41 UTC - Mutex Acquired
+2012-08-30 09:05:41 UTC - Releasing Mutex
+2012-08-30 09:05:41 UTC - Mutex Released
+2012-08-30 09:05:41 UTC - Finished Engine Match 0.0 
+2012-08-30 09:06:41 UTC - Run Engine
+2012-08-30 09:06:41 UTC - Acquiring Mutex
+2012-08-30 09:06:41 UTC - Mutex Acquired
+2012-08-30 09:06:41 UTC - Releasing Mutex
+2012-08-30 09:06:41 UTC - Mutex Released
+2012-08-30 09:06:41 UTC - Finished Engine Match 0.0 
+2012-08-30 09:07:41 UTC - Run Engine
+2012-08-30 09:07:41 UTC - Acquiring Mutex
+2012-08-30 09:07:41 UTC - Mutex Acquired
+2012-08-30 09:07:41 UTC - Releasing Mutex
+2012-08-30 09:07:41 UTC - Mutex Released
+2012-08-30 09:07:41 UTC - Finished Engine Match 0.0 
+2012-08-30 09:08:41 UTC - Run Engine
+2012-08-30 09:08:41 UTC - Acquiring Mutex
+2012-08-30 09:08:41 UTC - Mutex Acquired
+2012-08-30 09:08:41 UTC - Releasing Mutex
+2012-08-30 09:08:41 UTC - Mutex Released
+2012-08-30 09:08:41 UTC - Finished Engine Match 0.0 
+2012-08-30 09:09:49 UTC - Created Notification Object
+2012-08-30 09:09:49 UTC - Created New Rules Engine
+2012-08-30 09:09:49 UTC - Loading Rules into Rulebook
+2012-08-30 09:10:20 UTC - Added Rules & Facts to New Rules Engine
+2012-08-30 09:10:20 UTC - Acquiring Mutex
+2012-08-30 09:10:20 UTC - Mutex Acquired
+2012-08-30 09:10:21 UTC - Loading Rules into Rulebook
+2012-08-30 09:10:21 UTC - Started loading Events
+2012-08-30 09:10:21 UTC - Finished loading Events
+2012-08-30 09:10:21 UTC - Releasing Mutex
+2012-08-30 09:10:21 UTC - Mutex Released
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:10:36 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:37 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:38 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:38 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:38 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:38 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:10:38 +1000
+2012-08-30 09:11:48 UTC - Created Notification Object
+2012-08-30 09:11:48 UTC - Created New Rules Engine
+2012-08-30 09:11:48 UTC - Loading Rules into Rulebook
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:11:58 +1000
+
+NoMethodError (undefined method `chomp' for nil:NilClass):
+  bullet (4.1.6) lib/bullet/notification/base.rb:22:in `whoami'
+  bullet (4.1.6) lib/bullet/notification/base.rb:34:in `full_notice'
+  bullet (4.1.6) lib/bullet/notification/base.rb:38:in `notify_inline'
+  bullet (4.1.6) lib/bullet.rb:92:in `block in gather_inline_notifications'
+  bullet (4.1.6) lib/bullet.rb:109:in `block (2 levels) in for_each_active_notifier_with_notification'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `block in each'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each_key'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each'
+  bullet (4.1.6) lib/bullet.rb:107:in `block in for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:106:in `each'
+  bullet (4.1.6) lib/bullet.rb:106:in `for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:91:in `gather_inline_notifications'
+  bullet (4.1.6) lib/bullet/rack.rb:17:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__8520832__call__859439539__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+2012-08-30 09:13:05 UTC - Created Notification Object
+2012-08-30 09:13:05 UTC - Created New Rules Engine
+2012-08-30 09:13:05 UTC - Loading Rules into Rulebook
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:13:20 +1000
+
+NoMethodError (undefined method `chomp' for nil:NilClass):
+  bullet (4.1.6) lib/bullet/notification/base.rb:22:in `whoami'
+  bullet (4.1.6) lib/bullet/notification/base.rb:34:in `full_notice'
+  bullet (4.1.6) lib/bullet/notification/base.rb:38:in `notify_inline'
+  bullet (4.1.6) lib/bullet.rb:92:in `block in gather_inline_notifications'
+  bullet (4.1.6) lib/bullet.rb:109:in `block (2 levels) in for_each_active_notifier_with_notification'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `block in each'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each_key'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each'
+  bullet (4.1.6) lib/bullet.rb:107:in `block in for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:106:in `each'
+  bullet (4.1.6) lib/bullet.rb:106:in `for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:91:in `gather_inline_notifications'
+  bullet (4.1.6) lib/bullet/rack.rb:17:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__586253595__call__660034917__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+2012-08-30 09:14:14 UTC - Created Notification Object
+2012-08-30 09:14:14 UTC - Created New Rules Engine
+2012-08-30 09:14:14 UTC - Loading Rules into Rulebook
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:14:24 +1000
+
+NoMethodError (undefined method `chomp' for nil:NilClass):
+  bullet (4.1.6) lib/bullet/notification/base.rb:22:in `whoami'
+  bullet (4.1.6) lib/bullet/notification/base.rb:34:in `full_notice'
+  bullet (4.1.6) lib/bullet/notification/base.rb:38:in `notify_inline'
+  bullet (4.1.6) lib/bullet.rb:92:in `block in gather_inline_notifications'
+  bullet (4.1.6) lib/bullet.rb:109:in `block (2 levels) in for_each_active_notifier_with_notification'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `block in each'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each_key'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each'
+  bullet (4.1.6) lib/bullet.rb:107:in `block in for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:106:in `each'
+  bullet (4.1.6) lib/bullet.rb:106:in `for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:91:in `gather_inline_notifications'
+  bullet (4.1.6) lib/bullet/rack.rb:17:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__13202358__call__763580762__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+2012-08-30 09:14:45 UTC - Added Rules & Facts to New Rules Engine
+2012-08-30 09:14:45 UTC - Acquiring Mutex
+2012-08-30 09:14:45 UTC - Mutex Acquired
+2012-08-30 09:14:45 UTC - Loading Rules into Rulebook
+2012-08-30 09:14:45 UTC - Started loading Events
+2012-08-30 09:14:45 UTC - Finished loading Events
+2012-08-30 09:14:45 UTC - Releasing Mutex
+2012-08-30 09:14:45 UTC - Mutex Released
+2012-08-30 09:15:15 UTC - Run Engine
+2012-08-30 09:15:15 UTC - Acquiring Mutex
+2012-08-30 09:15:15 UTC - Mutex Acquired
+2012-08-30 09:15:15 UTC - Releasing Mutex
+2012-08-30 09:15:15 UTC - Mutex Released
+2012-08-30 09:15:15 UTC - Finished Engine Match 0.0 
+2012-08-30 09:16:15 UTC - Run Engine
+2012-08-30 09:16:15 UTC - Acquiring Mutex
+2012-08-30 09:16:15 UTC - Mutex Acquired
+2012-08-30 09:16:15 UTC - Releasing Mutex
+2012-08-30 09:16:15 UTC - Mutex Released
+2012-08-30 09:16:15 UTC - Finished Engine Match 0.0 
+2012-08-30 09:17:15 UTC - Run Engine
+2012-08-30 09:17:15 UTC - Acquiring Mutex
+2012-08-30 09:17:15 UTC - Mutex Acquired
+2012-08-30 09:17:15 UTC - Releasing Mutex
+2012-08-30 09:17:15 UTC - Mutex Released
+2012-08-30 09:17:15 UTC - Finished Engine Match 0.0 
+2012-08-30 09:18:15 UTC - Run Engine
+2012-08-30 09:18:15 UTC - Acquiring Mutex
+2012-08-30 09:18:15 UTC - Mutex Acquired
+2012-08-30 09:18:15 UTC - Releasing Mutex
+2012-08-30 09:18:15 UTC - Mutex Released
+2012-08-30 09:18:15 UTC - Finished Engine Match 0.0 
+2012-08-30 09:19:36 UTC - Created Notification Object
+2012-08-30 09:19:36 UTC - Created New Rules Engine
+2012-08-30 09:19:36 UTC - Loading Rules into Rulebook
+2012-08-30 09:20:07 UTC - Added Rules & Facts to New Rules Engine
+2012-08-30 09:20:07 UTC - Acquiring Mutex
+2012-08-30 09:20:07 UTC - Mutex Acquired
+2012-08-30 09:20:07 UTC - Loading Rules into Rulebook
+2012-08-30 09:20:07 UTC - Started loading Events
+2012-08-30 09:20:07 UTC - Finished loading Events
+2012-08-30 09:20:07 UTC - Releasing Mutex
+2012-08-30 09:20:07 UTC - Mutex Released
+2012-08-30 09:20:37 UTC - Run Engine
+2012-08-30 09:20:37 UTC - Acquiring Mutex
+2012-08-30 09:20:37 UTC - Mutex Acquired
+2012-08-30 09:20:37 UTC - Releasing Mutex
+2012-08-30 09:20:37 UTC - Mutex Released
+2012-08-30 09:20:37 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-08-30 19:20:46 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:48 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:20:51 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:52 +1000
+
+
+Started GET "/groups" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:54 +1000
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:20:56 +1000
+2012-08-30 09:21:48 UTC - Created Notification Object
+2012-08-30 09:21:48 UTC - Created New Rules Engine
+2012-08-30 09:21:48 UTC - Loading Rules into Rulebook
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:21:57 +1000
+
+NoMethodError (undefined method `chomp' for nil:NilClass):
+  bullet (4.1.6) lib/bullet/notification/base.rb:22:in `whoami'
+  bullet (4.1.6) lib/bullet/notification/base.rb:34:in `full_notice'
+  bullet (4.1.6) lib/bullet/notification/base.rb:38:in `notify_inline'
+  bullet (4.1.6) lib/bullet.rb:92:in `block in gather_inline_notifications'
+  bullet (4.1.6) lib/bullet.rb:109:in `block (2 levels) in for_each_active_notifier_with_notification'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `block in each'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each_key'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each'
+  bullet (4.1.6) lib/bullet.rb:107:in `block in for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:106:in `each'
+  bullet (4.1.6) lib/bullet.rb:106:in `for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:91:in `gather_inline_notifications'
+  bullet (4.1.6) lib/bullet/rack.rb:17:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__638203909__call__313902271__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+2012-08-30 09:22:52 UTC - Created Notification Object
+2012-08-30 09:22:52 UTC - Created New Rules Engine
+2012-08-30 09:22:52 UTC - Loading Rules into Rulebook
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:23:21 +1000
+
+NoMethodError (undefined method `chomp' for nil:NilClass):
+  bullet (4.1.6) lib/bullet/notification/base.rb:22:in `whoami'
+  bullet (4.1.6) lib/bullet/notification/base.rb:34:in `full_notice'
+  bullet (4.1.6) lib/bullet/notification/base.rb:38:in `notify_inline'
+  bullet (4.1.6) lib/bullet.rb:92:in `block in gather_inline_notifications'
+  bullet (4.1.6) lib/bullet.rb:109:in `block (2 levels) in for_each_active_notifier_with_notification'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `block in each'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each_key'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/set.rb:222:in `each'
+  bullet (4.1.6) lib/bullet.rb:107:in `block in for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:106:in `each'
+  bullet (4.1.6) lib/bullet.rb:106:in `for_each_active_notifier_with_notification'
+  bullet (4.1.6) lib/bullet.rb:91:in `gather_inline_notifications'
+  bullet (4.1.6) lib/bullet/rack.rb:17:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__204348521__call__536048784__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run_machine'
+  eventmachine-1.0.0.beta.4.1-x86 (mingw32) lib/eventmachine.rb:179:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<top (required)>'
+  -e:1:in `load'
+  -e:1:in `<main>'
+
+
+2012-08-30 09:23:23 UTC - Added Rules & Facts to New Rules Engine
+2012-08-30 09:23:23 UTC - Acquiring Mutex
+2012-08-30 09:23:23 UTC - Mutex Acquired
+2012-08-30 09:23:23 UTC - Loading Rules into Rulebook
+2012-08-30 09:23:23 UTC - Started loading Events
+2012-08-30 09:23:23 UTC - Finished loading Events
+2012-08-30 09:23:23 UTC - Releasing Mutex
+2012-08-30 09:23:23 UTC - Mutex Released
+2012-08-30 09:24:23 UTC - Created Notification Object
+2012-08-30 09:24:23 UTC - Created New Rules Engine
+2012-08-30 09:24:23 UTC - Loading Rules into Rulebook
+
+
+Started GET "/rules" for 127.0.0.1 at 2012-08-30 19:24:28 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:30 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-08-30 19:24:31 +1000
+2012-08-30 09:24:54 UTC - Added Rules & Facts to New Rules Engine
+2012-08-30 09:24:54 UTC - Acquiring Mutex
+2012-08-30 09:24:54 UTC - Mutex Acquired
+2012-08-30 09:24:54 UTC - Loading Rules into Rulebook
+2012-08-30 09:24:54 UTC - Started loading Events
+2012-08-30 09:24:54 UTC - Finished loading Events
+2012-08-30 09:24:54 UTC - Releasing Mutex
+2012-08-30 09:24:54 UTC - Mutex Released
+2012-08-30 09:25:24 UTC - Run Engine
+2012-08-30 09:25:24 UTC - Acquiring Mutex
+2012-08-30 09:25:24 UTC - Mutex Acquired
+2012-08-30 09:25:24 UTC - Releasing Mutex
+2012-08-30 09:25:24 UTC - Mutex Released
+2012-08-30 09:25:24 UTC - Finished Engine Match 0.0 
+2012-08-30 09:26:24 UTC - Run Engine
+2012-08-30 09:26:24 UTC - Acquiring Mutex
+2012-08-30 09:26:24 UTC - Mutex Acquired
+2012-08-30 09:26:24 UTC - Releasing Mutex
+2012-08-30 09:26:24 UTC - Mutex Released
+2012-08-30 09:26:24 UTC - Finished Engine Match 0.0 
+2012-08-30 09:27:24 UTC - Run Engine
+2012-08-30 09:27:24 UTC - Acquiring Mutex
+2012-08-30 09:27:24 UTC - Mutex Acquired
+2012-08-30 09:27:24 UTC - Releasing Mutex
+2012-08-30 09:27:24 UTC - Mutex Released
+2012-08-30 09:27:24 UTC - Finished Engine Match 0.0 

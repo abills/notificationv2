@@ -1,0 +1,23 @@
+#configurable settings for the notification app
+:core_settings:
+  :app_name: CRaNE
+  :app_url: crane.mincom.com
+  :redirect_url: http://www.ventyx.com
+  :threshold: 45   #length of time (in seconds) to count running engine as too long
+  :run_engine_time_seconds: 60   #length of time that the engine is schedule to run, used only for chart display
+  :run_engine_time: 1m   #length of time that the engine is scheduled to run, used by scheduler
+  :forced_engine_restart: 1h   #length of time before engine is forced to reload, used by scheduler
+  :event_history_length: 45 #length of time in days history is retained per user
+  :event_history_display: 10 #number of history items to display
+  :first_heartbeat: 60 #length of time since last event for heartbeat rules in minutes
+  :event_retention: 3 #number of days that events are retained for
+:sms_global_settings:
+  :user_name: mincom
+  :password: 41988482
+:gmail_notification_settings:
+  :user_name: ventyx.service.no.reply
+  :password: Ell1pse8
+  :email: ventyx.service.no.reply@gmail.com
+:boxcar_settings:
+  :public_notification_api_uri: http://boxcar.io/devices/providers/MH0S7xOFSwVLNvNhTpiC/notifications
+  :public_notification__subscription_api_uri: http://boxcar.io/devices/providers/MH0S7xOFSwVLNvNhTpiC/notifications/subscribe

@@ -1,0 +1,866 @@
+# Logfile created on 2012-09-14 17:37:18 +1000 by logger.rb/31641
+2012-09-14 07:37:18 UTC - Created Notification Object
+2012-09-14 07:37:18 UTC - Created New Rules Engine
+2012-09-14 07:37:18 UTC - Loading Rules into Rulebook
+2012-09-14 07:38:02 UTC - Created Notification Object
+2012-09-14 07:38:02 UTC - Created New Rules Engine
+2012-09-14 07:38:02 UTC - Loading Rules into Rulebook
+2012-09-14 07:38:34 UTC - Added Rules & Facts to New Rules Engine
+2012-09-14 07:38:34 UTC - Acquiring Mutex
+2012-09-14 07:38:34 UTC - Mutex Acquired
+2012-09-14 07:38:34 UTC - Loading Rules into Rulebook
+2012-09-14 07:38:34 UTC - Started loading Events
+2012-09-14 07:38:34 UTC - Finished loading Events
+2012-09-14 07:38:34 UTC - Releasing Mutex
+2012-09-14 07:38:34 UTC - Mutex Released
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:38:45 +1000
+
+
+Started GET "/d/users/sign_in" for 127.0.0.1 at 2012-09-14 17:38:46 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:48 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:48 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:48 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:48 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:48 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:49 +1000
+
+
+Started POST "/d/users/sign_in" for 127.0.0.1 at 2012-09-14 17:38:51 +1000
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:38:51 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:53 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:53 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-14 17:38:54 +1000
+2012-09-14 07:39:03 UTC - Run Engine
+2012-09-14 07:39:03 UTC - Acquiring Mutex
+2012-09-14 07:39:03 UTC - Mutex Acquired
+2012-09-14 07:39:03 UTC - Releasing Mutex
+2012-09-14 07:39:03 UTC - Mutex Released
+2012-09-14 07:39:03 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:39:16 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-14 17:39:17 +1000
+2012-09-14 07:40:03 UTC - Run Engine
+2012-09-14 07:40:03 UTC - Acquiring Mutex
+2012-09-14 07:40:03 UTC - Mutex Acquired
+2012-09-14 07:40:03 UTC - Releasing Mutex
+2012-09-14 07:40:03 UTC - Mutex Released
+2012-09-14 07:40:03 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+2012-09-14 07:41:03 UTC - Run Engine
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+2012-09-14 07:41:03 UTC - Acquiring Mutex
+2012-09-14 07:41:03 UTC - Mutex Acquired
+2012-09-14 07:41:03 UTC - Releasing Mutex
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+2012-09-14 07:41:03 UTC - Mutex Released
+2012-09-14 07:41:03 UTC - Finished Engine Match 0.062501 
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:03 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-14 17:41:04 +1000
+2012-09-14 07:42:03 UTC - Run Engine
+2012-09-14 07:42:03 UTC - Acquiring Mutex
+2012-09-14 07:42:03 UTC - Mutex Acquired
+2012-09-14 07:42:03 UTC - Releasing Mutex
+2012-09-14 07:42:03 UTC - Mutex Released
+2012-09-14 07:42:03 UTC - Finished Engine Match 0.0 
+2012-09-14 07:43:03 UTC - Run Engine
+2012-09-14 07:43:03 UTC - Acquiring Mutex
+2012-09-14 07:43:03 UTC - Mutex Acquired
+2012-09-14 07:43:03 UTC - Releasing Mutex
+2012-09-14 07:43:03 UTC - Mutex Released
+2012-09-14 07:43:03 UTC - Finished Engine Match 0.0 
+2012-09-14 07:44:03 UTC - Run Engine
+2012-09-14 07:44:03 UTC - Acquiring Mutex
+2012-09-14 07:44:03 UTC - Mutex Acquired
+2012-09-14 07:44:03 UTC - Releasing Mutex
+2012-09-14 07:44:03 UTC - Mutex Released
+2012-09-14 07:44:03 UTC - Finished Engine Match 0.0 
+2012-09-14 07:45:04 UTC - Run Engine
+2012-09-14 07:45:04 UTC - Acquiring Mutex
+2012-09-14 07:45:04 UTC - Mutex Acquired
+2012-09-14 07:45:04 UTC - Releasing Mutex
+2012-09-14 07:45:04 UTC - Mutex Released
+2012-09-14 07:45:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:46:04 UTC - Run Engine
+2012-09-14 07:46:04 UTC - Acquiring Mutex
+2012-09-14 07:46:04 UTC - Mutex Acquired
+2012-09-14 07:46:04 UTC - Releasing Mutex
+2012-09-14 07:46:04 UTC - Mutex Released
+2012-09-14 07:46:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:47:04 UTC - Run Engine
+2012-09-14 07:47:04 UTC - Acquiring Mutex
+2012-09-14 07:47:04 UTC - Mutex Acquired
+2012-09-14 07:47:04 UTC - Releasing Mutex
+2012-09-14 07:47:04 UTC - Mutex Released
+2012-09-14 07:47:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:48:04 UTC - Run Engine
+2012-09-14 07:48:04 UTC - Acquiring Mutex
+2012-09-14 07:48:04 UTC - Mutex Acquired
+2012-09-14 07:48:04 UTC - Releasing Mutex
+2012-09-14 07:48:04 UTC - Mutex Released
+2012-09-14 07:48:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:49:04 UTC - Run Engine
+2012-09-14 07:49:04 UTC - Acquiring Mutex
+2012-09-14 07:49:04 UTC - Mutex Acquired
+2012-09-14 07:49:04 UTC - Releasing Mutex
+2012-09-14 07:49:04 UTC - Mutex Released
+2012-09-14 07:49:04 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:49:58 +1000
+
+ActionView::Template::Error (undefined method `reload' for "2012-09-14 07:49:04 UTC":String):
+    16:         <%=  @last_event.created_at %><br>
+    17:     <% end %></p>
+    18:     <%= image_tag(@processing_line_chart) %>
+    19:     <p><b>Last Rule Processing @</b> <%= RULES_ENG.last_processing_timestamp.to_s.reload %> <b>for</b> <%= RULES_ENG.last_processing_duration.to_s %> seconds</p>
+    20: 
+    21: <% end %>
+  app/views/home/index.html.erb:19:in `_app_views_home_index_html_erb__1036507743_19680456'
+
+
+2012-09-14 07:50:04 UTC - Run Engine
+2012-09-14 07:50:04 UTC - Acquiring Mutex
+2012-09-14 07:50:04 UTC - Mutex Acquired
+2012-09-14 07:50:04 UTC - Releasing Mutex
+2012-09-14 07:50:04 UTC - Mutex Released
+2012-09-14 07:50:04 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:50:06 +1000
+
+ActionView::Template::Error (undefined method `refresh' for "2012-09-14 07:50:04 UTC":String):
+    16:         <%=  @last_event.created_at %><br>
+    17:     <% end %></p>
+    18:     <%= image_tag(@processing_line_chart) %>
+    19:     <p><b>Last Rule Processing @</b> <%= RULES_ENG.last_processing_timestamp.to_s.refresh %> <b>for</b> <%= RULES_ENG.last_processing_duration.to_s %> seconds</p>
+    20: 
+    21: <% end %>
+  app/views/home/index.html.erb:19:in `_app_views_home_index_html_erb__1036507743_20256300'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:50:14 +1000
+
+ActionView::Template::Error (undefined method `force' for "2012-09-14 07:50:04 UTC":String):
+    16:         <%=  @last_event.created_at %><br>
+    17:     <% end %></p>
+    18:     <%= image_tag(@processing_line_chart) %>
+    19:     <p><b>Last Rule Processing @</b> <%= RULES_ENG.last_processing_timestamp.to_s.force %> <b>for</b> <%= RULES_ENG.last_processing_duration.to_s %> seconds</p>
+    20: 
+    21: <% end %>
+  app/views/home/index.html.erb:19:in `_app_views_home_index_html_erb__1036507743_20536776'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:50:21 +1000
+
+ActionView::Template::Error (undefined method `reload' for 2012-09-14 07:50:04 UTC:Time):
+    16:         <%=  @last_event.created_at %><br>
+    17:     <% end %></p>
+    18:     <%= image_tag(@processing_line_chart) %>
+    19:     <p><b>Last Rule Processing @</b> <%= RULES_ENG.last_processing_timestamp.reload %> <b>for</b> <%= RULES_ENG.last_processing_duration.to_s %> seconds</p>
+    20: 
+    21: <% end %>
+  app/views/home/index.html.erb:19:in `_app_views_home_index_html_erb__1036507743_19986696'
+
+
+2012-09-14 07:51:04 UTC - Run Engine
+2012-09-14 07:51:04 UTC - Acquiring Mutex
+2012-09-14 07:51:04 UTC - Mutex Acquired
+2012-09-14 07:51:04 UTC - Releasing Mutex
+2012-09-14 07:51:04 UTC - Mutex Released
+2012-09-14 07:51:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:52:04 UTC - Run Engine
+2012-09-14 07:52:04 UTC - Acquiring Mutex
+2012-09-14 07:52:04 UTC - Mutex Acquired
+2012-09-14 07:52:04 UTC - Releasing Mutex
+2012-09-14 07:52:04 UTC - Mutex Released
+2012-09-14 07:52:04 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:52:32 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-14 17:52:32 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-14 17:52:33 +1000
+2012-09-14 07:53:04 UTC - Run Engine
+2012-09-14 07:53:04 UTC - Acquiring Mutex
+2012-09-14 07:53:04 UTC - Mutex Acquired
+2012-09-14 07:53:04 UTC - Releasing Mutex
+2012-09-14 07:53:04 UTC - Mutex Released
+2012-09-14 07:53:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:54:04 UTC - Run Engine
+2012-09-14 07:54:04 UTC - Acquiring Mutex
+2012-09-14 07:54:04 UTC - Mutex Acquired
+2012-09-14 07:54:04 UTC - Releasing Mutex
+2012-09-14 07:54:04 UTC - Mutex Released
+2012-09-14 07:54:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:55:04 UTC - Run Engine
+2012-09-14 07:55:04 UTC - Acquiring Mutex
+2012-09-14 07:55:04 UTC - Mutex Acquired
+2012-09-14 07:55:04 UTC - Releasing Mutex
+2012-09-14 07:55:04 UTC - Mutex Released
+2012-09-14 07:55:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:56:04 UTC - Run Engine
+2012-09-14 07:56:04 UTC - Acquiring Mutex
+2012-09-14 07:56:04 UTC - Mutex Acquired
+2012-09-14 07:56:04 UTC - Releasing Mutex
+2012-09-14 07:56:04 UTC - Mutex Released
+2012-09-14 07:56:04 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:56:18 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-14 17:56:19 +1000
+2012-09-14 07:57:04 UTC - Run Engine
+2012-09-14 07:57:04 UTC - Acquiring Mutex
+2012-09-14 07:57:04 UTC - Mutex Acquired
+2012-09-14 07:57:04 UTC - Releasing Mutex
+2012-09-14 07:57:04 UTC - Mutex Released
+2012-09-14 07:57:04 UTC - Finished Engine Match 0.0 
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-14 17:57:24 +1000
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/groups.css?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/rules.css?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-affix.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/groups.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/rules.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-14 17:57:25 +1000
+2012-09-14 07:58:04 UTC - Run Engine
+2012-09-14 07:58:04 UTC - Acquiring Mutex
+2012-09-14 07:58:04 UTC - Mutex Acquired
+2012-09-14 07:58:04 UTC - Releasing Mutex
+2012-09-14 07:58:04 UTC - Mutex Released
+2012-09-14 07:58:04 UTC - Finished Engine Match 0.0 
+2012-09-14 07:59:04 UTC - Run Engine
+2012-09-14 07:59:04 UTC - Acquiring Mutex
+2012-09-14 07:59:04 UTC - Mutex Acquired
+2012-09-14 07:59:04 UTC - Releasing Mutex
+2012-09-14 07:59:04 UTC - Mutex Released
+2012-09-14 07:59:04 UTC - Finished Engine Match 0.0 
+2012-09-14 08:00:04 UTC - Run Engine
+2012-09-14 08:00:04 UTC - Acquiring Mutex
+2012-09-14 08:00:04 UTC - Mutex Acquired
+2012-09-14 08:00:04 UTC - Releasing Mutex
+2012-09-14 08:00:04 UTC - Mutex Released
+2012-09-14 08:00:04 UTC - Finished Engine Match 0.0 
+2012-09-14 08:01:04 UTC - Run Engine
+2012-09-14 08:01:04 UTC - Acquiring Mutex
+2012-09-14 08:01:04 UTC - Mutex Acquired
+2012-09-14 08:01:04 UTC - Releasing Mutex
+2012-09-14 08:01:04 UTC - Mutex Released
+2012-09-14 08:01:04 UTC - Finished Engine Match 0.0 

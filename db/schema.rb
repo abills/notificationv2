@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120801021052) do
+ActiveRecord::Schema.define(:version => 20120910082957) do
 
   create_table "events", :force => true do |t|
     t.string   "milestone"
@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(:version => 20120801021052) do
     t.integer  "event_id_ref"
   end
 
+  add_index "records", ["user_id"], :name => "index_records_on_user_id"
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -112,6 +114,8 @@ ActiveRecord::Schema.define(:version => 20120801021052) do
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
   end
+
+  add_index "rules", ["group_id"], :name => "index_rules_on_group_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false
@@ -163,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20120801021052) do
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
+  add_index "users", ["invited_by_id", "invited_by_type"], :name => "index_users_on_invited_by_id_and_invited_by_type"
   add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 

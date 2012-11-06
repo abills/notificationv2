@@ -52,51 +52,65 @@ class Notification
           #need to check time
           if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour < user.business_hrs_end)
             if user.use_boxcar_flag == 1
-              Thread.new do
+              #pid = fork do
                 boxcar_notify(user.boxcar_id, @record.source.to_s, @record.message.to_s)
-              end
+              #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.boxcar_notify = user.use_boxcar_flag
             end
             if user.use_email_flag == 1
-              Thread.new do
+              #pid = fork do
                 mail_notify(user.email, @record.source.to_s, @record.message.to_s)
-              end
+              #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.email_notify = user.use_email_flag
             end
             if user.use_im_flag == 1
-              Thread.new do
+              #pid = fork do
                 im_notify(user.email, @record.source.to_s, @record.message.to_s)
-              end
+              #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.im_notify = user.use_im_flag
             end
             if user.use_mobile_ph_flag == 1
-              Thread.new do
+              #pid = fork do
                 sms_notify(user.mobile_phone_no, @record.source.to_s, @record.message.to_s)
-              end
+              #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.mobile_ph_notify = user.use_mobile_ph_flag
             end
             if user.use_nma_flag == 1
-              Thread.new do
+              #pid = fork do
                 nma_notify(user.nma_api_key, @record.source.to_s, @record.message.to_s)
-              end
+              #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.nma_notify = user.use_nma_flag
             end
             if user.use_nmwp_flag == 1
-              Thread.new do
+              #pid = fork do
                 nmwp_notify(user.nmwp_api_key, @record.source.to_s, @record.message.to_s)
-              end
+              #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.nmwp_notify = user.use_nmwp_flag
             end
             if user.use_prowl_flag == 1
-              Thread.new do
+              #pid = fork do
                 prowl_notify(user.prowl_api_key, @record.source.to_s, @record.message.to_s)
-              end
+              #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.prowl_notify = user.use_prowl_flag
             end
           end
         end
 
-        Rails.logger.info "#{Time.now.utc} - Add #{@record.to_s} to records"
+        #Rails.logger.info "#{Time.now.utc} - Add #{@record.to_s} to records"
         user.records << @record
       end
     end
@@ -133,45 +147,59 @@ class Notification
           #need to check time
           if (current_user_time.hour >= user.business_hrs_start) && (current_user_time.hour <= user.business_hrs_end)
             if user.use_boxcar_flag == 1
-              #Thread.new do
+              #pid = fork do
                 boxcar_notify(user.boxcar_id, @record.source.to_s, @record.message.to_s)
               #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.boxcar_notify = user.use_boxcar_flag
             end
             if user.use_email_flag == 1
-              #Thread.new do
+              #pid = fork do
                 mail_notify(user.email, @record.source.to_s, @record.message.to_s)
               #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.email_notify = user.use_email_flag
             end
             if user.use_im_flag == 1
-              #Thread.new do
+              #pid = fork do
                 im_notify(user.email, @record.source.to_s, @record.message.to_s)
               #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.im_notify = user.use_im_flag
             end
             if user.use_mobile_ph_flag == 1
-              #Thread.new do
+              #pid = fork do
                 sms_notify(user.mobile_phone_no, @record.source.to_s, @record.message.to_s)
               #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.mobile_ph_notify = user.use_mobile_ph_flag
             end
             if user.use_nma_flag == 1
-              #Thread.new do
+              #pid = fork do
                 nma_notify(user.nma_api_key, @record.source.to_s, @record.message.to_s)
               #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.nma_notify = user.use_nma_flag
             end
             if user.use_nmwp_flag == 1
-              #Thread.new do
+              #pid = fork do
                 nmwp_notify(user.nmwp_api_key, @record.source.to_s, @record.message.to_s)
               #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.nmwp_notify = user.use_nmwp_flag
             end
             if user.use_prowl_flag == 1
-              #Thread.new do
+              #pid = fork do
                 prowl_notify(user.prowl_api_key, @record.source.to_s, @record.message.to_s)
               #end
+              #Process.waitpid(pid, Process::WNOHANG)
+              #Process.detach(pid)
               @record.prowl_notify = user.use_prowl_flag
             end
           end

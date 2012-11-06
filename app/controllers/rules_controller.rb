@@ -5,7 +5,7 @@ class RulesController < ApplicationController
   # GET /rules
   # GET /rules.json
   def index
-    @rules = Rule.paginate(:page => params[:page])
+    @rules = Rule.paginate(:page => params[:page], :include => [:group])
 
     respond_to do |format|
       format.html # index.html.erb
